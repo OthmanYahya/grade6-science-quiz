@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Science Field Notebook · Grade 6 Exam Review</title>
+  
+  <!-- Typography: Fraunces (Headings, Numerals) & Atkinson Hyperlegible (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="field-notebook-theme">
+
+  <!-- Screen Reader Announcements -->
+  <div id="sr-announcer" class="sr-only" aria-live="polite"></div>
+
+  <!-- Header / Ledger Masthead -->
+  <header class="masthead">
+    <div class="masthead-inner">
+      <div class="masthead-meta">
+        <span class="catalog-badge">FIELD NOTEBOOK · VOL. 1</span>
+        <span class="meta-date">GRADE 6 SCIENCE REVIEW</span>
+      </div>
+      <div class="masthead-main">
+        <h1 class="notebook-title" id="site-logo" role="button" tabindex="0" title="Return to Notebook Index">
+          Natural Science Field Exam
+        </h1>
+        <p class="notebook-subtitle">Chapter 1 Review: Organisms, Heredity &amp; Inheritance</p>
+      </div>
+      
+      <!-- Top Navigation Tabs -->
+      <nav class="top-nav" aria-label="Main Navigation">
+        <button type="button" class="nav-tab active" data-view="home" id="tab-home">
+          <svg class="tab-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path d="M3 9.5L10 3l7 6.5V17a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/>
+            <path d="M7 18v-7h6v7"/>
+          </svg>
+          <span>Index</span>
+        </button>
+        <button type="button" class="nav-tab" data-view="practice-setup" id="tab-practice">
+          <svg class="tab-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path d="M4 4h12v12H4z"/>
+            <path d="M8 8l4 4m0-4l-4 4"/>
+          </svg>
+          <span>Practice</span>
+        </button>
+        <button type="button" class="nav-tab" data-view="mock-setup" id="tab-mock">
+          <svg class="tab-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <circle cx="10" cy="10" r="7"/>
+            <path d="M10 6v4l3 2"/>
+          </svg>
+          <span>Mock Exam</span>
+        </button>
+        <button type="button" class="nav-tab" data-view="mistakes" id="tab-mistakes">
+          <svg class="tab-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path d="M12 2l3 3-9 9H3v-3l9-9z"/>
+            <path d="M14 4l2 2"/>
+          </svg>
+          <span>Mistakes (<span id="top-mistake-count">0</span>)</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Viewport Container -->
+  <main id="app-root" class="notebook-viewport">
+    <!-- Dynamic views will be rendered here by app.js -->
+  </main>
+
+  <!-- Global Image Lightbox Modal -->
+  <div id="image-modal" class="modal-backdrop" hidden aria-modal="true" role="dialog" aria-labelledby="modal-fig-caption">
+    <div class="modal-plate">
+      <div class="modal-plate-header">
+        <span class="modal-fig-label">EXAMINATION SPECIMEN FIGURE</span>
+        <button type="button" id="modal-close-btn" class="modal-close-btn" aria-label="Close enlarged figure">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+            <path d="M18 6L6 18M6 6l12 12"/>
+          </svg>
+          <span>Close</span>
+        </button>
+      </div>
+      <div class="modal-plate-body">
+        <img id="modal-img" src="" alt="Enlarged science diagram" class="modal-enlarged-image">
+      </div>
+      <div class="modal-plate-footer">
+        <p id="modal-fig-caption" class="modal-caption-text"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Load pre-parsed questions data directly for offline & file:// support -->
+  <script src="questions-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
