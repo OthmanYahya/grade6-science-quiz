@@ -12,7 +12,8 @@ import os
 import sys
 
 CH1_MD = "Science_L6H_Ch1_Sections_1.2-1.3_Predicted_Questions.md"
-CH2_MD = "Grade_6_Science_2.1_Nervous_System_100_Exam_Practice_Questions.md"
+CH2_1_MD = "Grade_6_Science_2.1_Nervous_System_100_Exam_Practice_Questions.md"
+CH2_2_MD = "Grade_6_Science_2.2_Immune_System_100_Exam_Practice_Questions.md"
 OUTPUT_JSON = "questions.json"
 OUTPUT_JS = "questions-data.js"
 IMAGES_DIR = "images"
@@ -180,12 +181,12 @@ def parse_ch1():
 
     return parsed
 
-def parse_ch2():
-    if not os.path.exists(CH2_MD):
-        print(f"Error: {CH2_MD} not found!", file=sys.stderr)
+def parse_s21():
+    if not os.path.exists(CH2_1_MD):
+        print(f"Error: {CH2_1_MD} not found!", file=sys.stderr)
         sys.exit(1)
 
-    with open(CH2_MD, "r", encoding="utf-8") as f:
+    with open(CH2_1_MD, "r", encoding="utf-8") as f:
         text = f.read()
 
     parts = re.split(r"# Teacher / student answer key and personalized feedback", text)
@@ -372,10 +373,193 @@ def parse_ch2():
 
     return parsed
 
+def parse_s22():
+    if not os.path.exists(CH2_2_MD):
+        print(f"Error: {CH2_2_MD} not found!", file=sys.stderr)
+        sys.exit(1)
+
+    with open(CH2_2_MD, "r", encoding="utf-8") as f:
+        text = f.read()
+
+    parts = re.split(r"# Answer key", text)
+    student_text = parts[0]
+    answer_text = parts[1]
+
+    ans_blocks = re.split(r"(?=### Q\d{3})", answer_text)
+    answers_by_num = {}
+    for b in ans_blocks:
+        m = re.match(r"### Q(\d{3})\s*·\s*([^\n]+)", b)
+        if m:
+            qnum = int(m.group(1))
+            lp = m.group(2).strip()
+            model_m = re.search(r"\*\*Model answer:\*\*\s*(.*?)(?=\n\n\*\*|\n\*\*|$)", b, re.DOTALL)
+            if_corr_m = re.search(r"\*\*If correct:\*\*\s*(.*?)(?=\n\n\*\*|\n\*\*|$)", b, re.DOTALL)
+            if_incorr_m = re.search(r"\*\*If incorrect:\*\*\s*(.*?)(?=\n\n\*\*|\n\*\*|$)", b, re.DOTALL)
+            answers_by_num[qnum] = {
+                "lp": lp,
+                "model_answer": model_m.group(1).strip() if model_m else "",
+                "if_correct": if_corr_m.group(1).strip() if if_corr_m else "",
+                "if_incorrect": if_incorr_m.group(1).strip() if if_incorr_m else ""
+            }
+
+    student_q_splits = re.split(r"(?=\*\*Q\d{3}\.\*\*)", student_text)
+    questions_by_num = {}
+    for s in student_q_splits:
+        m = re.match(r"\*\*Q(\d{3})\.\*\*\s*(.*)", s, re.DOTALL)
+        if m:
+            qnum = int(m.group(1))
+            questions_by_num[qnum] = m.group(2).strip()
+
+    parsed = []
+
+    # Part A: Written (1–35)
+    for num in range(1, 36):
+        body = questions_by_num[num]
+        ans = answers_by_num[num]
+        lp = ans["lp"]
+        is_hard = "+" in lp or num in [6, 7, 8, 12, 17, 20, 24, 28, 32, 35]
+        level = "Hard" if is_hard else "Medium"
+        hint = f"Remember: {ans['if_incorrect']}"
+        explanation = f"{ans['model_answer']} ({ans['if_correct']})"
+
+        parsed.append({
+            "number": num,
+            "section": "2.2",
+            "section_title": "The Immune System",
+            "type": "Written",
+            "lp": lp,
+            "level": level,
+            "hint": hint,
+            "explanation": explanation,
+            "image": None,
+            "table_markdown": None,
+            "table_html": None,
+            "prompt": body,
+            "model_answer": ans["model_answer"]
+        })
+
+    # Part B: Find the Mistake (36–50)
+    for num in range(36, 51):
+        body = questions_by_num[num]
+        ans = answers_by_num[num]
+        lp = ans["lp"]
+        is_hard = "+" in lp or num in [38, 42, 45, 48, 50]
+        level = "Hard" if is_hard else "Medium"
+
+        clean_body = re.sub(r"^Correct the mistake:\s*“?(.*?)”?$", r"\1", body, flags=re.DOTALL).strip(' “\"”')
+        hint = f"Look closely: {ans['if_incorrect']}"
+        explanation = f"{ans['model_answer']} ({ans['if_correct']})"
+
+        parsed.append({
+            "number": num,
+            "section": "2.2",
+            "section_title": "The Immune System",
+            "type": "Find the Mistake",
+            "lp": lp,
+            "level": level,
+            "hint": hint,
+            "explanation": explanation,
+            "image": None,
+            "table_markdown": None,
+            "table_html": None,
+            "student_answer": clean_body,
+            "mistake": ans["if_incorrect"],
+            "correct_answer": ans["model_answer"]
+        })
+
+    # Part C: MCQ (51–80)
+    for num in range(51, 81):
+        body = questions_by_num[num]
+        ans = answers_by_num[num]
+        lp = ans["lp"]
+        is_hard = "+" in lp or num in [54, 62, 65, 70, 75, 79, 80]
+        level = "Hard" if is_hard else "Medium"
+
+        opt_matches = list(re.finditer(r"-\s*\*\*([A-D])\.\*\*\s*(.*?)(?=\n-\s*\*\*|\n\n|$)", body, re.DOTALL))
+        prompt_text = body[:opt_matches[0].start()].strip() if opt_matches else body
+
+        options = []
+        for m in opt_matches:
+            options.append({
+                "key": m.group(1),
+                "text": m.group(2).strip()
+            })
+
+        raw_ans = ans["model_answer"]
+        ans_key_m = re.match(r"([A-D])\.", raw_ans)
+        answer_key = ans_key_m.group(1) if ans_key_m else "A"
+
+        hint = f"Key clue: {ans['if_incorrect']}"
+        explanation = f"{raw_ans} ({ans['if_correct']})"
+
+        parsed.append({
+            "number": num,
+            "section": "2.2",
+            "section_title": "The Immune System",
+            "type": "MCQ",
+            "lp": lp,
+            "level": level,
+            "hint": hint,
+            "explanation": explanation,
+            "image": None,
+            "table_markdown": None,
+            "table_html": None,
+            "prompt": prompt_text,
+            "options": options,
+            "answer": answer_key
+        })
+
+    # Part D: True/False (81–100)
+    for num in range(81, 101):
+        body = questions_by_num[num]
+        ans = answers_by_num[num]
+        lp = ans["lp"]
+        is_hard = "+" in lp or num in [84, 88, 93, 94, 97, 100]
+        level = "Hard" if is_hard else "Medium"
+
+        clean_stmt = re.sub(r"\s*\*\*\(True\s*/\s*False\)\*\*", "", body).strip()
+        raw_ans = ans["model_answer"]
+        is_true = raw_ans.startswith("True")
+        corr_m = re.match(r"^False\.\s*(.*)", raw_ans)
+        correction = corr_m.group(1) if (corr_m and not is_true) else (raw_ans if not is_true else None)
+
+        hint = f"Key clue: {ans['if_incorrect']}"
+        explanation = f"{raw_ans} ({ans['if_correct']})"
+
+        parsed.append({
+            "number": num,
+            "section": "2.2",
+            "section_title": "The Immune System",
+            "type": "True/False",
+            "lp": lp,
+            "level": level,
+            "hint": hint,
+            "explanation": explanation,
+            "image": None,
+            "table_markdown": None,
+            "table_html": None,
+            "statement": clean_stmt,
+            "is_true": is_true,
+            "raw_answer": raw_ans,
+            "correction": correction
+        })
+
+    # Randomize the arrangement of Section 2.2 questions so types are interleaved
+    import random
+    rng = random.Random(154)
+    rng.shuffle(parsed)
+    for idx, q in enumerate(parsed):
+        q["orig_number"] = q["number"]
+        q["number"] = idx + 1
+        q["id"] = f"s22_q{idx + 1}"
+
+    return parsed
+
 def main():
     q_ch1 = parse_ch1()
-    q_ch2 = parse_ch2()
-    all_questions = q_ch1 + q_ch2
+    q_s21 = parse_s21()
+    q_s22 = parse_s22()
+    all_questions = q_ch1 + q_s21 + q_s22
 
     print("==================================================")
     print("PARSING COMPLETE & VERIFIED SUCCESSFULLY!")
@@ -384,6 +568,7 @@ def main():
     print(f"  - Section 1.2 (Classifying Organisms): {len([q for q in all_questions if q['section'] == '1.2'])}")
     print(f"  - Section 1.3 (Heredity & Inheritance): {len([q for q in all_questions if q['section'] == '1.3'])}")
     print(f"  - Section 2.1 (The Nervous System): {len([q for q in all_questions if q['section'] == '2.1'])}")
+    print(f"  - Section 2.2 (The Immune System): {len([q for q in all_questions if q['section'] == '2.2'])}")
 
     with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
         json.dump(all_questions, f, indent=2, ensure_ascii=False)

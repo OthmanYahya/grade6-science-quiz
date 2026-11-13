@@ -7572,5 +7572,2300 @@
     "prompt": "Trace the message pathway that causes shivering, beginning with the receptors and ending with a warmer body.",
     "model_answer": "Skin receptors detect cold → sensory nerves → spinal cord → brain → commands through spinal cord and motor nerves → muscles contract/shiver → body produces heat.",
     "orig_number": 18
+  },
+  {
+    "number": 1,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "MCQ",
+    "lp": "LP5",
+    "level": "Medium",
+    "hint": "Key clue: Coughing can expel material from the body, but doing so uncovered can spread pathogens.",
+    "explanation": "D. Covering a cough or sneeze helps keep infectious droplets from reaching other people. (You selected a behavior that reduces other people’s exposure.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "Which action directly limits spread of pathogens when a student has a cold?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Sharing drinks"
+      },
+      {
+        "key": "B",
+        "text": "Coughing into open air"
+      },
+      {
+        "key": "C",
+        "text": "Skipping handwashing"
+      },
+      {
+        "key": "D",
+        "text": "Covering the nose and mouth when coughing or sneezing"
+      }
+    ],
+    "answer": "D",
+    "orig_number": 71,
+    "id": "s22_q1"
+  },
+  {
+    "number": 2,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Written",
+    "lp": "LP3",
+    "level": "Medium",
+    "hint": "Remember: The lesson presents fever as sometimes protective, not proof that every fever is harmless or that all pathogens are killed by heat.",
+    "explanation": "During infection, immune-system substances can cause shivering and narrowing of blood vessels, raising body temperature. Some pathogens grow less well at higher temperatures, so fever can help slow them. A fever does not guarantee that an infection has been cured. (You linked temperature rise to a possible defense while avoiding the idea that fever alone cures disease.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "A child develops a fever while fighting an infection. Using the lesson, explain how fever may help and why it is part of the body’s response.",
+    "model_answer": "During infection, immune-system substances can cause shivering and narrowing of blood vessels, raising body temperature. Some pathogens grow less well at higher temperatures, so fever can help slow them. A fever does not guarantee that an infection has been cured.",
+    "orig_number": 18,
+    "id": "s22_q2"
+  },
+  {
+    "number": 3,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "True/False",
+    "lp": "LP3+LP4",
+    "level": "Hard",
+    "hint": "Key clue: The body retains some immune memory cells, not necessarily the disease-causing pathogen.",
+    "explanation": "True. Immune memory can speed up a later response to a previously encountered pathogen. (You linked a later faster response to the cells that remain after infection.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "statement": "Some white blood cells stay as memory immune cells, helping the body respond faster when the same pathogen returns.",
+    "is_true": true,
+    "raw_answer": "True. Immune memory can speed up a later response to a previously encountered pathogen.",
+    "correction": null,
+    "orig_number": 89,
+    "id": "s22_q3"
+  },
+  {
+    "number": 4,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "True/False",
+    "lp": "LP3",
+    "level": "Hard",
+    "hint": "Key clue: If you reversed this order, remember that white blood cells must find and recognize a pathogen before engulfing it.",
+    "explanation": "True. The taught sequence is arrival, recognition, engulfing, then destruction. (You kept the cause-and-effect order of the immune response.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "statement": "During inflammation, white blood cells engulf pathogens only after they have arrived and recognized them.",
+    "is_true": true,
+    "raw_answer": "True. The taught sequence is arrival, recognition, engulfing, then destruction.",
+    "correction": null,
+    "orig_number": 88,
+    "id": "s22_q4"
+  },
+  {
+    "number": 5,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Written",
+    "lp": "LP2+LP5",
+    "level": "Hard",
+    "hint": "Remember: Natural barriers are helpful but not perfect; stomach juices do not make unwashed food risk-free.",
+    "explanation": "Saliva in the mouth helps destroy pathogens, and stomach juices can kill swallowed pathogens. Washing food lowers the number of pathogens entering the body in the first place, so it remains important. (You distinguished lowering exposure from the body’s attempts to kill pathogens after swallowing.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "Describe two defenses in the digestive system and explain why washing food still matters even though these defenses exist.",
+    "model_answer": "Saliva in the mouth helps destroy pathogens, and stomach juices can kill swallowed pathogens. Washing food lowers the number of pathogens entering the body in the first place, so it remains important.",
+    "orig_number": 12,
+    "id": "s22_q5"
+  },
+  {
+    "number": 6,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "MCQ",
+    "lp": "LP5",
+    "level": "Medium",
+    "hint": "Key clue: Washing hands alone does not remove pathogens from unwashed produce or kill those inside undercooked meat.",
+    "explanation": "C. Washing produce and fully cooking meat reduce foodborne pathogen exposure. (You selected the two food-preparation precautions from the lesson.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "Which combination best lowers risk from pathogens that may be present in food?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Drink water without washing the food"
+      },
+      {
+        "key": "B",
+        "text": "Eat raw meat but wash hands afterward"
+      },
+      {
+        "key": "C",
+        "text": "Wash fruits and vegetables and cook meat properly"
+      },
+      {
+        "key": "D",
+        "text": "Avoid all vaccines"
+      }
+    ],
+    "answer": "C",
+    "orig_number": 73,
+    "id": "s22_q6"
+  },
+  {
+    "number": 7,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "True/False",
+    "lp": "LP2+LP5",
+    "level": "Hard",
+    "hint": "Key clue: The lesson specifically recommends cooking meat well. Digestive defenses do not make undercooked meat safe.",
+    "explanation": "False. Thoroughly cooking meat can kill pathogens in the food and reduces the risk of infection; stomach defenses are not perfect. (You linked safer food preparation to preventing pathogens entering the body.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "statement": "Properly cooking meat is unnecessary because stomach juices always kill every swallowed pathogen.",
+    "is_true": false,
+    "raw_answer": "False. Thoroughly cooking meat can kill pathogens in the food and reduces the risk of infection; stomach defenses are not perfect.",
+    "correction": "Thoroughly cooking meat can kill pathogens in the food and reduces the risk of infection; stomach defenses are not perfect.",
+    "orig_number": 97,
+    "id": "s22_q7"
+  },
+  {
+    "number": 8,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Written",
+    "lp": "LP4",
+    "level": "Medium",
+    "hint": "Remember: Do not say vaccines are antibiotics or that one vaccination creates protection from all infections; the immune response is targeted.",
+    "explanation": "The lesson describes vaccines as containing killed or weakened pathogens that stimulate the body’s immune response so it can respond faster to that specific pathogen later. Different pathogens require different specific protection. (You explained preparation of the immune system and the specificity of protection.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "Explain the role of a vaccine described in the textbook and why a vaccine against one disease does not automatically protect against every disease.",
+    "model_answer": "The lesson describes vaccines as containing killed or weakened pathogens that stimulate the body’s immune response so it can respond faster to that specific pathogen later. Different pathogens require different specific protection.",
+    "orig_number": 23,
+    "id": "s22_q8"
+  },
+  {
+    "number": 9,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "True/False",
+    "lp": "LP3",
+    "level": "Medium",
+    "hint": "Key clue: The material describes fever as sometimes helpful. It does not guarantee that all fever is safe or that pathogens are eliminated.",
+    "explanation": "False. The slides explain that higher body temperature during fever can slow the growth of some pathogens. (You recognized fever as a possible immune defense without claiming it cures everything.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "statement": "A fever is never part of the body’s defense and cannot affect the growth of pathogens.",
+    "is_true": false,
+    "raw_answer": "False. The slides explain that higher body temperature during fever can slow the growth of some pathogens.",
+    "correction": "The slides explain that higher body temperature during fever can slow the growth of some pathogens.",
+    "orig_number": 90,
+    "id": "s22_q9"
+  },
+  {
+    "number": 10,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "True/False",
+    "lp": "LP2+LP5",
+    "level": "Hard",
+    "hint": "Key clue: An uncovered cough can spread pathogens even when coughing is useful for clearing airways.",
+    "explanation": "True. Coughing can expel material, but covering the cough reduces the spread of droplets containing pathogens. (You explained both the body’s response and the hygiene rule.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "statement": "Covering a cough protects other people even though coughing itself can help the body remove trapped material.",
+    "is_true": true,
+    "raw_answer": "True. Coughing can expel material, but covering the cough reduces the spread of droplets containing pathogens.",
+    "correction": null,
+    "orig_number": 95,
+    "id": "s22_q10"
+  },
+  {
+    "number": 11,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "MCQ",
+    "lp": "LP2",
+    "level": "Medium",
+    "hint": "Key clue: Do not confuse respiratory mucus with the mouth’s saliva or the stomach’s digestive juices.",
+    "explanation": "D. Saliva in the mouth and stomach juices can help destroy pathogens. (You identified two digestive defenses that act before or during swallowing.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "Which pair acts in the mouth and stomach to help destroy swallowed pathogens?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Cilia and sweat"
+      },
+      {
+        "key": "B",
+        "text": "Tears and mucus"
+      },
+      {
+        "key": "C",
+        "text": "White blood cells and hair"
+      },
+      {
+        "key": "D",
+        "text": "Saliva and stomach juices"
+      }
+    ],
+    "answer": "D",
+    "orig_number": 59,
+    "id": "s22_q11"
+  },
+  {
+    "number": 12,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Written",
+    "lp": "ACT+LP2",
+    "level": "Hard",
+    "hint": "Remember: Do not say only apple 2 touched the rotting apple. All three were exposed, but their skin and washing treatments differed.",
+    "explanation": "All three fresh apples were rubbed with the rotting apple. Apple 1 was left with its skin intact; apple 2 had some skin rubbed off with sandpaper; apple 3 also had skin rubbed off but was then washed carefully with soap and water and dried. Each went into its own bag. (You identified the skin condition and washing step—the differences the investigation was designed to test.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "In the three-apple activity, describe exactly how apple 1, apple 2, and apple 3 were treated before they were placed in separate bags.",
+    "model_answer": "All three fresh apples were rubbed with the rotting apple. Apple 1 was left with its skin intact; apple 2 had some skin rubbed off with sandpaper; apple 3 also had skin rubbed off but was then washed carefully with soap and water and dried. Each went into its own bag.",
+    "orig_number": 6,
+    "id": "s22_q12"
+  },
+  {
+    "number": 13,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "MCQ",
+    "lp": "LP5",
+    "level": "Medium",
+    "hint": "Key clue: The lesson recommends avoiding contact with sick people and washing hands; sharing food can increase exposure.",
+    "explanation": "A. Avoiding close exposure and washing hands can reduce infection risk. (You recognized that several small prevention measures can work together.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "A classmate has an infectious cough. Which choice best combines two protections?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Keep distance when appropriate and wash hands after contact"
+      },
+      {
+        "key": "B",
+        "text": "Share food to show friendship and stop handwashing"
+      },
+      {
+        "key": "C",
+        "text": "Ask the classmate to cough toward everyone"
+      },
+      {
+        "key": "D",
+        "text": "Eat unwashed vegetables to strengthen immunity"
+      }
+    ],
+    "answer": "A",
+    "orig_number": 74,
+    "id": "s22_q13"
+  },
+  {
+    "number": 14,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Written",
+    "lp": "LP5",
+    "level": "Hard",
+    "hint": "Remember: Soap and water do not remove pathogens from the air or inside food; they mainly remove them from the washed skin.",
+    "explanation": "Pathogens can transfer by touching contaminated surfaces and then touching the body or food. Handwashing removes pathogens from the hands and reduces the chance of carrying them to the mouth or to another person. (You linked hand hygiene to both contaminated surfaces and food/hand contact.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "A student washes hands after touching a shared desk and before eating lunch. Explain which two possible routes of pathogen spread this interrupts.",
+    "model_answer": "Pathogens can transfer by touching contaminated surfaces and then touching the body or food. Handwashing removes pathogens from the hands and reduces the chance of carrying them to the mouth or to another person.",
+    "orig_number": 28,
+    "id": "s22_q14"
+  },
+  {
+    "number": 15,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Written",
+    "lp": "LP3+LP4",
+    "level": "Hard",
+    "hint": "Remember: The pathogen need not remain to provide memory. It is some white blood cells that remain and help recognize it again.",
+    "explanation": "Some white blood cells remain after the pathogens are destroyed and act as memory immune cells. They help the immune system recognize the same pathogen and respond faster during a later encounter. (You linked later speed to retained immune memory, not to the pathogen permanently staying inside.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "Why can the immune system respond more quickly if the *same* pathogen enters again? What remains after the first infection?",
+    "model_answer": "Some white blood cells remain after the pathogens are destroyed and act as memory immune cells. They help the immune system recognize the same pathogen and respond faster during a later encounter.",
+    "orig_number": 17,
+    "id": "s22_q15"
+  },
+  {
+    "number": 16,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Find the Mistake",
+    "lp": "LP4",
+    "level": "Medium",
+    "hint": "Look closely: Vaccination stimulates the recipient’s own immunity. Passive immunity is protection supplied from another source.",
+    "explanation": "A vaccine that triggers the child’s own immune response develops active immunity, not passive immunity. (You classified immunity by the origin of the response, not by whether someone gives an injection.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "student_answer": "A child develops passive immunity when a vaccine causes the child’s own immune system to respond.",
+    "mistake": "Vaccination stimulates the recipient’s own immunity. Passive immunity is protection supplied from another source.",
+    "correct_answer": "A vaccine that triggers the child’s own immune response develops active immunity, not passive immunity.",
+    "orig_number": 44,
+    "id": "s22_q16"
+  },
+  {
+    "number": 17,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "True/False",
+    "lp": "LP6",
+    "level": "Medium",
+    "hint": "Key clue: Noninfectious diseases are not spread from person to person; the lesson gives all three as examples.",
+    "explanation": "True. These diseases are noninfectious and are not transmitted by ordinary contact. (You recognized that seriousness does not equal contagiousness.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "statement": "Asthma, diabetes, and cancer are noninfectious diseases and cannot be caught by a handshake.",
+    "is_true": true,
+    "raw_answer": "True. These diseases are noninfectious and are not transmitted by ordinary contact.",
+    "correction": null,
+    "orig_number": 98,
+    "id": "s22_q17"
+  },
+  {
+    "number": 18,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Written",
+    "lp": "LP5",
+    "level": "Medium",
+    "hint": "Remember: Do not treat drinking water as a substitute for washing vegetables or properly cooking meat.",
+    "explanation": "Unwashed salad may carry pathogens on its surface, and undercooked meat may contain living pathogens. Wash vegetables and cook meat thoroughly; drinking water alone does not make the other foods safe. (You recognized separate contamination risks and matched each to an effective preventive action.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "A cafeteria offers unwashed salad, poorly cooked meat, and water to drink. Identify the two infection risks and describe practical steps to reduce them.",
+    "model_answer": "Unwashed salad may carry pathogens on its surface, and undercooked meat may contain living pathogens. Wash vegetables and cook meat thoroughly; drinking water alone does not make the other foods safe.",
+    "orig_number": 31,
+    "id": "s22_q18"
+  },
+  {
+    "number": 19,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "True/False",
+    "lp": "LP6",
+    "level": "Medium",
+    "hint": "Key clue: An immune reaction can happen without a contagious pathogen being present.",
+    "explanation": "False. Pollen allergy is a noninfectious immune reaction to a substance that is not a pathogen. (You separated immune-system reactions from infectious diseases.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "statement": "A pollen allergy is contagious because the immune system reacts to pollen.",
+    "is_true": false,
+    "raw_answer": "False. Pollen allergy is a noninfectious immune reaction to a substance that is not a pathogen.",
+    "correction": "Pollen allergy is a noninfectious immune reaction to a substance that is not a pathogen.",
+    "orig_number": 99,
+    "id": "s22_q19"
+  },
+  {
+    "number": 20,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "MCQ",
+    "lp": "LP3",
+    "level": "Medium",
+    "hint": "Key clue: These are the named signs of inflammation; vaccination and passive immunity are not the local process shown.",
+    "explanation": "C. Redness, heat, swelling, and pain are the four signs of inflammation given in the lesson. (You recognized a typical protective response after tissue damage.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "A few hours after scraping a knee, a child notices redness, heat, swelling, and pain. This is most consistent with:",
+    "options": [
+      {
+        "key": "A",
+        "text": "Passive immunity"
+      },
+      {
+        "key": "B",
+        "text": "A vitamin deficiency"
+      },
+      {
+        "key": "C",
+        "text": "Inflammation"
+      },
+      {
+        "key": "D",
+        "text": "A noninfectious allergy to homework"
+      }
+    ],
+    "answer": "C",
+    "orig_number": 61,
+    "id": "s22_q20"
+  },
+  {
+    "number": 21,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "MCQ",
+    "lp": "LP6",
+    "level": "Hard",
+    "hint": "Key clue: Diabetes is noninfectious; it is not ringworm, a virus, or a bacterial illness.",
+    "explanation": "D. The slides describe diabetes as a problem with using and storing glucose and high blood glucose. (You identified the disease description rather than the names of pathogens.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "Which description of diabetes agrees with the slides?",
+    "options": [
+      {
+        "key": "A",
+        "text": "A fungal rash in rings"
+      },
+      {
+        "key": "B",
+        "text": "A virus that causes fever"
+      },
+      {
+        "key": "C",
+        "text": "An infection always treated with antibiotics"
+      },
+      {
+        "key": "D",
+        "text": "A condition in which the body cannot use and store glucose properly, leading to too much glucose in the blood"
+      }
+    ],
+    "answer": "D",
+    "orig_number": 79,
+    "id": "s22_q21"
+  },
+  {
+    "number": 22,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Find the Mistake",
+    "lp": "LP2",
+    "level": "Medium",
+    "hint": "Look closely: Mucus traps material in air passages. Cilia are tiny hair-like structures in the respiratory system, not part of the stomach.",
+    "explanation": "Mucus traps dust and pathogens in the respiratory passages; cilia help filter inhaled air. Stomach juices belong to digestive defense, not to cilia. (You assigned the right jobs to mucus, cilia, and stomach juices.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "student_answer": "Mucus pushes pathogens into the bloodstream, while cilia make the stomach release digestive juices.",
+    "mistake": "Mucus traps material in air passages. Cilia are tiny hair-like structures in the respiratory system, not part of the stomach.",
+    "correct_answer": "Mucus traps dust and pathogens in the respiratory passages; cilia help filter inhaled air. Stomach juices belong to digestive defense, not to cilia.",
+    "orig_number": 40,
+    "id": "s22_q22"
+  },
+  {
+    "number": 23,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Written",
+    "lp": "LP4",
+    "level": "Medium",
+    "hint": "Remember: Mother-to-baby protection is passive; developing your own response after exposure is active. Prior infection does not guarantee protection against every future influenza strain.",
+    "explanation": "The baby receives passive immunity because protective substances come from the mother. The older sibling may develop active immunity from the body’s own response to influenza infection. (You classified the two cases by the origin of protection rather than by the person’s age.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "A baby receives protection through breast milk, while an older sibling recovers from influenza. Identify the type of immunity in each case and defend your choices.",
+    "model_answer": "The baby receives passive immunity because protective substances come from the mother. The older sibling may develop active immunity from the body’s own response to influenza infection.",
+    "orig_number": 25,
+    "id": "s22_q23"
+  },
+  {
+    "number": 24,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "True/False",
+    "lp": "LP1",
+    "level": "Medium",
+    "hint": "Key clue: The pathogen type matters: chickenpox is a viral disease, not a bacterial one.",
+    "explanation": "False. Antibiotics treat some bacterial infections, but they do not treat the virus causing chickenpox. (You avoided assuming that the same medicine works against all pathogens.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "statement": "Antibiotics that treat some bacterial diseases are also an effective treatment against the chickenpox virus.",
+    "is_true": false,
+    "raw_answer": "False. Antibiotics treat some bacterial infections, but they do not treat the virus causing chickenpox.",
+    "correction": "Antibiotics treat some bacterial infections, but they do not treat the virus causing chickenpox.",
+    "orig_number": 83,
+    "id": "s22_q24"
+  },
+  {
+    "number": 25,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Written",
+    "lp": "LP1",
+    "level": "Medium",
+    "hint": "Remember: Do not say antibiotics kill every pathogen. The treatment described targets some bacteria, not chickenpox virus.",
+    "explanation": "Chickenpox is caused by a virus. Antibiotics are used against diseases caused by some bacteria; they do not act against viruses, fungi, or parasites. (You distinguished bacterial infections from viral infections, an important exam contrast.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "Karl has chickenpox, but taking an antibiotic does not treat the virus that caused it. Explain why this is expected and state what antibiotics are used for in this lesson.",
+    "model_answer": "Chickenpox is caused by a virus. Antibiotics are used against diseases caused by some bacteria; they do not act against viruses, fungi, or parasites.",
+    "orig_number": 3,
+    "id": "s22_q25"
+  },
+  {
+    "number": 26,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Find the Mistake",
+    "lp": "LP3",
+    "level": "Hard",
+    "hint": "Look closely: Cells cannot destroy pathogens at the site before arriving and recognizing them.",
+    "explanation": "Damaged cells release attracting chemicals; white blood cells arrive, recognize pathogens, engulf them, and destroy them, in that order. (You restored the revision sheet’s five-stage order.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "student_answer": "During inflammation, pathogens are destroyed first, and only then do white blood cells arrive and recognize them.",
+    "mistake": "Cells cannot destroy pathogens at the site before arriving and recognizing them.",
+    "correct_answer": "Damaged cells release attracting chemicals; white blood cells arrive, recognize pathogens, engulf them, and destroy them, in that order.",
+    "orig_number": 42,
+    "id": "s22_q26"
+  },
+  {
+    "number": 27,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Find the Mistake",
+    "lp": "LP5",
+    "level": "Medium",
+    "hint": "Look closely: The body’s own protection does not justify spraying infectious droplets into shared air.",
+    "explanation": "Sneezing helps expel material from the respiratory system, but it can spread pathogens to others. Cover the nose and mouth and clean hands afterward. (You combined the defensive purpose of sneezing with responsibility to protect classmates.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "student_answer": "It is best to sneeze openly in a crowded room because sneezing removes pathogens from your body.",
+    "mistake": "The body’s own protection does not justify spraying infectious droplets into shared air.",
+    "correct_answer": "Sneezing helps expel material from the respiratory system, but it can spread pathogens to others. Cover the nose and mouth and clean hands afterward.",
+    "orig_number": 47,
+    "id": "s22_q27"
+  },
+  {
+    "number": 28,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "MCQ",
+    "lp": "LP4",
+    "level": "Medium",
+    "hint": "Key clue: Protection against one pathogen does not automatically mean protection against unrelated viruses, bacteria, fungi, or parasites.",
+    "explanation": "C. A vaccine develops targeted protection, not universal protection from all pathogens. (You understood why the slides show different vaccines for different diseases.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "Why does a vaccine against a specific pathogen not protect equally against every infection?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Pathogens are all identical"
+      },
+      {
+        "key": "B",
+        "text": "Vaccines work only on broken skin"
+      },
+      {
+        "key": "C",
+        "text": "Immune responses are directed against particular pathogens"
+      },
+      {
+        "key": "D",
+        "text": "Vaccines prevent all allergies but no infections"
+      }
+    ],
+    "answer": "C",
+    "orig_number": 69,
+    "id": "s22_q28"
+  },
+  {
+    "number": 29,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Written",
+    "lp": "LP3",
+    "level": "Medium",
+    "hint": "Remember: Inflammation may cause pain, but white blood cells are recruited to fight pathogens, not to create pain as their goal.",
+    "explanation": "White blood cells help defend against pathogens. They arrive at the infected area, recognize invaders, engulf and destroy them; other white blood cells help mark pathogens or remember them. (You identified the cells’ defense role, rather than confusing the signs of inflammation with its purpose.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "A student says, “White blood cells arrive at a wound only to cause pain.” Correct the explanation by describing what white blood cells actually do.",
+    "model_answer": "White blood cells help defend against pathogens. They arrive at the infected area, recognize invaders, engulf and destroy them; other white blood cells help mark pathogens or remember them.",
+    "orig_number": 19,
+    "id": "s22_q29"
+  },
+  {
+    "number": 30,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "MCQ",
+    "lp": "LP3",
+    "level": "Hard",
+    "hint": "Key clue: The lesson says fever may slow some pathogens. It does not make every infection harmless.",
+    "explanation": "C. Some pathogens grow less well at the higher temperatures caused by fever. (You correctly treated fever as a possible defense, not a guaranteed cure.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "According to the slides, why can fever sometimes help fight infection?",
+    "options": [
+      {
+        "key": "A",
+        "text": "It proves every pathogen has been destroyed"
+      },
+      {
+        "key": "B",
+        "text": "It always means the person has a noninfectious disease"
+      },
+      {
+        "key": "C",
+        "text": "A higher body temperature can slow the growth of some pathogens"
+      },
+      {
+        "key": "D",
+        "text": "It prevents all pathogens from ever entering the body"
+      }
+    ],
+    "answer": "C",
+    "orig_number": 65,
+    "id": "s22_q30"
+  },
+  {
+    "number": 31,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Written",
+    "lp": "LP2+LP5",
+    "level": "Hard",
+    "hint": "Remember: The safe conclusion is not “never cough” or “cough openly”; cover coughs to limit spread.",
+    "explanation": "Coughing can help expel trapped particles and pathogens from airways, but an uncovered cough can spread infectious droplets. Cover the mouth and nose with a tissue or elbow, dispose of the tissue, and wash hands. (You distinguished a protective body action from how that action can expose others.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "Two classmates disagree: one says coughing helps the body, the other says coughing spreads illness. Show how both observations can be true and give the safest behavior.",
+    "model_answer": "Coughing can help expel trapped particles and pathogens from airways, but an uncovered cough can spread infectious droplets. Cover the mouth and nose with a tissue or elbow, dispose of the tissue, and wash hands.",
+    "orig_number": 30,
+    "id": "s22_q31"
+  },
+  {
+    "number": 32,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "MCQ",
+    "lp": "LP6",
+    "level": "Medium",
+    "hint": "Key clue: Diabetes is not caused by a transmissible pathogen and cannot be caught through a handshake.",
+    "explanation": "A. Diabetes is noninfectious, so ordinary contact does not transmit it. (You applied the lesson’s diabetes example without confusing illness with contagiousness.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "Why is it safe in terms of disease transmission to shake hands with a neighbor who has diabetes?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Diabetes is noninfectious and cannot be caught through a handshake"
+      },
+      {
+        "key": "B",
+        "text": "Diabetes is caused by ringworm"
+      },
+      {
+        "key": "C",
+        "text": "Every illness is transmitted only through food"
+      },
+      {
+        "key": "D",
+        "text": "Diabetes creates viruses that vanish on contact"
+      }
+    ],
+    "answer": "A",
+    "orig_number": 78,
+    "id": "s22_q32"
+  },
+  {
+    "number": 33,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Find the Mistake",
+    "lp": "LP5",
+    "level": "Hard",
+    "hint": "Look closely: Food and water are also entry routes in this lesson; hygiene is broader than covering coughs.",
+    "explanation": "Pathogens can spread in contaminated food as well as through contact and coughing. Washing produce and cooking meat well help reduce foodborne infections. (You named both airborne/contact and food-related ways pathogens may spread.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "student_answer": "Washing fruit and vegetables, and cooking meat properly, cannot reduce infectious disease because pathogens only spread through coughing.",
+    "mistake": "Food and water are also entry routes in this lesson; hygiene is broader than covering coughs.",
+    "correct_answer": "Pathogens can spread in contaminated food as well as through contact and coughing. Washing produce and cooking meat well help reduce foodborne infections.",
+    "orig_number": 48,
+    "id": "s22_q33"
+  },
+  {
+    "number": 34,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "MCQ",
+    "lp": "LP1",
+    "level": "Medium",
+    "hint": "Key clue: Review the table: chickenpox is viral; tetanus is bacterial; malaria is parasitic; ringworm is fungal.",
+    "explanation": "C. Ringworm is a fungal disease of the skin. (The name is misleading; ringworm is not caused by a worm.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "Which pair correctly matches a disease with the type of pathogen named in the lesson?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Chickenpox—bacterium"
+      },
+      {
+        "key": "B",
+        "text": "Tetanus—fungus"
+      },
+      {
+        "key": "C",
+        "text": "Ringworm—fungus"
+      },
+      {
+        "key": "D",
+        "text": "Malaria—virus"
+      }
+    ],
+    "answer": "C",
+    "orig_number": 52,
+    "id": "s22_q34"
+  },
+  {
+    "number": 35,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Find the Mistake",
+    "lp": "LP4",
+    "level": "Hard",
+    "hint": "Look closely: Do not swap the two: own immune response with memory is active; borrowed temporary protection is passive.",
+    "explanation": "Active immunity can create longer-lasting immune memory after infection or vaccination. Maternal passive immunity supplies temporary protection without giving the baby its own immune memory against that pathogen. (You corrected both the memory and duration comparison.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "student_answer": "Active immunity always ends after a few days, while maternal passive immunity creates lifelong immune memory in the baby.",
+    "mistake": "Do not swap the two: own immune response with memory is active; borrowed temporary protection is passive.",
+    "correct_answer": "Active immunity can create longer-lasting immune memory after infection or vaccination. Maternal passive immunity supplies temporary protection without giving the baby its own immune memory against that pathogen.",
+    "orig_number": 45,
+    "id": "s22_q35"
+  },
+  {
+    "number": 36,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Written",
+    "lp": "LP2+ACT",
+    "level": "Hard",
+    "hint": "Remember: The scraped skin does not provide the same physical protection as intact skin. Wound cleaning matters even before visible signs of infection.",
+    "explanation": "Unbroken skin is a physical barrier that resists entry of pathogens. A scrape breaks that barrier; cleaning the wound carefully with soap and water helps remove microorganisms and lowers the risk of infection. (You linked the injury to the lost barrier and the cleaning step to reducing pathogens.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "A scraped knee lets pathogens enter more easily than an unbroken knee. Explain why and give the first action a child should take to lower the risk of infection.",
+    "model_answer": "Unbroken skin is a physical barrier that resists entry of pathogens. A scrape breaks that barrier; cleaning the wound carefully with soap and water helps remove microorganisms and lowers the risk of infection.",
+    "orig_number": 9,
+    "id": "s22_q36"
+  },
+  {
+    "number": 37,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Written",
+    "lp": "LP2+LP3",
+    "level": "Hard",
+    "hint": "Remember: Do not confuse intact skin with the white blood cells summoned to an infected wound. These act at different stages.",
+    "explanation": "First-line barriers such as intact skin, mucus, saliva, and stomach juices help prevent pathogens entering. If pathogens pass these barriers, the immune system responds—for example through inflammation and white blood cells that attack pathogens. (You separated *preventing entry* from *fighting an invasion after entry*.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "The skin is injured, yet the immune system still protects the body. Explain the difference between a *first line of defense* and the response that follows if pathogens get inside.",
+    "model_answer": "First-line barriers such as intact skin, mucus, saliva, and stomach juices help prevent pathogens entering. If pathogens pass these barriers, the immune system responds—for example through inflammation and white blood cells that attack pathogens.",
+    "orig_number": 15,
+    "id": "s22_q37"
+  },
+  {
+    "number": 38,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "True/False",
+    "lp": "LP3",
+    "level": "Medium",
+    "hint": "Key clue: Review the four words together: red, hot, swollen, and painful.",
+    "explanation": "True. These are the four inflammation signs emphasized in the slides and revision key. (You recognized all four symptoms without substituting an unrelated condition.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "statement": "The four common signs of inflammation are redness, heat, swelling, and pain.",
+    "is_true": true,
+    "raw_answer": "True. These are the four inflammation signs emphasized in the slides and revision key.",
+    "correction": null,
+    "orig_number": 87,
+    "id": "s22_q38"
+  },
+  {
+    "number": 39,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "True/False",
+    "lp": "LP4",
+    "level": "Medium",
+    "hint": "Key clue: A vaccine being administered by another person does not make it passive immunity.",
+    "explanation": "True. Active immunity develops through the body’s own immune response after infection or vaccination. (You applied the defining test: who produces the protective response?)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "statement": "Vaccination is an example of active immunity because it stimulates the vaccinated person’s own immune response.",
+    "is_true": true,
+    "raw_answer": "True. Active immunity develops through the body’s own immune response after infection or vaccination.",
+    "correction": null,
+    "orig_number": 91,
+    "id": "s22_q39"
+  },
+  {
+    "number": 40,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Written",
+    "lp": "LP6",
+    "level": "Hard",
+    "hint": "Remember: Do not classify influenza, ringworm, or malaria as noninfectious; they are caused by pathogens.",
+    "explanation": "A noninfectious disease is not caused by a disease-causing pathogen and cannot spread from person to person. The lesson lists allergies, asthma, diabetes, cancer, and heart disease; any four are acceptable. (You described both the absence of pathogen transmission and examples from the lesson.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "Define a *noninfectious disease* and name four examples included in the lesson.",
+    "model_answer": "A noninfectious disease is not caused by a disease-causing pathogen and cannot spread from person to person. The lesson lists allergies, asthma, diabetes, cancer, and heart disease; any four are acceptable.",
+    "orig_number": 32,
+    "id": "s22_q40"
+  },
+  {
+    "number": 41,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "MCQ",
+    "lp": "LP1",
+    "level": "Hard",
+    "hint": "Key clue: The other groups mix viral diseases with bacterial, fungal, or parasitic ones.",
+    "explanation": "A. Chickenpox, influenza, and measles are viral diseases. (You used the pathogen classification table accurately.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "Which group contains only diseases the slides classify as caused by viruses?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Chickenpox, influenza, measles"
+      },
+      {
+        "key": "B",
+        "text": "Tetanus, tuberculosis, malaria"
+      },
+      {
+        "key": "C",
+        "text": "Ringworm, strep throat, measles"
+      },
+      {
+        "key": "D",
+        "text": "Athlete’s foot, malaria, chickenpox"
+      }
+    ],
+    "answer": "A",
+    "orig_number": 54,
+    "id": "s22_q41"
+  },
+  {
+    "number": 42,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "MCQ",
+    "lp": "LP6",
+    "level": "Medium",
+    "hint": "Key clue: The other groups contain infectious diseases caused by viruses, bacteria, fungi, or parasites.",
+    "explanation": "B. Diabetes, asthma, and cancer are noninfectious conditions. (You correctly distinguished them from illnesses caused by pathogens.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "Which group contains only noninfectious diseases listed in the lesson?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Influenza, measles, chickenpox"
+      },
+      {
+        "key": "B",
+        "text": "Diabetes, asthma, cancer"
+      },
+      {
+        "key": "C",
+        "text": "Tetanus, ringworm, malaria"
+      },
+      {
+        "key": "D",
+        "text": "Tuberculosis, strep throat, athlete’s foot"
+      }
+    ],
+    "answer": "B",
+    "orig_number": 76,
+    "id": "s22_q42"
+  },
+  {
+    "number": 43,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Written",
+    "lp": "LP3",
+    "level": "Medium",
+    "hint": "Remember: The lesson says different white blood cells perform different jobs; do not assume one white blood cell must do every job.",
+    "explanation": "One kind recognizes the specific pathogen, another produces substances that attach to it and mark it for destruction, and another white blood cell helps destroy the marked pathogen. (You described the coordinated sequence of recognition, marking, and destruction.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "Describe how three different kinds of white blood cells can cooperate to remove one specific pathogen, based on the lesson.",
+    "model_answer": "One kind recognizes the specific pathogen, another produces substances that attach to it and mark it for destruction, and another white blood cell helps destroy the marked pathogen.",
+    "orig_number": 16,
+    "id": "s22_q43"
+  },
+  {
+    "number": 44,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Find the Mistake",
+    "lp": "LP3",
+    "level": "Medium",
+    "hint": "Look closely: Inflammation does not mean the body has no defense; white blood cells are recruited to protect the wound.",
+    "explanation": "Redness, heat, swelling, and pain are signs of inflammation, a protective immune response in which white blood cells help fight pathogens. (You interpreted the symptoms as part of the defense process.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "student_answer": "If a scraped knee becomes red, hot, swollen, and painful, these four signs prove white blood cells are useless.",
+    "mistake": "Inflammation does not mean the body has no defense; white blood cells are recruited to protect the wound.",
+    "correct_answer": "Redness, heat, swelling, and pain are signs of inflammation, a protective immune response in which white blood cells help fight pathogens.",
+    "orig_number": 41,
+    "id": "s22_q44"
+  },
+  {
+    "number": 45,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "MCQ",
+    "lp": "LP4",
+    "level": "Medium",
+    "hint": "Key clue: The baby does not acquire its own lasting immune memory just from receiving these protective substances.",
+    "explanation": "D. Protection received from the mother is passive and temporary. (You distinguished borrowed protection from making a new immune response.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "A newborn receives protective substances from the mother. Which description best fits?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Active immunity with guaranteed lifelong memory"
+      },
+      {
+        "key": "B",
+        "text": "A bacterial infection"
+      },
+      {
+        "key": "C",
+        "text": "Active immunity gained through a vaccine"
+      },
+      {
+        "key": "D",
+        "text": "Passive immunity with temporary protection"
+      }
+    ],
+    "answer": "D",
+    "orig_number": 67,
+    "id": "s22_q45"
+  },
+  {
+    "number": 46,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Written",
+    "lp": "LP1",
+    "level": "Medium",
+    "hint": "Remember: Ringworm is caused by a fungus, not a worm; chickenpox is viral, tetanus bacterial, and malaria parasitic.",
+    "explanation": "Chickenpox—virus; ringworm—fungus; tetanus—bacterium; malaria—parasite. Each is listed with that type of pathogen in the lesson’s disease table. (You used the specific disease–pathogen pairs rather than guessing from the illness name.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "Match each illness to its pathogen type and explain your reasoning using the lesson’s examples: chickenpox, ringworm, tetanus, and malaria.",
+    "model_answer": "Chickenpox—virus; ringworm—fungus; tetanus—bacterium; malaria—parasite. Each is listed with that type of pathogen in the lesson’s disease table.",
+    "orig_number": 2,
+    "id": "s22_q46"
+  },
+  {
+    "number": 47,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Find the Mistake",
+    "lp": "LP3+LP4",
+    "level": "Hard",
+    "hint": "Look closely: The body may clear pathogens while retaining white blood cells that remember them.",
+    "explanation": "Some white blood cells remain as memory immune cells after the infection, helping the immune system respond faster if the same pathogen returns. (You distinguished immune memory cells from the removed pathogens.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "student_answer": "Once an infection ends, the immune system forgets the pathogen because no white blood cells can remain.",
+    "mistake": "The body may clear pathogens while retaining white blood cells that remember them.",
+    "correct_answer": "Some white blood cells remain as memory immune cells after the infection, helping the immune system respond faster if the same pathogen returns.",
+    "orig_number": 43,
+    "id": "s22_q47"
+  },
+  {
+    "number": 48,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "True/False",
+    "lp": "LP4",
+    "level": "Hard",
+    "hint": "Key clue: Different pathogens require different defenses, and the flu example shows why protection may need updating.",
+    "explanation": "False. Vaccines target particular pathogens, and protection is not always lifelong. The lesson notes that flu vaccination may need repeating. (You corrected both universal protection and lifetime protection claims.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "statement": "One vaccine always protects against every infectious disease for the rest of a person’s life.",
+    "is_true": false,
+    "raw_answer": "False. Vaccines target particular pathogens, and protection is not always lifelong. The lesson notes that flu vaccination may need repeating.",
+    "correction": "Vaccines target particular pathogens, and protection is not always lifelong. The lesson notes that flu vaccination may need repeating.",
+    "orig_number": 94,
+    "id": "s22_q48"
+  },
+  {
+    "number": 49,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Written",
+    "lp": "LP4",
+    "level": "Hard",
+    "hint": "Remember: A newborn receiving protective substances from a mother is passive immunity, not active; active requires the person’s own immune response.",
+    "explanation": "Active immunity develops when the body produces its own protective immune response. It may develop after exposure to a pathogen in an infection or after vaccination. (You named the body as the source of its own immune defense and both ways to acquire it.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "Define *active immunity*. Explain the two ways of developing it that are taught in the slides.",
+    "model_answer": "Active immunity develops when the body produces its own protective immune response. It may develop after exposure to a pathogen in an infection or after vaccination.",
+    "orig_number": 20,
+    "id": "s22_q49"
+  },
+  {
+    "number": 50,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Written",
+    "lp": "LP6+LP1",
+    "level": "Hard",
+    "hint": "Remember: The key distinction is pathogen-caused infection and potential transmission, not whether the illness is mild or severe.",
+    "explanation": "Infectious: caused by pathogens; can spread between organisms; example chickenpox, strep throat, or ringworm. Noninfectious: not caused by pathogens; does not spread person-to-person; example diabetes, asthma, or cancer. Both can harm the body. (You gave a fair comparison using cause, transmission, examples, and the shared effect on health.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "Compare infectious and noninfectious diseases in a two-column table: cause, ability to spread, and one example. Then state one similarity.",
+    "model_answer": "Infectious: caused by pathogens; can spread between organisms; example chickenpox, strep throat, or ringworm. Noninfectious: not caused by pathogens; does not spread person-to-person; example diabetes, asthma, or cancer. Both can harm the body.",
+    "orig_number": 33,
+    "id": "s22_q50"
+  },
+  {
+    "number": 51,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "MCQ",
+    "lp": "ACT+LP2",
+    "level": "Hard",
+    "hint": "Key clue: All apples were rubbed with the rotting apple, but only bag 2 had scraped skin left unwashed in the displayed result.",
+    "explanation": "B. The apple with damaged skin that was not washed (bag 2) rotted in the lesson’s recorded observations. (You connected rotting to the combination of barrier damage and lack of washing.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "Which apple treatment produced rotting in the observation table shown in the slides?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Unbroken skin; no scraping"
+      },
+      {
+        "key": "B",
+        "text": "Scraped skin without washing"
+      },
+      {
+        "key": "C",
+        "text": "Scraped skin followed by soap-and-water washing"
+      },
+      {
+        "key": "D",
+        "text": "No apple was exposed to the rotting apple"
+      }
+    ],
+    "answer": "B",
+    "orig_number": 56,
+    "id": "s22_q51"
+  },
+  {
+    "number": 52,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Written",
+    "lp": "LP3",
+    "level": "Medium",
+    "hint": "Remember: A red, warm, swollen, painful wound illustrates inflammation. Include both the damaged barrier and the immune response.",
+    "explanation": "This is inflammation. The signs are redness, heat, swelling, and pain. The damaged tissue produces chemicals that attract white blood cells because pathogens can enter through the broken skin. (You correctly linked the four observable signs to a protective response, not a separate disease.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "Jana scrapes her knee; several hours later it is red, hot, swollen, and painful. Name the reaction, list all four signs, and explain why it began.",
+    "model_answer": "This is inflammation. The signs are redness, heat, swelling, and pain. The damaged tissue produces chemicals that attract white blood cells because pathogens can enter through the broken skin.",
+    "orig_number": 13,
+    "id": "s22_q52"
+  },
+  {
+    "number": 53,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "True/False",
+    "lp": "LP1",
+    "level": "Medium",
+    "hint": "Key clue: A pathogen is not limited to viruses or bacteria; fungi and parasites may also cause infection.",
+    "explanation": "True. The lesson defines a pathogen by its ability to cause disease and lists those four types. (You recognized the definition and the four major categories.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "statement": "A pathogen is an agent that can cause disease; the lesson identifies bacteria, viruses, fungi, and parasites as possible pathogens.",
+    "is_true": true,
+    "raw_answer": "True. The lesson defines a pathogen by its ability to cause disease and lists those four types.",
+    "correction": null,
+    "orig_number": 81,
+    "id": "s22_q53"
+  },
+  {
+    "number": 54,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "True/False",
+    "lp": "LP5",
+    "level": "Medium",
+    "hint": "Key clue: A clean-looking desk may still carry microorganisms; handwashing reduces transfer risk.",
+    "explanation": "True. Soap-and-water handwashing removes pathogens that may have been picked up from contaminated surfaces. (You identified a way to interrupt contact transmission.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "statement": "Washing hands after touching shared objects can help prevent the spread of infectious diseases.",
+    "is_true": true,
+    "raw_answer": "True. Soap-and-water handwashing removes pathogens that may have been picked up from contaminated surfaces.",
+    "correction": null,
+    "orig_number": 96,
+    "id": "s22_q54"
+  },
+  {
+    "number": 55,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "MCQ",
+    "lp": "LP3+LP4",
+    "level": "Hard",
+    "hint": "Key clue: The remaining cells are immune memory, not evidence that the pathogen must remain alive in the body.",
+    "explanation": "B. Memory immune cells help the body respond faster to a previously encountered pathogen. (You linked memory to future speed and specificity.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "Some white blood cells remain after an infection. What is their important function?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Make the patient contagious forever"
+      },
+      {
+        "key": "B",
+        "text": "Remember the same pathogen so the body responds faster next time"
+      },
+      {
+        "key": "C",
+        "text": "Replace the person’s skin barrier"
+      },
+      {
+        "key": "D",
+        "text": "Change an infection into diabetes"
+      }
+    ],
+    "answer": "B",
+    "orig_number": 64,
+    "id": "s22_q55"
+  },
+  {
+    "number": 56,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Written",
+    "lp": "LP4",
+    "level": "Medium",
+    "hint": "Remember: Do not repeat “every vaccine protects for life.” The slide’s influenza example shows why protection can need updating.",
+    "explanation": "Active immunity develops immune memory, so it may last for a long time, but its duration depends on the disease and vaccine and is not always lifelong. The slides mention flu vaccination being repeated because different influenza strains circulate. (You retained the lesson’s memory concept without assuming lifelong protection from every pathogen.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "The revision sheet includes a phrase suggesting active immunity “gives lifetime immunity.” Explain why it is safer to say active immunity may last a long time, and name the lesson’s example of vaccination that needs repeating.",
+    "model_answer": "Active immunity develops immune memory, so it may last for a long time, but its duration depends on the disease and vaccine and is not always lifelong. The slides mention flu vaccination being repeated because different influenza strains circulate.",
+    "orig_number": 26,
+    "id": "s22_q56"
+  },
+  {
+    "number": 57,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "True/False",
+    "lp": "LP2+LP3",
+    "level": "Hard",
+    "hint": "Key clue: The immune system has responses after pathogens cross the skin, even though preventing entry is preferable.",
+    "explanation": "False. A cut weakens the skin barrier, but cleaning the wound helps and the immune system can respond through inflammation and white blood cells. (You understood that losing one barrier does not disable every body defense.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "statement": "If the skin is cut, the body has no defense left against pathogens.",
+    "is_true": false,
+    "raw_answer": "False. A cut weakens the skin barrier, but cleaning the wound helps and the immune system can respond through inflammation and white blood cells.",
+    "correction": "A cut weakens the skin barrier, but cleaning the wound helps and the immune system can respond through inflammation and white blood cells.",
+    "orig_number": 86,
+    "id": "s22_q57"
+  },
+  {
+    "number": 58,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Find the Mistake",
+    "lp": "LP1",
+    "level": "Medium",
+    "hint": "Look closely: A pathogen is defined by causing disease and is not limited to bacteria.",
+    "explanation": "Some bacteria can be pathogens, but not all bacteria cause disease. Pathogens also include disease-causing viruses, fungi, and parasites. (You corrected both the “every bacterium” error and the missing other pathogen types.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "student_answer": "Every bacterium is a pathogen, and every pathogen is a bacterium.",
+    "mistake": "A pathogen is defined by causing disease and is not limited to bacteria.",
+    "correct_answer": "Some bacteria can be pathogens, but not all bacteria cause disease. Pathogens also include disease-causing viruses, fungi, and parasites.",
+    "orig_number": 36,
+    "id": "s22_q58"
+  },
+  {
+    "number": 59,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Written",
+    "lp": "LP4",
+    "level": "Medium",
+    "hint": "Remember: Passive immunity is borrowed protection. It can help immediately but does not create the body’s own memory response in the way active immunity does.",
+    "explanation": "Passive immunity occurs when protection comes from another source. A newborn receives protective substances from the mother before birth and through breast milk. This protection is temporary and does not create the baby’s own lasting immune memory against that pathogen. (You identified the source of protection and why it does not provide the same long-term memory.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "Define *passive immunity* and use a newborn baby to explain where it comes from and how long it lasts compared with immune memory.",
+    "model_answer": "Passive immunity occurs when protection comes from another source. A newborn receives protective substances from the mother before birth and through breast milk. This protection is temporary and does not create the baby’s own lasting immune memory against that pathogen.",
+    "orig_number": 21,
+    "id": "s22_q59"
+  },
+  {
+    "number": 60,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Find the Mistake",
+    "lp": "LP1",
+    "level": "Medium",
+    "hint": "Look closely: The word “worm” in ringworm is not the cause. In the lesson’s disease table ringworm is fungal.",
+    "explanation": "Ringworm is a fungal infection of the skin. Antibiotics that act against bacteria do not treat the fungus that causes ringworm. (You avoided the misleading name “ringworm” and selected the correct pathogen type.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "student_answer": "Ringworm is caused by a parasitic worm, so an antibiotic for bacteria always cures it.",
+    "mistake": "The word “worm” in ringworm is not the cause. In the lesson’s disease table ringworm is fungal.",
+    "correct_answer": "Ringworm is a fungal infection of the skin. Antibiotics that act against bacteria do not treat the fungus that causes ringworm.",
+    "orig_number": 37,
+    "id": "s22_q60"
+  },
+  {
+    "number": 61,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Written",
+    "lp": "LP1+LP6",
+    "level": "Hard",
+    "hint": "Remember: Not every disease can spread. Diabetes is a noninfectious condition, so ordinary contact does not transmit it.",
+    "explanation": "Infectious diseases are caused by pathogens and may spread between organisms. Diabetes is noninfectious: it is not caused by a transmissible pathogen and is not spread by shaking hands. (You based the comparison on pathogen-caused infection, rather than on how serious the illness seems.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "Explain why an infectious disease can spread between people but diabetes cannot be passed along by a handshake.",
+    "model_answer": "Infectious diseases are caused by pathogens and may spread between organisms. Diabetes is noninfectious: it is not caused by a transmissible pathogen and is not spread by shaking hands.",
+    "orig_number": 4,
+    "id": "s22_q61"
+  },
+  {
+    "number": 62,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Written",
+    "lp": "LP2+LP5",
+    "level": "Hard",
+    "hint": "Remember: Cilia help filter; mucus traps; coughing or sneezing expels. Do not say sneezing creates pathogens or that coughing uncovered is safe for classmates.",
+    "explanation": "Tiny hairs called cilia help filter inhaled air. Sticky mucus traps dust and pathogens in the air passages, and coughing or sneezing can expel trapped material. The child should cover the mouth and nose to protect others. (You explained trapping/removing pathogens and included the hygiene reason for covering a cough.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "Dust and pathogens enter a child’s nose as the child breathes. Explain how *cilia*, *mucus*, and *coughing or sneezing* work together.",
+    "model_answer": "Tiny hairs called cilia help filter inhaled air. Sticky mucus traps dust and pathogens in the air passages, and coughing or sneezing can expel trapped material. The child should cover the mouth and nose to protect others.",
+    "orig_number": 11,
+    "id": "s22_q62"
+  },
+  {
+    "number": 63,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "MCQ",
+    "lp": "LP6",
+    "level": "Hard",
+    "hint": "Key clue: Cancer is described as uncontrolled cell growth, but it is not contagious through normal contact.\n\n## Part D solutions — True or false (Q081–Q100)",
+    "explanation": "C. Both categories can harm the body, but noninfectious illnesses do not spread from person to person. (You retained the common feature while distinguishing causes and transmission.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "Which statement correctly compares infectious diseases and noninfectious diseases?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Only noninfectious diseases can cause harm"
+      },
+      {
+        "key": "B",
+        "text": "All diseases develop immunity after they occur"
+      },
+      {
+        "key": "C",
+        "text": "Both can harm the body, but noninfectious diseases are not caused by pathogens and cannot pass person-to-person"
+      },
+      {
+        "key": "D",
+        "text": "Cancer is infectious because its cells grow without control"
+      }
+    ],
+    "answer": "C",
+    "orig_number": 80,
+    "id": "s22_q63"
+  },
+  {
+    "number": 64,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Written",
+    "lp": "LP5+LP2",
+    "level": "Hard",
+    "hint": "Remember: Stomach defenses do not justify eating contaminated food. Washing does not replace thorough cooking of meat.",
+    "explanation": "Fruits and vegetables may have pathogens on their surfaces, and contaminated meat may contain pathogens such as salmonella. Washing produce removes some pathogens, and cooking meat properly kills possible pathogens, reducing exposure before digestive defenses are needed. (You distinguished cleaning surfaces from using heat and connected both to less swallowed infection risk.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "Explain why washing vegetables and cooking meat well are useful *even if* the body has stomach juices and saliva.",
+    "model_answer": "Fruits and vegetables may have pathogens on their surfaces, and contaminated meat may contain pathogens such as salmonella. Washing produce removes some pathogens, and cooking meat properly kills possible pathogens, reducing exposure before digestive defenses are needed.",
+    "orig_number": 29,
+    "id": "s22_q64"
+  },
+  {
+    "number": 65,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Written",
+    "lp": "LP6+LP4",
+    "level": "Hard",
+    "hint": "Remember: Seriousness does not determine contagiousness. A noninfectious condition cannot be passed through ordinary contact and is not a source of pathogen-specific immune memory.\n\n## Part B solutions — Correct the mistake (Q036–Q050)",
+    "explanation": "Diabetes, asthma, and cancer are noninfectious diseases and cannot be caught by a handshake. They are not caused by contagious pathogens, and having one does not develop the pathogen-specific immunity that can follow infection or vaccination. (You rejected stigma and explained that having a noninfectious condition does not train immunity to a pathogen.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "A student says people should avoid shaking hands with someone who has diabetes, asthma, or cancer because “all serious diseases are contagious.” Respond using the textbook’s definition and explain what *does not cause immunity* means here.\n\n## Part B — Correct the mistake (Q036–Q050)\n\n*Each statement has at least one deliberate misconception. Identify it and rewrite the statement correctly.*",
+    "model_answer": "Diabetes, asthma, and cancer are noninfectious diseases and cannot be caught by a handshake. They are not caused by contagious pathogens, and having one does not develop the pathogen-specific immunity that can follow infection or vaccination.",
+    "orig_number": 35,
+    "id": "s22_q65"
+  },
+  {
+    "number": 66,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "MCQ",
+    "lp": "LP5",
+    "level": "Medium",
+    "hint": "Key clue: Antibiotics are not a substitute for handwashing; soap removes organisms from the washed skin.",
+    "explanation": "B. Soap-and-water handwashing removes pathogens from the hands. (You connected a contaminated surface to the most relevant hygiene response.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "After touching a desk that could be contaminated, which action most directly removes pathogens from the hands?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Reading about diseases"
+      },
+      {
+        "key": "B",
+        "text": "Washing hands carefully with soap and water"
+      },
+      {
+        "key": "C",
+        "text": "Taking an antibiotic for prevention without medical advice"
+      },
+      {
+        "key": "D",
+        "text": "Wiping the desk with a dry sleeve"
+      }
+    ],
+    "answer": "B",
+    "orig_number": 72,
+    "id": "s22_q66"
+  },
+  {
+    "number": 67,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Written",
+    "lp": "LP4",
+    "level": "Hard",
+    "hint": "Remember: Active is not merely “getting an injection”; passive is not an illness. Compare who supplies protection, memory, and how long protection lasts.",
+    "explanation": "Active: a person’s own immune system responds after infection or vaccination, forms immune memory, and protection can be long-lasting. Passive: protective substances come from another source, do not create the recipient’s own immune memory, and give temporary protection. (Your comparison uses the three requested criteria and avoids an absolute lifetime promise.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "Compare active and passive immunity using three headings: source of protection, formation of immune memory, and duration.",
+    "model_answer": "Active: a person’s own immune system responds after infection or vaccination, forms immune memory, and protection can be long-lasting. Passive: protective substances come from another source, do not create the recipient’s own immune memory, and give temporary protection.",
+    "orig_number": 24,
+    "id": "s22_q67"
+  },
+  {
+    "number": 68,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "MCQ",
+    "lp": "LP3",
+    "level": "Hard",
+    "hint": "Key clue: Cells must first reach and identify the pathogens before engulfing and destroying them.",
+    "explanation": "A. Damaged-cell chemicals attract white blood cells, which arrive, recognize, engulf, and destroy invaders. (You followed the exact sequence emphasized in the revision exercise.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "Which is the correct order during the lesson’s inflammation response?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Chemicals attract white blood cells → arrival → recognition → engulfing → destruction"
+      },
+      {
+        "key": "B",
+        "text": "Destruction → arrival → chemicals → engulfing → recognition"
+      },
+      {
+        "key": "C",
+        "text": "Arrival → destruction → recognition → chemicals → engulfing"
+      },
+      {
+        "key": "D",
+        "text": "Recognition → no response → pathogens disappear"
+      }
+    ],
+    "answer": "A",
+    "orig_number": 62,
+    "id": "s22_q68"
+  },
+  {
+    "number": 69,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Written",
+    "lp": "LP3",
+    "level": "Medium",
+    "hint": "Remember: Attracting and arrival come before recognition, engulfing, and destruction. Do not place destruction before the cells reach the site.",
+    "explanation": "1. Damaged cells release chemicals that attract white blood cells. 2. White blood cells arrive. 3. They recognize pathogens as foreign. 4. They engulf pathogens. 5. They destroy them. The sequence helps protect the body from infection. (You reproduced the progression emphasized by the revision sheet and explained its goal.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "Put these immune-system events in the correct order and explain the purpose of the sequence: white cells engulf pathogens; damaged cells release chemicals; pathogens are destroyed; white cells arrive; white cells recognize pathogens.",
+    "model_answer": "1. Damaged cells release chemicals that attract white blood cells. 2. White blood cells arrive. 3. They recognize pathogens as foreign. 4. They engulf pathogens. 5. They destroy them. The sequence helps protect the body from infection.",
+    "orig_number": 14,
+    "id": "s22_q69"
+  },
+  {
+    "number": 70,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Find the Mistake",
+    "lp": "LP2",
+    "level": "Medium",
+    "hint": "Look closely: Do not confuse first-line barriers with the immune response after pathogens enter. Several organs act as barriers.",
+    "explanation": "The first lines of defense include unbroken skin, respiratory defenses such as cilia and mucus, and digestive defenses such as saliva and stomach juices. (You included the other natural barriers described in the slides.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "student_answer": "The respiratory system has no role in first-line defense; the only first line is the skin.",
+    "mistake": "Do not confuse first-line barriers with the immune response after pathogens enter. Several organs act as barriers.",
+    "correct_answer": "The first lines of defense include unbroken skin, respiratory defenses such as cilia and mucus, and digestive defenses such as saliva and stomach juices.",
+    "orig_number": 39,
+    "id": "s22_q70"
+  },
+  {
+    "number": 71,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Find the Mistake",
+    "lp": "LP4",
+    "level": "Medium",
+    "hint": "Look closely: The slides state a vaccine generally contains or targets a specific kind of pathogen, not all infectious agents.",
+    "explanation": "Vaccines described in the lesson train protection against particular pathogens; a vaccine against one disease does not automatically protect against every pathogen. (You recognized that immune protection is specific.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "student_answer": "One vaccine protects equally well against all kinds of bacteria, fungi, parasites, and viruses.",
+    "mistake": "The slides state a vaccine generally contains or targets a specific kind of pathogen, not all infectious agents.",
+    "correct_answer": "Vaccines described in the lesson train protection against particular pathogens; a vaccine against one disease does not automatically protect against every pathogen.",
+    "orig_number": 46,
+    "id": "s22_q71"
+  },
+  {
+    "number": 72,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Written",
+    "lp": "LP1",
+    "level": "Medium",
+    "hint": "Remember: The lesson lists bacteria as *possible* pathogens. Do not conclude that every bacterium causes an infection.",
+    "explanation": "A bacterium is a type of microorganism. Some bacteria cause disease and are pathogens, but not all bacteria are harmful. “Pathogen” describes a disease-causing agent. (You separated the category of organism from whether it causes disease.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "A classmate insists that all bacteria cause disease. What is wrong with treating “bacterium” and “pathogen” as identical terms?",
+    "model_answer": "A bacterium is a type of microorganism. Some bacteria cause disease and are pathogens, but not all bacteria are harmful. “Pathogen” describes a disease-causing agent.",
+    "orig_number": 5,
+    "id": "s22_q72"
+  },
+  {
+    "number": 73,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Written",
+    "lp": "LP4",
+    "level": "Medium",
+    "hint": "Remember: An injection is not automatically passive. A vaccine that trains the recipient’s own immune system creates active immunity.",
+    "explanation": "It is active immunity. The vaccine stimulates the child’s own immune system to prepare a defense and memory against the targeted pathogen. The fact that a nurse administers the vaccine does not make the resulting immunity passive. (You focused on who develops the immune response, which is the key test distinction.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "A three-year-old receives a vaccine against polio. Is this active or passive immunity? Explain why the answer does not depend on the vaccine being injected by someone else.",
+    "model_answer": "It is active immunity. The vaccine stimulates the child’s own immune system to prepare a defense and memory against the targeted pathogen. The fact that a nurse administers the vaccine does not make the resulting immunity passive.",
+    "orig_number": 22,
+    "id": "s22_q73"
+  },
+  {
+    "number": 74,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Find the Mistake",
+    "lp": "ACT+LP2",
+    "level": "Hard",
+    "hint": "Look closely: Check the procedure: all apples were rubbed with the same source; what differed was intact/scraped skin and washing.",
+    "explanation": "The apple in bag 3 had its skin scraped off and was then washed; the apple in bag 2 was also scraped but not washed. All three apples were exposed by rubbing them with the rotting apple. (You identified both treatment differences in the experiment.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "student_answer": "In the apple experiment, the washed apple had unbroken skin, whereas the apple in bag 2 was never exposed to microorganisms.",
+    "mistake": "Check the procedure: all apples were rubbed with the same source; what differed was intact/scraped skin and washing.",
+    "correct_answer": "The apple in bag 3 had its skin scraped off and was then washed; the apple in bag 2 was also scraped but not washed. All three apples were exposed by rubbing them with the rotting apple.",
+    "orig_number": 38,
+    "id": "s22_q74"
+  },
+  {
+    "number": 75,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "True/False",
+    "lp": "LP4",
+    "level": "Medium",
+    "hint": "Key clue: Mother-to-baby protection is passive; the baby does not have to produce the protective substances in that situation.",
+    "explanation": "False. Protection received from the mother is passive immunity. (You correctly separated borrowed maternal protection from a baby’s own immune response.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "statement": "A newborn’s protection received from the mother is an example of active immunity.",
+    "is_true": false,
+    "raw_answer": "False. Protection received from the mother is passive immunity.",
+    "correction": "Protection received from the mother is passive immunity.",
+    "orig_number": 92,
+    "id": "s22_q75"
+  },
+  {
+    "number": 76,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Written",
+    "lp": "LP2",
+    "level": "Medium",
+    "hint": "Remember: The first lines include skin, respiratory defenses, and digestive defenses; immune white blood cells are not the only means of protection.",
+    "explanation": "Skin blocks entry of pathogens; the respiratory system uses cilia, mucus, coughing, and sneezing to trap or expel particles; the digestive system uses saliva and stomach juices to help destroy swallowed pathogens. Tears and sweat also help protect the body. (You included several cooperating barriers rather than treating skin as the whole defense system.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "A student claims only skin protects the body before an infection starts. Name three body systems or barriers involved in the first lines of defense and one job of each.",
+    "model_answer": "Skin blocks entry of pathogens; the respiratory system uses cilia, mucus, coughing, and sneezing to trap or expel particles; the digestive system uses saliva and stomach juices to help destroy swallowed pathogens. Tears and sweat also help protect the body.",
+    "orig_number": 10,
+    "id": "s22_q76"
+  },
+  {
+    "number": 77,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "MCQ",
+    "lp": "LP6",
+    "level": "Medium",
+    "hint": "Key clue: Pollen allergies do not spread between people; influenza is a virus-caused infectious disease.",
+    "explanation": "C. Pollen can trigger an allergy without being a disease-causing pathogen. (You recognized the difference between an allergic reaction and a contagious infection.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "A child has an allergic reaction to pollen. Which statement is correct?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Pollen allergy spreads to friends by shaking hands"
+      },
+      {
+        "key": "B",
+        "text": "Pollen allergy is caused by a bacterium"
+      },
+      {
+        "key": "C",
+        "text": "It is a noninfectious immune reaction to a substance that is not a pathogen"
+      },
+      {
+        "key": "D",
+        "text": "It is the same illness as influenza"
+      }
+    ],
+    "answer": "C",
+    "orig_number": 77,
+    "id": "s22_q77"
+  },
+  {
+    "number": 78,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "MCQ",
+    "lp": "LP2",
+    "level": "Medium",
+    "hint": "Key clue: Skin is protective when intact; injury increases entry risk even when the child feels fine.",
+    "explanation": "B. Scraped skin can let pathogens enter, so cleaning helps remove possible contaminants. (You connected an injury to a weakened barrier and prevention.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "Why does a child need to clean a scraped knee even if the knee was previously protected by skin?",
+    "options": [
+      {
+        "key": "A",
+        "text": "The scrape makes the immune system stop permanently"
+      },
+      {
+        "key": "B",
+        "text": "Damaged skin no longer forms the same unbroken barrier"
+      },
+      {
+        "key": "C",
+        "text": "Soap changes viruses into harmless bacteria"
+      },
+      {
+        "key": "D",
+        "text": "Cleaning allows more pathogens to enter"
+      }
+    ],
+    "answer": "B",
+    "orig_number": 60,
+    "id": "s22_q78"
+  },
+  {
+    "number": 79,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "True/False",
+    "lp": "LP2",
+    "level": "Medium",
+    "hint": "Key clue: Cilia and mucus belong to respiratory defenses, while saliva and stomach juices protect the digestive route.",
+    "explanation": "True. The lesson describes cilia filtering inhaled air and mucus trapping dirt and pathogens. (You placed both barriers in the air passages.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "statement": "Mucus and tiny hairs called cilia are respiratory defenses that help stop inhaled particles and pathogens.",
+    "is_true": true,
+    "raw_answer": "True. The lesson describes cilia filtering inhaled air and mucus trapping dirt and pathogens.",
+    "correction": null,
+    "orig_number": 85,
+    "id": "s22_q79"
+  },
+  {
+    "number": 80,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "MCQ",
+    "lp": "LP1",
+    "level": "Medium",
+    "hint": "Key clue: Chickenpox and influenza are caused by viruses; antibiotics are used to treat some bacterial infections.",
+    "explanation": "D. Antibiotics that act against bacteria do not treat viral infections. (You distinguished the type of pathogen from the choice of treatment.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "A pupil with a virus-caused infection takes an antibiotic designed to act against bacteria. Which conclusion best follows?",
+    "options": [
+      {
+        "key": "A",
+        "text": "The antibiotic always kills the virus"
+      },
+      {
+        "key": "B",
+        "text": "Antibiotics are effective against every pathogen"
+      },
+      {
+        "key": "C",
+        "text": "The virus instantly becomes a fungus"
+      },
+      {
+        "key": "D",
+        "text": "The antibiotic does not treat the virus itself"
+      }
+    ],
+    "answer": "D",
+    "orig_number": 53,
+    "id": "s22_q80"
+  },
+  {
+    "number": 81,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "MCQ",
+    "lp": "LP4",
+    "level": "Hard",
+    "hint": "Key clue: Breast-milk protection is passive; hand sanitizer and bandages are hygiene/barrier measures, not types of immunity.",
+    "explanation": "A. The child’s own immune system responds to the influenza pathogen, potentially creating memory. (You distinguished immune response after infection from protection passed from a mother.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "Which student most clearly develops active immunity after natural exposure?",
+    "options": [
+      {
+        "key": "A",
+        "text": "A child who has influenza and mounts their own immune response"
+      },
+      {
+        "key": "B",
+        "text": "A baby receiving protective substances from breast milk"
+      },
+      {
+        "key": "C",
+        "text": "A person borrowing their friend’s hand sanitizer"
+      },
+      {
+        "key": "D",
+        "text": "A student wearing a bandage over a cut"
+      }
+    ],
+    "answer": "A",
+    "orig_number": 70,
+    "id": "s22_q81"
+  },
+  {
+    "number": 82,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Find the Mistake",
+    "lp": "LP6",
+    "level": "Hard",
+    "hint": "Look closely: The ability to spread depends on pathogens, not on whether an illness is serious or needs treatment.\n\n## Part C solutions — Multiple choice (Q051–Q080)",
+    "explanation": "Diabetes, asthma, and cancer are noninfectious diseases. They are not transmitted by ordinary person-to-person contact, so avoiding a handshake on that basis is unnecessary. (You used the correct category and avoided blaming or isolating people with noninfectious illnesses.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "student_answer": "Diabetes, asthma, and cancer are infectious diseases, so people should avoid normal contact with anyone who has them.”\n\n## Part C — Multiple choice (Q051–Q080)\n\n*Choose **one best answer** per question.*",
+    "mistake": "The ability to spread depends on pathogens, not on whether an illness is serious or needs treatment.\n\n## Part C solutions — Multiple choice (Q051–Q080)",
+    "correct_answer": "Diabetes, asthma, and cancer are noninfectious diseases. They are not transmitted by ordinary person-to-person contact, so avoiding a handshake on that basis is unnecessary.",
+    "orig_number": 50,
+    "id": "s22_q82"
+  },
+  {
+    "number": 83,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Written",
+    "lp": "ACT+LP2",
+    "level": "Hard",
+    "hint": "Remember: The rotting apple was not the treatment being compared; the key comparison was intact versus scraped versus scraped-and-washed skin. Keep bags closed for safety.",
+    "explanation": "The rotting apple served as a common source of microorganisms for all three apples, making comparison meaningful. Inspecting without opening the bags avoids unnecessary contact with possibly moldy, contaminated material. (You explained both the experimental purpose and the safety reason.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "Why did the students rub every apple with a rotting apple, and why did they inspect the sealed bags instead of opening them after one week?",
+    "model_answer": "The rotting apple served as a common source of microorganisms for all three apples, making comparison meaningful. Inspecting without opening the bags avoids unnecessary contact with possibly moldy, contaminated material.",
+    "orig_number": 8,
+    "id": "s22_q83"
+  },
+  {
+    "number": 84,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "MCQ",
+    "lp": "LP4",
+    "level": "Medium",
+    "hint": "Key clue: Neither type must always last a lifetime, and vaccination is an example of active immunity.",
+    "explanation": "B. Active immunity develops a person’s own immune response and memory; passive immunity supplies outside protection. (You compared both source and memory, the key differences in the slides.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "Which comparison between the two kinds of immunity is most accurate?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Both always give protection for life"
+      },
+      {
+        "key": "B",
+        "text": "Active involves the body’s own response and memory; passive protection comes from another source"
+      },
+      {
+        "key": "C",
+        "text": "Passive develops only after a flu infection"
+      },
+      {
+        "key": "D",
+        "text": "Active is never related to vaccination"
+      }
+    ],
+    "answer": "B",
+    "orig_number": 68,
+    "id": "s22_q84"
+  },
+  {
+    "number": 85,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "True/False",
+    "lp": "LP4",
+    "level": "Hard",
+    "hint": "Key clue: Active immunity can produce memory; passive immunity does not create that same memory.",
+    "explanation": "False. Passive immunity provides temporary protection from another source and does not develop the recipient’s own immune memory against that pathogen. (You distinguished immediate borrowed protection from active immune memory.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "statement": "Passive immunity usually creates the same long-term immune memory as an infection or vaccination.",
+    "is_true": false,
+    "raw_answer": "False. Passive immunity provides temporary protection from another source and does not develop the recipient’s own immune memory against that pathogen.",
+    "correction": "Passive immunity provides temporary protection from another source and does not develop the recipient’s own immune memory against that pathogen.",
+    "orig_number": 93,
+    "id": "s22_q85"
+  },
+  {
+    "number": 86,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Written",
+    "lp": "ACT+LP2",
+    "level": "Hard",
+    "hint": "Remember: Apple 3 also has damaged skin—the important difference from apple 2 is that its surface was washed.",
+    "explanation": "Apple 1 represents a person with unbroken skin; apple 2 represents a person with injured skin; apple 3 represents a person with injured skin who cleaned the wound well. The example models how intact skin and cleaning a wound help prevent infection. (You connected the observations to the body’s barriers and sensible wound care.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "The lesson records that apple 2 rotted, while apples 1 and 3 did not. Explain what each apple represents when compared with a person.",
+    "model_answer": "Apple 1 represents a person with unbroken skin; apple 2 represents a person with injured skin; apple 3 represents a person with injured skin who cleaned the wound well. The example models how intact skin and cleaning a wound help prevent infection.",
+    "orig_number": 7,
+    "id": "s22_q86"
+  },
+  {
+    "number": 87,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "MCQ",
+    "lp": "LP5+LP2",
+    "level": "Hard",
+    "hint": "Key clue: An operation can break the protective barrier, so minimizing pathogens on hands is especially important.",
+    "explanation": "D. Handwashing lowers the risk of introducing pathogens when the patient’s skin barrier is opened. (You combined the skin-barrier concept with hygienic prevention.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "A hospital team carefully washes their hands before an operation. What is the main reason related to this lesson?",
+    "options": [
+      {
+        "key": "A",
+        "text": "To guarantee the patient never has a noninfectious disease"
+      },
+      {
+        "key": "B",
+        "text": "To stop the patient’s skin from healing"
+      },
+      {
+        "key": "C",
+        "text": "To increase the number of microorganisms on the hands"
+      },
+      {
+        "key": "D",
+        "text": "To reduce pathogens that might enter the patient when skin is opened"
+      }
+    ],
+    "answer": "D",
+    "orig_number": 75,
+    "id": "s22_q87"
+  },
+  {
+    "number": 88,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "True/False",
+    "lp": "LP1",
+    "level": "Medium",
+    "hint": "Key clue: The disease table puts chickenpox and influenza under viruses, not fungi.",
+    "explanation": "False. Chickenpox and influenza are caused by viruses; ringworm and athlete’s foot are fungal examples. (You identified the incorrect pathogen group and replaced it with viruses.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "statement": "Chickenpox and influenza are examples of fungal diseases.",
+    "is_true": false,
+    "raw_answer": "False. Chickenpox and influenza are caused by viruses; ringworm and athlete’s foot are fungal examples.",
+    "correction": "Chickenpox and influenza are caused by viruses; ringworm and athlete’s foot are fungal examples.",
+    "orig_number": 82,
+    "id": "s22_q88"
+  },
+  {
+    "number": 89,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "True/False",
+    "lp": "ACT+LP2",
+    "level": "Hard",
+    "hint": "Key clue: Apple 1 had intact skin; apple 2 was scraped and unwashed; apple 3 was scraped then washed.",
+    "explanation": "True. All three were exposed to microorganisms, and the third apple alone was scraped and then washed. (You distinguished exposure from the experimental treatments.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "statement": "In the slide experiment, all three fresh apples touched the rotting apple, but only one scraped apple was washed afterward.",
+    "is_true": true,
+    "raw_answer": "True. All three were exposed to microorganisms, and the third apple alone was scraped and then washed.",
+    "correction": null,
+    "orig_number": 84,
+    "id": "s22_q89"
+  },
+  {
+    "number": 90,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "MCQ",
+    "lp": "LP1+LP6",
+    "level": "Hard",
+    "hint": "Key clue: Diabetes and asthma are noninfectious; contagiousness is not determined by severity.",
+    "explanation": "B. Infectious diseases have a disease-causing agent and can spread between organisms. (You used the lesson’s defining difference: pathogen-related transmission.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "Which statement best distinguishes an infectious disease from a noninfectious disease?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Every infectious disease is cured by washing hands"
+      },
+      {
+        "key": "B",
+        "text": "Infectious diseases are caused by pathogens and can spread between organisms"
+      },
+      {
+        "key": "C",
+        "text": "Noninfectious diseases are all caused by bacteria"
+      },
+      {
+        "key": "D",
+        "text": "Only noninfectious diseases can harm people"
+      }
+    ],
+    "answer": "B",
+    "orig_number": 55,
+    "id": "s22_q90"
+  },
+  {
+    "number": 91,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "MCQ",
+    "lp": "LP1",
+    "level": "Medium",
+    "hint": "Key clue: The term “pathogen” describes a disease-causing agent such as a virus, bacterium, fungus, or parasite.",
+    "explanation": "B. A pathogen is an agent that causes disease. (You identified the cause of infectious disease, not a symptom or body response.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "A disease spreads between organisms because it is caused by an agent that produces illness. What name is given to that agent?",
+    "options": [
+      {
+        "key": "A",
+        "text": "A nutrient"
+      },
+      {
+        "key": "B",
+        "text": "A pathogen"
+      },
+      {
+        "key": "C",
+        "text": "A reflex"
+      },
+      {
+        "key": "D",
+        "text": "An allergy"
+      }
+    ],
+    "answer": "B",
+    "orig_number": 51,
+    "id": "s22_q91"
+  },
+  {
+    "number": 92,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Written",
+    "lp": "LP6+LP1",
+    "level": "Hard",
+    "hint": "Remember: Pollen allergies are not transmitted by sneezing. Influenza can be spread by infected people and involves a pathogen.",
+    "explanation": "An allergy is an immune reaction to a foreign substance such as pollen that is not a pathogen, so it cannot be caught from another person. Influenza is caused by a virus and can spread between people. (You separated an immune reaction to a harmless trigger from a virus-caused infection.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "A child has an allergy to pollen while another has influenza. Explain why one is a noninfectious condition and the other is infectious.",
+    "model_answer": "An allergy is an immune reaction to a foreign substance such as pollen that is not a pathogen, so it cannot be caught from another person. Influenza is caused by a virus and can spread between people.",
+    "orig_number": 34,
+    "id": "s22_q92"
+  },
+  {
+    "number": 93,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "MCQ",
+    "lp": "LP2",
+    "level": "Medium",
+    "hint": "Key clue: Stomach juices belong to digestive defenses; the nose and airways use cilia and mucus.",
+    "explanation": "A. Cilia help filter inhaled air; mucus traps particles and pathogens. (You matched each respiratory defense to its proper job.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "A student breathes dusty air. Which structure and substance help trap and remove particles from the respiratory system?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Cilia and mucus"
+      },
+      {
+        "key": "B",
+        "text": "Stomach and glucose"
+      },
+      {
+        "key": "C",
+        "text": "Antibodies and bones"
+      },
+      {
+        "key": "D",
+        "text": "Liver and urine"
+      }
+    ],
+    "answer": "A",
+    "orig_number": 58,
+    "id": "s22_q93"
+  },
+  {
+    "number": 94,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Written",
+    "lp": "LP1",
+    "level": "Medium",
+    "hint": "Remember: A harmless microorganism is not automatically a pathogen. State the disease-causing property and name two types.",
+    "explanation": "A pathogen is an agent that causes disease. Examples include bacteria, viruses, fungi, and parasites. Being microscopic alone does not make something a pathogen. (You focused on whether the agent causes disease, not just its size.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "A student says, “A pathogen is any tiny thing we can see under a microscope.” Explain the actual meaning of *pathogen* and give two types.",
+    "model_answer": "A pathogen is an agent that causes disease. Examples include bacteria, viruses, fungi, and parasites. Being microscopic alone does not make something a pathogen.",
+    "orig_number": 1,
+    "id": "s22_q94"
+  },
+  {
+    "number": 95,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "MCQ",
+    "lp": "LP4",
+    "level": "Medium",
+    "hint": "Key clue: The fact that someone else administers a vaccine does not make the resulting immunity passive.",
+    "explanation": "A. Vaccination develops active immunity by training the body’s own immune system. (You classified by whose immune system produces the defense.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "A child receives a vaccine that stimulates the child’s own immune response. Which type of immunity develops?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Active immunity"
+      },
+      {
+        "key": "B",
+        "text": "Passive immunity"
+      },
+      {
+        "key": "C",
+        "text": "A noninfectious disease"
+      },
+      {
+        "key": "D",
+        "text": "A physical skin barrier"
+      }
+    ],
+    "answer": "A",
+    "orig_number": 66,
+    "id": "s22_q95"
+  },
+  {
+    "number": 96,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "MCQ",
+    "lp": "LP2",
+    "level": "Medium",
+    "hint": "Key clue: Vaccines train immunity, while white blood cells act when pathogens get past barriers; neither replaces all first-line defenses.",
+    "explanation": "C. Skin, respiratory, and digestive defenses help stop pathogens entering the body. (You recognized the natural barriers before the immune-system response.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "Which combination best describes the body’s first lines of defense?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Only white blood cells"
+      },
+      {
+        "key": "B",
+        "text": "Only fever and memory cells"
+      },
+      {
+        "key": "C",
+        "text": "Skin, respiratory system, and digestive system"
+      },
+      {
+        "key": "D",
+        "text": "Only vaccines and antibiotics"
+      }
+    ],
+    "answer": "C",
+    "orig_number": 57,
+    "id": "s22_q96"
+  },
+  {
+    "number": 97,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "True/False",
+    "lp": "LP6",
+    "level": "Hard",
+    "hint": "Key clue: Do not mistake “can cause harm” for “can be caught.” A noninfectious condition may be serious without being contagious.\n\n---\n\n## Coverage and verification\n\n| Question type | Numbers | Count |\n|---|---|---:|\n| Standard free response | 1–35 | 35 |\n| Correct the mistake (free response) | 36–50 | 15 |\n| Multiple choice | 51–80 | 30 |\n| True/False, with false statements to correct | 81–100 | 20 |\n| **Total** | **1–100** | **100** |",
+    "explanation": "True. Both categories can affect health, but pathogens cause infectious rather than noninfectious diseases. (You kept both the similarity and the important difference.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "statement": "Infectious and noninfectious diseases can both harm the body, but only infectious diseases are caused by pathogens in this lesson.\n\n---",
+    "is_true": true,
+    "raw_answer": "True. Both categories can affect health, but pathogens cause infectious rather than noninfectious diseases.",
+    "correction": null,
+    "orig_number": 100,
+    "id": "s22_q97"
+  },
+  {
+    "number": 98,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "MCQ",
+    "lp": "LP3",
+    "level": "Medium",
+    "hint": "Key clue: The lesson describes white blood cells arriving, recognizing, engulfing, and destroying pathogens.",
+    "explanation": "D. White blood cells protect the body by acting against pathogens. (You identified their immune role rather than unrelated body functions.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "What is the main role of white blood cells at a site of infection?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Carry oxygen in place of red blood cells"
+      },
+      {
+        "key": "B",
+        "text": "Create new skin by changing into bone"
+      },
+      {
+        "key": "C",
+        "text": "Make every disease noninfectious"
+      },
+      {
+        "key": "D",
+        "text": "Recognize and help destroy invading pathogens"
+      }
+    ],
+    "answer": "D",
+    "orig_number": 63,
+    "id": "s22_q98"
+  },
+  {
+    "number": 99,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Find the Mistake",
+    "lp": "LP6",
+    "level": "Medium",
+    "hint": "Look closely: Pollen is an allergy trigger, not a disease-causing pathogen in the lesson’s example.",
+    "explanation": "A pollen allergy is a noninfectious immune reaction to a substance that is not a pathogen; it cannot spread from one person to another. (You identified an allergy as a reaction, not an infection.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "student_answer": "An allergy to pollen is an infectious disease caused by the pollen reproducing inside the person.",
+    "mistake": "Pollen is an allergy trigger, not a disease-causing pathogen in the lesson’s example.",
+    "correct_answer": "A pollen allergy is a noninfectious immune reaction to a substance that is not a pathogen; it cannot spread from one person to another.",
+    "orig_number": 49,
+    "id": "s22_q99"
+  },
+  {
+    "number": 100,
+    "section": "2.2",
+    "section_title": "The Immune System",
+    "type": "Written",
+    "lp": "LP5",
+    "level": "Medium",
+    "hint": "Remember: Drinking water may help comfort but is not the lesson’s main method for stopping spread; focus on exposure, cough covering, and cleaning.",
+    "explanation": "She should stay home while sick when possible, cover her mouth and nose when coughing or sneezing, wash her hands with soap, and avoid sharing food or supplies. Covering a cough limits droplets; handwashing removes pathogens from the hands. (You gave several ways to reduce transmission rather than only trying to feel less sick.)",
+    "image": null,
+    "table_markdown": null,
+    "table_html": null,
+    "prompt": "Nathalie comes to school with a severe cold. Give four actions that would lower the risk of spreading pathogens to classmates and briefly justify two of them.",
+    "model_answer": "She should stay home while sick when possible, cover her mouth and nose when coughing or sneezing, wash her hands with soap, and avoid sharing food or supplies. Covering a cough limits droplets; handwashing removes pathogens from the hands.",
+    "orig_number": 27,
+    "id": "s22_q100"
   }
 ]

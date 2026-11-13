@@ -33,6 +33,10 @@
   --sec-21-accent: #1F4E79;       /* Deep Blueprint Cobalt */
   --sec-21-bg: #EAF0F6;
   --sec-21-border: #1F4E79;
+
+  --sec-22-accent: #6B2D5C;       /* Antique Plum / Wine */
+  --sec-22-bg: #F6EDF3;
+  --sec-22-border: #6B2D5C;
   
   /* Assessment Feedback (Color + Icon/Label required) */
   --feedback-correct-ink: #14492E;
@@ -323,6 +327,12 @@ code {
   border-color: var(--sec-21-accent);
   color: var(--sec-21-accent);
   background: var(--sec-21-bg);
+}
+
+.specimen-tag.sec-22 {
+  border-color: var(--sec-22-accent);
+  color: var(--sec-22-accent);
+  background: var(--sec-22-bg);
 }
 
 .specimen-tag.level-hard {
@@ -1088,6 +1098,10 @@ code {
 
 .section-card-21 {
   border-top: 6px solid var(--sec-21-accent);
+}
+
+.section-card-22 {
+  border-top: 6px solid var(--sec-22-accent);
 }
 
 .section-card-header {
