@@ -232,7 +232,18 @@
       <div class="home-workspace">
         <!-- Section Selection Cards -->
         <section aria-labelledby="sections-heading">
-          <h2 id="sections-heading" class="sr-only">Course Sections</h2>
+          <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; margin-bottom:14px; padding-bottom:8px; border-bottom:1px dashed var(--ink-border);">
+            <h2 id="sections-heading" style="font-family:var(--font-serif); font-size:1.15rem; color:var(--ink-secondary); margin:0;">
+              Exam Curriculum: 5 Sections (500 Questions Total)
+            </h2>
+            <div style="display:flex; flex-wrap:wrap; gap:6px;">
+              <span class="specimen-tag sec-12">1.2 Classifying</span>
+              <span class="specimen-tag sec-13">1.3 Heredity</span>
+              <span class="specimen-tag sec-21">2.1 Nervous</span>
+              <span class="specimen-tag sec-22">2.2 Immune</span>
+              <span class="specimen-tag sec-23">2.3 Excretory</span>
+            </div>
+          </div>
           <div class="section-choice-row">
             <!-- Section 1.2 -->
             <div class="section-choice-card section-card-12" id="card-sec-12" tabindex="0" role="button">
@@ -1966,6 +1977,12 @@
       const [route, queryStr] = hash.split('?');
       const params = new URLSearchParams(queryStr || '');
       const qid = params.get('qid');
+      const sec = params.get('sec');
+
+      if (sec && ['1.2', '1.3', '2.1', '2.2', '2.3'].includes(sec)) {
+        startPracticeSession(sec, 'all', 'all');
+        return;
+      }
 
       if (qid && state.questionsById[qid]) {
         const targetQ = state.questionsById[qid];
