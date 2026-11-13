@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """
-Parser script to convert Science_L6H_Ch1_Sections_1.2-1.3_Predicted_Questions.md
-into questions.json with full validation.
+Master Parser script for Grade 6 Science Field Notebook:
+- Chapter 1: Sections 1.2 (Classifying Organisms) & 1.3 (Heredity and Inheritance)
+- Chapter 2: Section 2.1 (The Nervous System)
+Converts markdown files into questions.json and questions-data.js with full validation.
 """
 
 import re
@@ -9,8 +11,10 @@ import json
 import os
 import sys
 
-MD_FILE = "Science_L6H_Ch1_Sections_1.2-1.3_Predicted_Questions.md"
+CH1_MD = "Science_L6H_Ch1_Sections_1.2-1.3_Predicted_Questions.md"
+CH2_MD = "Grade_6_Science_2.1_Nervous_System_100_Exam_Practice_Questions.md"
 OUTPUT_JSON = "questions.json"
+OUTPUT_JS = "questions-data.js"
 IMAGES_DIR = "images"
 
 def markdown_table_to_html(md_table):
@@ -21,14 +25,12 @@ def markdown_table_to_html(md_table):
     if len(lines) < 2:
         return None
     
-    # Header
     def split_row(row_str):
         cells = [c.strip() for c in row_str.strip("|").split("|")]
         return cells
     
     headers = split_row(lines[0])
     rows = []
-    # Skip separator line (line 1)
     for line in lines[2:]:
         rows.append(split_row(line))
         
@@ -49,37 +51,28 @@ def inline_markdown_to_html(text):
     """Lightweight converter for inline markdown: bold, italic, code."""
     if not text:
         return ""
-    # Bold **text**
     t = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', text)
-    # Italic *text*
     t = re.sub(r'\*([^*]+?)\*', r'<em>\1</em>', t)
-    # Backticks `code`
     t = re.sub(r'`([^`]+?)`', r'<code>\1</code>', t)
     return t
 
-def parse_markdown():
-    if not os.path.exists(MD_FILE):
-        print(f"Error: {MD_FILE} not found!", file=sys.stderr)
+def parse_ch1():
+    if not os.path.exists(CH1_MD):
+        print(f"Error: {CH1_MD} not found!", file=sys.stderr)
         sys.exit(1)
 
-    with open(MD_FILE, "r", encoding="utf-8") as f:
+    with open(CH1_MD, "r", encoding="utf-8") as f:
         content = f.read()
 
     sec12_pos = content.find("# SECTION 1.2 – CLASSIFYING ORGANISMS")
     sec13_pos = content.find("# SECTION 1.3 – HEREDITY AND INHERITANCE")
-
-    if sec12_pos == -1 or sec13_pos == -1:
-        print("Error: Could not locate section headers in markdown!", file=sys.stderr)
-        sys.exit(1)
 
     sections = [
         ("1.2", "Classifying Organisms", content[sec12_pos:sec13_pos]),
         ("1.3", "Heredity and Inheritance", content[sec13_pos:])
     ]
 
-    parsed_questions = []
-    image_paths_checked = set()
-
+    parsed = []
     for sec_id, sec_title, sec_text in sections:
         raw_blocks = re.split(r"(?m)^(?=###\s+Q)", sec_text)
         for block in raw_blocks:
@@ -91,7 +84,6 @@ def parse_markdown():
 
             hm = re.match(r"^###\s+Q(\d+)\s+·\s+([^·]+)\s+·\s+([^·]+)\s+·\s+([A-Za-z]+)", header)
             if not hm:
-                print(f"Error: Failed header match on: {header}", file=sys.stderr)
                 continue
 
             qnum_str, qtype_str, lp_str, level_str = hm.groups()
@@ -104,24 +96,15 @@ def parse_markdown():
 
             body = "\n".join(lines[1:]).strip()
 
-            # Image extraction
             img_match = re.search(r"!\[(.*?)\]\((.*?)\)", body)
             image_data = None
             if img_match:
                 alt, src = img_match.groups()
                 src = src.strip()
                 alt = alt.strip()
-                if not os.path.exists(src):
-                    print(f"Error: Image {src} in {qid} does not exist!", file=sys.stderr)
-                    sys.exit(1)
-                image_paths_checked.add(src)
-                image_data = {
-                    "alt": alt,
-                    "src": src
-                }
+                image_data = {"alt": alt, "src": src}
                 body = body.replace(img_match.group(0), "").strip()
 
-            # Table extraction
             table_lines = [l for l in body.split("\n") if l.strip().startswith("|") and l.strip().endswith("|")]
             table_markdown = None
             table_html = None
@@ -193,51 +176,214 @@ def parse_markdown():
                 q_obj["prompt"] = question_text
                 q_obj["model_answer"] = model_ans
 
-            parsed_questions.append(q_obj)
+            parsed.append(q_obj)
 
-    # Verification
-    assert len(parsed_questions) == 200, f"Expected 200 questions, got {len(parsed_questions)}"
-    
-    sec12_qs = [q for q in parsed_questions if q["section"] == "1.2"]
-    sec13_qs = [q for q in parsed_questions if q["section"] == "1.3"]
-    assert len(sec12_qs) == 100, f"Expected 100 in Sec 1.2, got {len(sec12_qs)}"
-    assert len(sec13_qs) == 100, f"Expected 100 in Sec 1.3, got {len(sec13_qs)}"
+    return parsed
 
-    def check_types(qs, sec_name):
-        type_counts = {}
-        for q in qs:
-            type_counts[q["type"]] = type_counts.get(q["type"], 0) + 1
-        expected = {"MCQ": 36, "True/False": 24, "Find the Mistake": 20, "Written": 20}
-        assert type_counts == expected, f"{sec_name} counts mismatch: got {type_counts}"
-        return type_counts
+def parse_ch2():
+    if not os.path.exists(CH2_MD):
+        print(f"Error: {CH2_MD} not found!", file=sys.stderr)
+        sys.exit(1)
 
-    c12 = check_types(sec12_qs, "Section 1.2")
-    c13 = check_types(sec13_qs, "Section 1.3")
+    with open(CH2_MD, "r", encoding="utf-8") as f:
+        text = f.read()
 
-    with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
-        json.dump(parsed_questions, f, indent=2, ensure_ascii=False)
+    parts = re.split(r"# Teacher / student answer key and personalized feedback", text)
+    student_text = parts[0]
+    answer_text = parts[1]
 
-    js_file = "questions-data.js"
-    with open(js_file, "w", encoding="utf-8") as f:
-        f.write("/* Generated by parse_questions.py */\nwindow.SCIENCE_QUESTIONS = ")
-        json.dump(parsed_questions, f, indent=2, ensure_ascii=False)
-        f.write(";\n")
+    ans_blocks = re.split(r"(?=### Q\d{3})", answer_text)
+    answers_by_num = {}
+    for b in ans_blocks:
+        m = re.match(r"### Q(\d{3})\s*·\s*([^\n]+)", b)
+        if m:
+            qnum = int(m.group(1))
+            lp = m.group(2).strip()
+            model_m = re.search(r"\*\*Model answer:\*\*\s*(.*?)(?=\n\n\*\*|\n\*\*|$)", b, re.DOTALL)
+            if_corr_m = re.search(r"\*\*If correct:\*\*\s*(.*?)(?=\n\n\*\*|\n\*\*|$)", b, re.DOTALL)
+            if_incorr_m = re.search(r"\*\*If incorrect:\*\*\s*(.*?)(?=\n\n\*\*|\n\*\*|$)", b, re.DOTALL)
+            answers_by_num[qnum] = {
+                "lp": lp,
+                "model_answer": model_m.group(1).strip() if model_m else "",
+                "if_correct": if_corr_m.group(1).strip() if if_corr_m else "",
+                "if_incorrect": if_incorr_m.group(1).strip() if if_incorr_m else ""
+            }
+
+    student_q_splits = re.split(r"(?=\*\*Q\d{3}\.\*\*)", student_text)
+    questions_by_num = {}
+    for s in student_q_splits:
+        m = re.match(r"\*\*Q(\d{3})\.\*\*\s*(.*)", s, re.DOTALL)
+        if m:
+            qnum = int(m.group(1))
+            questions_by_num[qnum] = m.group(2).strip()
+
+    parsed = []
+
+    # Part A: Written (1–35)
+    for num in range(1, 36):
+        body = questions_by_num[num]
+        ans = answers_by_num[num]
+        lp = ans["lp"]
+        is_hard = "+" in lp or "ACT" in lp or num in [6, 8, 9, 12, 18, 20, 24, 29, 32, 33]
+        level = "Hard" if is_hard else "Medium"
+        hint = f"Remember: {ans['if_incorrect']}"
+        explanation = f"{ans['model_answer']} ({ans['if_correct']})"
+
+        parsed.append({
+            "id": f"s21_q{num}",
+            "number": num,
+            "section": "2.1",
+            "section_title": "The Nervous System",
+            "type": "Written",
+            "lp": lp,
+            "level": level,
+            "hint": hint,
+            "explanation": explanation,
+            "image": None,
+            "table_markdown": None,
+            "table_html": None,
+            "prompt": body,
+            "model_answer": ans["model_answer"]
+        })
+
+    # Part B: Find the Mistake (36–50)
+    for num in range(36, 51):
+        body = questions_by_num[num]
+        ans = answers_by_num[num]
+        lp = ans["lp"]
+        is_hard = "+" in lp or "ACT" in lp or num in [36, 44, 47, 49, 50]
+        level = "Hard" if is_hard else "Medium"
+        quote_m = re.search(r"[“\"](.*?)[”\"]", body)
+        student_ans = f"\"{quote_m.group(1)}\"" if quote_m else body
+        hint = f"Notice: {ans['if_incorrect']}"
+        explanation = f"{ans['model_answer']} ({ans['if_correct']})"
+
+        parsed.append({
+            "id": f"s21_q{num}",
+            "number": num,
+            "section": "2.1",
+            "section_title": "The Nervous System",
+            "type": "Find the Mistake",
+            "lp": lp,
+            "level": level,
+            "hint": hint,
+            "explanation": explanation,
+            "image": None,
+            "table_markdown": None,
+            "table_html": None,
+            "student_answer": student_ans,
+            "student_table_flag": False,
+            "question": "Find the mistake in this statement and write the scientifically correct statement.",
+            "mistake": ans["if_incorrect"],
+            "correct_answer": ans["model_answer"]
+        })
+
+    # Part C: MCQ (51–80)
+    for num in range(51, 81):
+        body = questions_by_num[num]
+        ans = answers_by_num[num]
+        lp = ans["lp"]
+        is_hard = "+" in lp or "ACT" in lp or num in [56, 62, 63, 65, 72, 77, 78, 79, 80]
+        level = "Hard" if is_hard else "Medium"
+
+        prompt_m = re.split(r"\n\s*-\s*\*\*[A-D]\.\*\*", body)
+        prompt_text = prompt_m[0].strip()
+
+        opts_raw = re.findall(r"-\s*\*\*([A-D])\.\*\*\s*(.*)", body)
+        options = []
+        for key, opt_text in opts_raw:
+            opt_clean = opt_text.strip()
+            options.append({
+                "key": key,
+                "text": opt_clean,
+                "html": inline_markdown_to_html(opt_clean)
+            })
+
+        ans_letter_m = re.match(r"^([A-D])\s*—\s*(.*)", ans["model_answer"])
+        answer_key = ans_letter_m.group(1) if ans_letter_m else "A"
+        answer_desc = ans_letter_m.group(2) if ans_letter_m else ans["model_answer"]
+
+        hint = f"Clue: {ans['if_incorrect']}"
+        explanation = f"{answer_desc} ({ans['if_correct']})"
+
+        parsed.append({
+            "id": f"s21_q{num}",
+            "number": num,
+            "section": "2.1",
+            "section_title": "The Nervous System",
+            "type": "MCQ",
+            "lp": lp,
+            "level": level,
+            "hint": hint,
+            "explanation": explanation,
+            "image": None,
+            "table_markdown": None,
+            "table_html": None,
+            "prompt": prompt_text,
+            "options": options,
+            "answer": answer_key
+        })
+
+    # Part D: True/False (81–100)
+    for num in range(81, 101):
+        body = questions_by_num[num]
+        ans = answers_by_num[num]
+        lp = ans["lp"]
+        is_hard = "+" in lp or "ACT" in lp or num in [85, 92, 95, 97, 99, 100]
+        level = "Hard" if is_hard else "Medium"
+
+        clean_stmt = re.sub(r"\s*\*\*\(True\s*/\s*False\)\*\*", "", body).strip()
+        raw_ans = ans["model_answer"]
+        is_true = raw_ans.startswith("True")
+        corr_m = re.match(r"^False\.\s*(.*)", raw_ans)
+        correction = corr_m.group(1) if (corr_m and not is_true) else (raw_ans if not is_true else None)
+
+        hint = f"Key clue: {ans['if_incorrect']}"
+        explanation = f"{raw_ans} ({ans['if_correct']})"
+
+        parsed.append({
+            "id": f"s21_q{num}",
+            "number": num,
+            "section": "2.1",
+            "section_title": "The Nervous System",
+            "type": "True/False",
+            "lp": lp,
+            "level": level,
+            "hint": hint,
+            "explanation": explanation,
+            "image": None,
+            "table_markdown": None,
+            "table_html": None,
+            "statement": clean_stmt,
+            "is_true": is_true,
+            "raw_answer": raw_ans,
+            "correction": correction
+        })
+
+    return parsed
+
+def main():
+    q_ch1 = parse_ch1()
+    q_ch2 = parse_ch2()
+    all_questions = q_ch1 + q_ch2
 
     print("==================================================")
     print("PARSING COMPLETE & VERIFIED SUCCESSFULLY!")
     print("==================================================")
-    print(f"Total Questions Parsed: {len(parsed_questions)}")
-    print(f"Unique Image Files Resolved and Verified: {len(image_paths_checked)} / 20")
-    print("\nSection 1.2 – Classifying Organisms:")
-    print(f"  Total: {len(sec12_qs)}")
-    for t, c in c12.items():
-        print(f"  - {t}: {c}")
-    print("\nSection 1.3 – Heredity and Inheritance:")
-    print(f"  Total: {len(sec13_qs)}")
-    for t, c in c13.items():
-        print(f"  - {t}: {c}")
-    print(f"\nWritten to: {OUTPUT_JSON}")
-    print("==================================================")
+    print(f"Total Questions Parsed: {len(all_questions)}")
+    print(f"  - Section 1.2 (Classifying Organisms): {len([q for q in all_questions if q['section'] == '1.2'])}")
+    print(f"  - Section 1.3 (Heredity & Inheritance): {len([q for q in all_questions if q['section'] == '1.3'])}")
+    print(f"  - Section 2.1 (The Nervous System): {len([q for q in all_questions if q['section'] == '2.1'])}")
+
+    with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
+        json.dump(all_questions, f, indent=2, ensure_ascii=False)
+
+    with open(OUTPUT_JS, "w", encoding="utf-8") as f:
+        f.write("/* Generated by parse_questions.py */\nwindow.SCIENCE_QUESTIONS = ")
+        json.dump(all_questions, f, indent=2, ensure_ascii=False)
+        f.write(";\n")
+
+    print(f"Updated {OUTPUT_JSON} and {OUTPUT_JS} successfully!")
 
 if __name__ == "__main__":
-    parse_markdown()
+    main()

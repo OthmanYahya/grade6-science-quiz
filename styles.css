@@ -29,6 +29,10 @@
   --sec-13-accent: #A64424;       /* Terracotta / Rust */
   --sec-13-bg: #F7ECE7;
   --sec-13-border: #A64424;
+
+  --sec-21-accent: #1F4E79;       /* Deep Blueprint Cobalt */
+  --sec-21-bg: #EAF0F6;
+  --sec-21-border: #1F4E79;
   
   /* Assessment Feedback (Color + Icon/Label required) */
   --feedback-correct-ink: #14492E;
@@ -313,6 +317,12 @@ code {
   border-color: var(--sec-13-accent);
   color: var(--sec-13-accent);
   background: var(--sec-13-bg);
+}
+
+.specimen-tag.sec-21 {
+  border-color: var(--sec-21-accent);
+  color: var(--sec-21-accent);
+  background: var(--sec-21-bg);
 }
 
 .specimen-tag.level-hard {
@@ -1046,7 +1056,7 @@ code {
 
 @media (min-width: 680px) {
   .section-choice-row {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   }
 }
 
@@ -1074,6 +1084,10 @@ code {
 
 .section-card-13 {
   border-top: 6px solid var(--sec-13-accent);
+}
+
+.section-card-21 {
+  border-top: 6px solid var(--sec-21-accent);
 }
 
 .section-card-header {

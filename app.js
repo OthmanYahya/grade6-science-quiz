@@ -11,6 +11,7 @@
   const STORAGE_KEY = 'science_notebook_progress_v2';
   const SEC_12_TITLE = 'Classifying Organisms';
   const SEC_13_TITLE = 'Heredity and Inheritance';
+  const SEC_21_TITLE = 'The Nervous System';
 
   // --- App State ---
   const state = {
@@ -274,6 +275,28 @@
                 </button>
               </div>
             </div>
+
+            <!-- Section 2.1 -->
+            <div class="section-choice-card section-card-21" id="card-sec-21" tabindex="0" role="button">
+              <div>
+                <div class="section-card-header">
+                  <span class="specimen-tag sec-21">SECTION 2.1</span>
+                  <span class="specimen-tag">100 QUESTIONS</span>
+                </div>
+                <h3 class="section-card-title">${SEC_21_TITLE}</h3>
+                <p class="section-card-desc">
+                  Central vs. Peripheral Nervous System, Neurons &amp; Nerves (Sensory vs. Motor), Sense Organs (Eyes, Ears, Skin Receptors), Reflexes, and Reaction Time Ruler-Drop.
+                </p>
+              </div>
+              <div>
+                <div class="section-stats-list">
+                  <span>30 MCQ</span> · <span>20 True/False</span> · <span>15 Find Mistake</span> · <span>35 Written</span>
+                </div>
+                <button type="button" class="btn-action btn-primary" style="margin-top:14px; width:100%;">
+                  Practice Section 2.1
+                </button>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -335,7 +358,7 @@
           </div>
           <div class="ledger-grid">
             <div class="ledger-cell">
-              <div class="ledger-cell-num">${totalAnswered} / 200</div>
+              <div class="ledger-cell-num">${totalAnswered} / 300</div>
               <div class="ledger-cell-label">Questions Attempted</div>
             </div>
             <div class="ledger-cell">
@@ -361,6 +384,9 @@
     });
     document.getElementById('card-sec-13').addEventListener('click', () => {
       startPracticeSession('1.3', 'all', 'all');
+    });
+    document.getElementById('card-sec-21').addEventListener('click', () => {
+      startPracticeSession('2.1', 'all', 'all');
     });
     document.getElementById('card-mode-practice').addEventListener('click', () => {
       setView('practice-setup');
@@ -403,9 +429,10 @@
         <div class="form-group">
           <label class="form-label">1. Choose Section</label>
           <div class="option-pill-group" id="group-sec">
-            <button type="button" class="pill-option active" data-val="all">Both Sections (200)</button>
+            <button type="button" class="pill-option active" data-val="all">All Sections (300)</button>
             <button type="button" class="pill-option" data-val="1.2">1.2 Classifying (100)</button>
             <button type="button" class="pill-option" data-val="1.3">1.3 Heredity (100)</button>
+            <button type="button" class="pill-option" data-val="2.1">2.1 Nervous System (100)</button>
           </div>
         </div>
 
@@ -521,7 +548,7 @@
     }
 
     const ansState = state.practice.sessionAnswers[q.id];
-    const secTagClass = q.section === '1.2' ? 'sec-12' : 'sec-13';
+    const secTagClass = q.section === '1.2' ? 'sec-12' : (q.section === '1.3' ? 'sec-13' : 'sec-21');
     const isHard = q.level === 'Hard';
 
     // Desktop dual column: main card + side question list
@@ -1094,9 +1121,10 @@
         <div class="form-group">
           <label class="form-label">1. Choose Section</label>
           <div class="option-pill-group" id="mock-group-sec">
-            <button type="button" class="pill-option active" data-val="all">Both Sections (Balanced)</button>
+            <button type="button" class="pill-option active" data-val="all">All Sections (Balanced)</button>
             <button type="button" class="pill-option" data-val="1.2">1.2 Classifying Only</button>
             <button type="button" class="pill-option" data-val="1.3">1.3 Heredity Only</button>
+            <button type="button" class="pill-option" data-val="2.1">2.1 Nervous System Only</button>
           </div>
         </div>
 
@@ -1235,7 +1263,7 @@
     }
 
     const ansState = state.mock.sessionAnswers[q.id];
-    const secTagClass = q.section === '1.2' ? 'sec-12' : 'sec-13';
+    const secTagClass = q.section === '1.2' ? 'sec-12' : (q.section === '1.3' ? 'sec-13' : 'sec-21');
 
     // Count how many answered so far
     let answeredTotal = 0;
@@ -1444,7 +1472,8 @@
 
     const secBreakdown = {
       '1.2': { correct: 0, total: 0 },
-      '1.3': { correct: 0, total: 0 }
+      '1.3': { correct: 0, total: 0 },
+      '2.1': { correct: 0, total: 0 }
     };
 
     // Grade objective questions automatically, gather self-checks for subjective
@@ -1585,6 +1614,11 @@
               <td>${secBreakdown['1.3'].correct} / ${secBreakdown['1.3'].total}</td>
               <td>${secBreakdown['1.3'].total ? Math.round((secBreakdown['1.3'].correct / secBreakdown['1.3'].total) * 100) : 0}%</td>
             </tr>
+            <tr>
+              <td><strong>Section 2.1 – ${SEC_21_TITLE}</strong></td>
+              <td>${secBreakdown['2.1'].correct} / ${secBreakdown['2.1'].total}</td>
+              <td>${secBreakdown['2.1'].total ? Math.round((secBreakdown['2.1'].correct / secBreakdown['2.1'].total) * 100) : 0}%</td>
+            </tr>
           </tbody>
         </table>
 
@@ -1652,6 +1686,9 @@
           <button type="button" class="pill-option ${filter === '1.3' ? 'active' : ''}" data-filter="1.3">
             Section 1.3 (${mistakeIds.filter(id => id.startsWith('s13')).length})
           </button>
+          <button type="button" class="pill-option ${filter === '2.1' ? 'active' : ''}" data-filter="2.1">
+            Section 2.1 (${mistakeIds.filter(id => id.startsWith('s21')).length})
+          </button>
         </div>
 
         ${mistakeQuestions.length === 0 ? `
@@ -1679,7 +1716,7 @@
 
           <div style="display:flex; flex-direction:column; gap:12px;">
             ${mistakeQuestions.map((q) => {
-              const secClass = q.section === '1.2' ? 'sec-12' : 'sec-13';
+              const secClass = q.section === '1.2' ? 'sec-12' : (q.section === '1.3' ? 'sec-13' : 'sec-21');
               return `
                 <div class="field-plate-alt" style="display:flex; align-items:center; justify-content:space-between; gap:12px;">
                   <div>
