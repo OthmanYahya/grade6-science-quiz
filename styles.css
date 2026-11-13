@@ -37,6 +37,10 @@
   --sec-22-accent: #6B2D5C;       /* Antique Plum / Wine */
   --sec-22-bg: #F6EDF3;
   --sec-22-border: #6B2D5C;
+
+  --sec-23-accent: #A86518;       /* Warm Amber Ochre */
+  --sec-23-bg: #FAF3E6;
+  --sec-23-border: #A86518;
   
   /* Assessment Feedback (Color + Icon/Label required) */
   --feedback-correct-ink: #14492E;
@@ -333,6 +337,12 @@ code {
   border-color: var(--sec-22-accent);
   color: var(--sec-22-accent);
   background: var(--sec-22-bg);
+}
+
+.specimen-tag.sec-23 {
+  border-color: var(--sec-23-accent);
+  color: var(--sec-23-accent);
+  background: var(--sec-23-bg);
 }
 
 .specimen-tag.level-hard {
@@ -1102,6 +1112,10 @@ code {
 
 .section-card-22 {
   border-top: 6px solid var(--sec-22-accent);
+}
+
+.section-card-23 {
+  border-top: 6px solid var(--sec-23-accent);
 }
 
 .section-card-header {

@@ -13,6 +13,7 @@
   const SEC_13_TITLE = 'Heredity and Inheritance';
   const SEC_21_TITLE = 'The Nervous System';
   const SEC_22_TITLE = 'The Immune System';
+  const SEC_23_TITLE = 'The Excretory System';
 
   // --- App State ---
   const state = {
@@ -320,6 +321,28 @@
                 </button>
               </div>
             </div>
+
+            <!-- Section 2.3 -->
+            <div class="section-choice-card section-card-23" id="card-sec-23" tabindex="0" role="button">
+              <div>
+                <div class="section-card-header">
+                  <span class="specimen-tag sec-23">SECTION 2.3</span>
+                  <span class="specimen-tag">100 QUESTIONS</span>
+                </div>
+                <h3 class="section-card-title">${SEC_23_TITLE}</h3>
+                <p class="section-card-desc">
+                  Lungs &amp; Exhaled Wastes, Skin &amp; Perspiration (Sweat Glands &amp; Pores), Urinary System (Kidneys, Ureters, Bladder, Urethra), Blood Filtration, Urine Formation &amp; Healthy Organ Habits.
+                </p>
+              </div>
+              <div>
+                <div class="section-stats-list">
+                  <span>30 MCQ</span> · <span>20 True/False</span> · <span>15 Find Mistake</span> · <span>35 Written</span>
+                </div>
+                <button type="button" class="btn-action btn-primary" style="margin-top:14px; width:100%;">
+                  Practice Section 2.3
+                </button>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -414,6 +437,9 @@
     document.getElementById('card-sec-22').addEventListener('click', () => {
       startPracticeSession('2.2', 'all', 'all');
     });
+    document.getElementById('card-sec-23').addEventListener('click', () => {
+      startPracticeSession('2.3', 'all', 'all');
+    });
     document.getElementById('card-mode-practice').addEventListener('click', () => {
       setView('practice-setup');
     });
@@ -455,11 +481,12 @@
         <div class="form-group">
           <label class="form-label">1. Choose Section</label>
           <div class="option-pill-group" id="group-sec">
-            <button type="button" class="pill-option active" data-val="all">All Sections (400)</button>
+            <button type="button" class="pill-option active" data-val="all">All Sections (500)</button>
             <button type="button" class="pill-option" data-val="1.2">1.2 Classifying (100)</button>
             <button type="button" class="pill-option" data-val="1.3">1.3 Heredity (100)</button>
             <button type="button" class="pill-option" data-val="2.1">2.1 Nervous System (100)</button>
             <button type="button" class="pill-option" data-val="2.2">2.2 Immune System (100)</button>
+            <button type="button" class="pill-option" data-val="2.3">2.3 Excretory System (100)</button>
           </div>
         </div>
 
@@ -1175,6 +1202,7 @@
             <button type="button" class="pill-option" data-val="1.3">1.3 Heredity Only</button>
             <button type="button" class="pill-option" data-val="2.1">2.1 Nervous System Only</button>
             <button type="button" class="pill-option" data-val="2.2">2.2 Immune System Only</button>
+            <button type="button" class="pill-option" data-val="2.3">2.3 Excretory System Only</button>
           </div>
         </div>
 
@@ -1546,7 +1574,8 @@
       '1.2': { correct: 0, total: 0 },
       '1.3': { correct: 0, total: 0 },
       '2.1': { correct: 0, total: 0 },
-      '2.2': { correct: 0, total: 0 }
+      '2.2': { correct: 0, total: 0 },
+      '2.3': { correct: 0, total: 0 }
     };
 
     // Grade objective questions automatically, gather self-checks for subjective
@@ -1697,6 +1726,11 @@
               <td>${secBreakdown['2.2'].correct} / ${secBreakdown['2.2'].total}</td>
               <td>${secBreakdown['2.2'].total ? Math.round((secBreakdown['2.2'].correct / secBreakdown['2.2'].total) * 100) : 0}%</td>
             </tr>
+            <tr>
+              <td><strong>Section 2.3 – ${SEC_23_TITLE}</strong></td>
+              <td>${secBreakdown['2.3'].correct} / ${secBreakdown['2.3'].total}</td>
+              <td>${secBreakdown['2.3'].total ? Math.round((secBreakdown['2.3'].correct / secBreakdown['2.3'].total) * 100) : 0}%</td>
+            </tr>
           </tbody>
         </table>
 
@@ -1769,6 +1803,9 @@
           </button>
           <button type="button" class="pill-option ${filter === '2.2' ? 'active' : ''}" data-filter="2.2">
             Section 2.2 (${mistakeIds.filter(id => id.startsWith('s22')).length})
+          </button>
+          <button type="button" class="pill-option ${filter === '2.3' ? 'active' : ''}" data-filter="2.3">
+            Section 2.3 (${mistakeIds.filter(id => id.startsWith('s23')).length})
           </button>
         </div>
 
