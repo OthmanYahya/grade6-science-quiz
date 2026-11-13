@@ -360,6 +360,16 @@ def parse_ch2():
             "correction": correction
         })
 
+    # Randomize the arrangement of Section 2.1 so that all question types
+    # (MCQ, Written, True/False, Find the Mistake) are balanced and interleaved
+    import random
+    rng = random.Random(1)
+    rng.shuffle(parsed)
+    for idx, q in enumerate(parsed):
+        q["orig_number"] = q["number"]
+        q["number"] = idx + 1
+        q["id"] = f"s21_q{idx + 1}"
+
     return parsed
 
 def main():

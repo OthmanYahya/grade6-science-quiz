@@ -551,6 +551,10 @@
     const secTagClass = q.section === '1.2' ? 'sec-12' : (q.section === '1.3' ? 'sec-13' : 'sec-21');
     const isHard = q.level === 'Hard';
 
+    // Save scroll position of the question picker before re-rendering
+    const prevNavGrid = document.getElementById('practice-nav-grid');
+    const savedNavScrollTop = prevNavGrid ? prevNavGrid.scrollTop : null;
+
     // Desktop dual column: main card + side question list
     appRoot.innerHTML = `
       <div class="two-column-workspace">
@@ -637,6 +641,24 @@
         </div>
       </nav>
     `;
+
+    // Restore and adjust question picker scroll position
+    const newNavGrid = document.getElementById('practice-nav-grid');
+    if (newNavGrid) {
+      if (savedNavScrollTop !== null) {
+        newNavGrid.scrollTop = savedNavScrollTop;
+      }
+      const currentBtn = newNavGrid.querySelector('.nav-dot-btn.current');
+      if (currentBtn) {
+        const gridRect = newNavGrid.getBoundingClientRect();
+        const btnRect = currentBtn.getBoundingClientRect();
+        if (btnRect.top < gridRect.top) {
+          newNavGrid.scrollTop -= (gridRect.top - btnRect.top + 8);
+        } else if (btnRect.bottom > gridRect.bottom) {
+          newNavGrid.scrollTop += (btnRect.bottom - gridRect.bottom + 8);
+        }
+      }
+    }
 
     // Bind question interactions
     bindQuestionInteractions(q, ansState, 'practice');
@@ -1274,6 +1296,10 @@
       }
     }
 
+    // Save scroll position of the question picker before re-rendering
+    const prevNavGrid = document.getElementById('mock-nav-grid');
+    const savedNavScrollTop = prevNavGrid ? prevNavGrid.scrollTop : null;
+
     appRoot.innerHTML = `
       <!-- Exam Masthead Bar with Timer -->
       <div class="exam-masthead-bar">
@@ -1322,7 +1348,7 @@
               <div class="progress-fill" style="width: ${((idx + 1) / qList.length) * 100}%;"></div>
             </div>
           </div>
-          <div class="question-nav-grid">
+          <div class="question-nav-grid" id="mock-nav-grid">
             ${qList.map((item, i) => {
               const itemAns = state.mock.sessionAnswers[item.id];
               let isAnswered = itemAns && (itemAns.selected || (itemAns.studentText && itemAns.studentText.trim().length > 0));
@@ -1371,6 +1397,24 @@
       </nav>
     `;
 
+    // Restore and adjust question picker scroll position
+    const newNavGrid = document.getElementById('mock-nav-grid');
+    if (newNavGrid) {
+      if (savedNavScrollTop !== null) {
+        newNavGrid.scrollTop = savedNavScrollTop;
+      }
+      const currentBtn = newNavGrid.querySelector('.nav-dot-btn.current');
+      if (currentBtn) {
+        const gridRect = newNavGrid.getBoundingClientRect();
+        const btnRect = currentBtn.getBoundingClientRect();
+        if (btnRect.top < gridRect.top) {
+          newNavGrid.scrollTop -= (gridRect.top - btnRect.top + 8);
+        } else if (btnRect.bottom > gridRect.bottom) {
+          newNavGrid.scrollTop += (btnRect.bottom - gridRect.bottom + 8);
+        }
+      }
+    }
+
     updateTimerDisplay();
 
     // Auto-save textarea input on change
@@ -1418,7 +1462,7 @@
       finishBtn.addEventListener('click', promptMockSubmit);
     }
 
-    document.querySelectorAll('.journal-side-rail .nav-dot-btn').forEach((btn) => {
+    document.querySelectorAll('#mock-nav-grid .nav-dot-btn').forEach((btn) => {
       btn.addEventListener('click', () => {
         state.mock.currentIndex = parseInt(btn.getAttribute('data-index'), 10);
         renderMockQuestionView();
