@@ -634,6 +634,17 @@ code {
   opacity: 0.6;
 }
 
+.mcq-option-btn.state-selected {
+  background: var(--ink-primary);
+  border-color: var(--ink-primary);
+  color: var(--paper-sheet);
+}
+.mcq-option-btn.state-selected .mcq-key-pill {
+  background: var(--paper-sheet);
+  color: var(--ink-primary);
+  border-color: var(--paper-sheet);
+}
+
 /* True/False Buttons */
 .tf-buttons-row {
   display: grid;
@@ -675,6 +686,12 @@ code {
   background: var(--feedback-wrong-bg);
   border-color: var(--feedback-wrong-border);
   color: var(--feedback-wrong-ink);
+}
+
+.tf-choice-btn.state-selected {
+  background: var(--ink-primary);
+  border-color: var(--ink-primary);
+  color: var(--paper-sheet);
 }
 
 /* Student Input for Find the Mistake & Written */
@@ -14305,7 +14322,7 @@ Step 3: 3a. Has no tubes and is very small → Moss; 3b. Has tubes and its seeds
                 <span class="specimen-tag">MODE 2</span>
                 <h3 class="mode-card-title">Mock Exam</h3>
                 <p class="mode-card-desc">
-                  Timed or untimed exam test (20, 40, or 60 questions). Hints off, answers scored at the end with a full breakdown.
+                  Timed or untimed exam test (20, 40, 60, or 100 questions). Hints off, answers scored at the end with a full breakdown.
                 </p>
               </div>
               <button type="button" class="btn-action btn-secondary" style="width:100%;">
@@ -14719,7 +14736,7 @@ Step 3: 3a. Has no tubes and is very small → Moss; 3b. Has tubes and its seeds
           ${q.options.map((opt) => {
             let stateClass = '';
             let statusBadge = '';
-            if (ansState.answered) {
+            if (mode === 'practice' && ansState.answered) {
               const isCorrectOpt = opt.key === q.answer;
               const isSelected = ansState.selected === opt.key;
               if (isCorrectOpt) {
@@ -14732,11 +14749,11 @@ Step 3: 3a. Has no tubes and is very small → Moss; 3b. Has tubes and its seeds
                 stateClass = 'state-dimmed';
               }
             } else if (mode === 'mock' && ansState.selected === opt.key) {
-              stateClass = 'state-correct'; // in mock, just shows active selection
+              stateClass = 'state-selected'; // in mock, just shows active selection
             }
 
             return `
-              <button type="button" class="mcq-option-btn ${stateClass}" data-key="${opt.key}" ${mode === 'practice' && ansState.answered ? '' : ''}>
+              <button type="button" class="mcq-option-btn ${stateClass}" data-key="${opt.key}">
                 <span class="mcq-key-pill">${opt.key}</span>
                 <span class="mcq-text-content">${renderMarkdown(opt.text)}</span>
                 ${statusBadge}
@@ -14746,7 +14763,7 @@ Step 3: 3a. Has no tubes and is very small → Moss; 3b. Has tubes and its seeds
         </div>
       `;
     } else if (q.type === 'True/False') {
-      const isAnswered = ansState.answered;
+      const isAnswered = mode === 'practice' && ansState.answered;
       let trueClass = '';
       let falseClass = '';
       if (isAnswered) {
@@ -14758,8 +14775,8 @@ Step 3: 3a. Has no tubes and is very small → Moss; 3b. Has tubes and its seeds
           if (ansState.selected === 'True') trueClass = 'state-wrong';
         }
       } else if (mode === 'mock') {
-        if (ansState.selected === 'True') trueClass = 'state-correct';
-        if (ansState.selected === 'False') falseClass = 'state-correct';
+        if (ansState.selected === 'True') trueClass = 'state-selected';
+        if (ansState.selected === 'False') falseClass = 'state-selected';
       }
 
       html += `
@@ -14994,8 +15011,14 @@ Step 3: 3a. Has no tubes and is very small → Moss; 3b. Has tubes and its seeds
         const key = btn.getAttribute('data-key');
         ansState.selected = key;
         ansState.answered = true;
-        ansState.revealed = true;
 
+        if (mode === 'mock') {
+          renderMockQuestionView();
+          announce(`Selected option ${key}.`);
+          return;
+        }
+
+        ansState.revealed = true;
         const isCorrect = key === q.answer;
         ansState.status = isCorrect ? 'correct' : 'wrong';
 
@@ -15015,12 +15038,7 @@ Step 3: 3a. Has no tubes and is very small → Moss; 3b. Has tubes and its seeds
           announce(`Incorrect. Option ${key}. Correct answer is ${q.answer}. Explanation revealed.`);
         }
         saveProgress();
-
-        if (mode === 'practice') {
-          renderPracticeQuestionView();
-        } else if (mode === 'mock') {
-          renderMockQuestionView();
-        }
+        renderPracticeQuestionView();
       });
     });
 
@@ -15030,8 +15048,14 @@ Step 3: 3a. Has no tubes and is very small → Moss; 3b. Has tubes and its seeds
         const choice = btn.getAttribute('data-choice');
         ansState.selected = choice;
         ansState.answered = true;
-        ansState.revealed = true;
 
+        if (mode === 'mock') {
+          renderMockQuestionView();
+          announce(`Selected ${choice}.`);
+          return;
+        }
+
+        ansState.revealed = true;
         const choiceBool = choice === 'True';
         const isCorrect = choiceBool === q.is_true;
         ansState.status = isCorrect ? 'correct' : 'wrong';
@@ -15051,12 +15075,7 @@ Step 3: 3a. Has no tubes and is very small → Moss; 3b. Has tubes and its seeds
           announce(`Incorrect. Statement is ${q.is_true ? 'True' : 'False'}.`);
         }
         saveProgress();
-
-        if (mode === 'practice') {
-          renderPracticeQuestionView();
-        } else if (mode === 'mock') {
-          renderMockQuestionView();
-        }
+        renderPracticeQuestionView();
       });
     });
 
@@ -15118,7 +15137,24 @@ Step 3: 3a. Has no tubes and is very small → Moss; 3b. Has tubes and its seeds
   function renderMockSetupView() {
     let selSection = 'all';
     let selCount = 20;
-    let selTimer = 15; // minutes, 0 = no timer
+    let selTimerMode = 'standard'; // 'standard' | 'none'
+
+    function getRecommendedMinutes(count) {
+      if (count === 20) return 15;
+      if (count === 40) return 30;
+      if (count === 60) return 45;
+      if (count === 100) return 75;
+      return Math.round(count * 0.75);
+    }
+
+    function formatTimerLabel(mins) {
+      if (mins >= 60) {
+        const h = Math.floor(mins / 60);
+        const m = mins % 60;
+        return `${h}h${m ? ' ' + m + 'm' : ''}`;
+      }
+      return `${mins} min`;
+    }
 
     appRoot.innerHTML = `
       <div class="setup-form-card">
@@ -15148,6 +15184,7 @@ Step 3: 3a. Has no tubes and is very small → Moss; 3b. Has tubes and its seeds
             <button type="button" class="pill-option active" data-val="20">20 Questions (Standard)</button>
             <button type="button" class="pill-option" data-val="40">40 Questions (Deep Review)</button>
             <button type="button" class="pill-option" data-val="60">60 Questions (Full Simulation)</button>
+            <button type="button" class="pill-option" data-val="100">100 Questions (Mastery Exam)</button>
           </div>
         </div>
 
@@ -15155,7 +15192,9 @@ Step 3: 3a. Has no tubes and is very small → Moss; 3b. Has tubes and its seeds
         <div class="form-group">
           <label class="form-label">3. Exam Timer</label>
           <div class="option-pill-group" id="mock-group-timer">
-            <button type="button" class="pill-option active" data-val="standard">Timed (Recommended)</button>
+            <button type="button" class="pill-option active" data-val="standard" id="mock-pill-timer-std">
+              Timed (Recommended: 15 min)
+            </button>
             <button type="button" class="pill-option" data-val="none">No Timer (Untimed)</button>
           </div>
         </div>
@@ -15183,25 +15222,42 @@ Step 3: 3a. Has no tubes and is very small → Moss; 3b. Has tubes and its seeds
     }
 
     setupPillGroup('mock-group-sec', val => { selSection = val; });
-    setupPillGroup('mock-group-count', val => { selCount = parseInt(val, 10); });
+    setupPillGroup('mock-group-count', val => {
+      selCount = parseInt(val, 10);
+      const stdPill = document.getElementById('mock-pill-timer-std');
+      if (stdPill) {
+        const mins = getRecommendedMinutes(selCount);
+        stdPill.textContent = `Timed (Recommended: ${formatTimerLabel(mins)})`;
+      }
+    });
     setupPillGroup('mock-group-timer', val => {
-      selTimer = val === 'none' ? 0 : (selCount === 20 ? 15 : (selCount === 40 ? 30 : 45));
+      selTimerMode = val;
     });
 
     document.getElementById('btn-cancel-mock').addEventListener('click', () => setView('home'));
     document.getElementById('btn-start-mock').addEventListener('click', () => {
-      startMockExam(selSection, selCount, selTimer);
+      const timerMinutes = selTimerMode === 'none' ? 0 : getRecommendedMinutes(selCount);
+      startMockExam(selSection, selCount, timerMinutes);
     });
   }
 
   function startMockExam(section, count, timerMinutes) {
-    let pool = state.allQuestions;
-    if (section !== 'all') {
-      pool = pool.filter(q => q.section === section);
+    let chosen = [];
+    if (section === 'all') {
+      const sections = ['1.2', '1.3', '2.1', '2.2', '2.3'];
+      const perSection = Math.floor(count / sections.length);
+      let remainder = count % sections.length;
+      sections.forEach(sec => {
+        const secPool = shuffle(state.allQuestions.filter(q => q.section === sec));
+        const take = perSection + (remainder > 0 ? 1 : 0);
+        if (remainder > 0) remainder--;
+        chosen.push(...secPool.slice(0, take));
+      });
+      chosen = shuffle(chosen);
+    } else {
+      const pool = state.allQuestions.filter(q => q.section === section);
+      chosen = shuffle(pool).slice(0, Math.min(count, pool.length));
     }
-
-    const shuffled = shuffle(pool);
-    const chosen = shuffled.slice(0, Math.min(count, shuffled.length));
 
     // Clear previous timer
     if (state.mock.timerInterval) {
@@ -15244,12 +15300,19 @@ Step 3: 3a. Has no tubes and is very small → Moss; 3b. Has tubes and its seeds
   function updateTimerDisplay() {
     const timerElem = document.getElementById('exam-timer-text');
     if (!timerElem) return;
-    const s = state.mock.secondsRemaining;
-    const mins = Math.floor(s / 60);
+    const s = Math.max(0, state.mock.secondsRemaining);
+    const hrs = Math.floor(s / 3600);
+    const mins = Math.floor((s % 3600) / 60);
     const secs = s % 60;
-    timerElem.textContent = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    if (hrs > 0) {
+      timerElem.textContent = `${hrs}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    } else {
+      timerElem.textContent = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    }
     if (s <= 120) {
       timerElem.classList.add('timer-warning');
+    } else {
+      timerElem.classList.remove('timer-warning');
     }
   }
 
@@ -15315,11 +15378,12 @@ Step 3: 3a. Has no tubes and is very small → Moss; 3b. Has tubes and its seeds
         <!-- Main Question Plate -->
         <div class="field-plate">
           <div class="numeral-row">
-            <div class="question-big-num">Q${q.number}</div>
+            <div class="question-big-num">Q${idx + 1}</div>
             <div class="question-tags-group">
               <span class="specimen-tag ${secTagClass}">SEC ${q.section}</span>
               <span class="specimen-tag">${q.type.toUpperCase()}</span>
               <span class="specimen-tag">${q.lp}</span>
+              <span class="specimen-tag" style="background:var(--paper-sheet);">ITEM #${q.number}</span>
             </div>
           </div>
 
@@ -15347,8 +15411,8 @@ Step 3: 3a. Has no tubes and is very small → Moss; 3b. Has tubes and its seeds
               if (i === idx) statusClass = 'current';
               else if (isAnswered) statusClass = 'answered-correct';
               return `
-                <button type="button" class="nav-dot-btn ${statusClass}" data-index="${i}">
-                  ${item.number}
+                <button type="button" class="nav-dot-btn ${statusClass}" data-index="${i}" title="Question ${i + 1} (Bank Sec ${item.section} #${item.number})">
+                  ${i + 1}
                 </button>
               `;
             }).join('')}
@@ -15582,7 +15646,7 @@ Ready to submit and view your score breakdown?`;
           Assessment Summary
         </h2>
         <p style="color:var(--ink-secondary); font-size:0.95rem;">
-          Grade 6 Science · Chapter 1 Review (Classifying &amp; Heredity)
+          Grade 6 Science · ${state.mock.section === 'all' ? 'Comprehensive Exam (All 5 Sections)' : `Section ${state.mock.section} Review`}
         </p>
 
         <!-- Big Score Hero -->
@@ -15643,31 +15707,21 @@ Ready to submit and view your score breakdown?`;
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td><strong>Section 1.2 – ${SEC_12_TITLE}</strong></td>
-              <td>${secBreakdown['1.2'].correct} / ${secBreakdown['1.2'].total}</td>
-              <td>${secBreakdown['1.2'].total ? Math.round((secBreakdown['1.2'].correct / secBreakdown['1.2'].total) * 100) : 0}%</td>
-            </tr>
-            <tr>
-              <td><strong>Section 1.3 – ${SEC_13_TITLE}</strong></td>
-              <td>${secBreakdown['1.3'].correct} / ${secBreakdown['1.3'].total}</td>
-              <td>${secBreakdown['1.3'].total ? Math.round((secBreakdown['1.3'].correct / secBreakdown['1.3'].total) * 100) : 0}%</td>
-            </tr>
-            <tr>
-              <td><strong>Section 2.1 – ${SEC_21_TITLE}</strong></td>
-              <td>${secBreakdown['2.1'].correct} / ${secBreakdown['2.1'].total}</td>
-              <td>${secBreakdown['2.1'].total ? Math.round((secBreakdown['2.1'].correct / secBreakdown['2.1'].total) * 100) : 0}%</td>
-            </tr>
-            <tr>
-              <td><strong>Section 2.2 – ${SEC_22_TITLE}</strong></td>
-              <td>${secBreakdown['2.2'].correct} / ${secBreakdown['2.2'].total}</td>
-              <td>${secBreakdown['2.2'].total ? Math.round((secBreakdown['2.2'].correct / secBreakdown['2.2'].total) * 100) : 0}%</td>
-            </tr>
-            <tr>
-              <td><strong>Section 2.3 – ${SEC_23_TITLE}</strong></td>
-              <td>${secBreakdown['2.3'].correct} / ${secBreakdown['2.3'].total}</td>
-              <td>${secBreakdown['2.3'].total ? Math.round((secBreakdown['2.3'].correct / secBreakdown['2.3'].total) * 100) : 0}%</td>
-            </tr>
+            ${[
+              { id: '1.2', title: SEC_12_TITLE },
+              { id: '1.3', title: SEC_13_TITLE },
+              { id: '2.1', title: SEC_21_TITLE },
+              { id: '2.2', title: SEC_22_TITLE },
+              { id: '2.3', title: SEC_23_TITLE }
+            ]
+              .filter(sec => secBreakdown[sec.id].total > 0)
+              .map(sec => `
+                <tr>
+                  <td><strong>Section ${sec.id} – ${sec.title}</strong></td>
+                  <td>${secBreakdown[sec.id].correct} / ${secBreakdown[sec.id].total}</td>
+                  <td>${secBreakdown[sec.id].total ? Math.round((secBreakdown[sec.id].correct / secBreakdown[sec.id].total) * 100) : 0}%</td>
+                </tr>
+              `).join('')}
           </tbody>
         </table>
 

@@ -618,6 +618,17 @@ code {
   opacity: 0.6;
 }
 
+.mcq-option-btn.state-selected {
+  background: var(--ink-primary);
+  border-color: var(--ink-primary);
+  color: var(--paper-sheet);
+}
+.mcq-option-btn.state-selected .mcq-key-pill {
+  background: var(--paper-sheet);
+  color: var(--ink-primary);
+  border-color: var(--paper-sheet);
+}
+
 /* True/False Buttons */
 .tf-buttons-row {
   display: grid;
@@ -659,6 +670,12 @@ code {
   background: var(--feedback-wrong-bg);
   border-color: var(--feedback-wrong-border);
   color: var(--feedback-wrong-ink);
+}
+
+.tf-choice-btn.state-selected {
+  background: var(--ink-primary);
+  border-color: var(--ink-primary);
+  color: var(--paper-sheet);
 }
 
 /* Student Input for Find the Mistake & Written */
