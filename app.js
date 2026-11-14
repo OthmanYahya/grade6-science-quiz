@@ -140,6 +140,46 @@
     return arr;
   }
 
+  // Balanced random sampling across selected sections
+  function sampleBalanced(pool, sections, count) {
+    if (!count || count === 'all' || count >= pool.length) {
+      return shuffle(pool);
+    }
+
+    const secList = (Array.isArray(sections) && sections.length > 0)
+      ? sections
+      : ['1.2', '1.3', '2.1', '2.2', '2.3'];
+
+    const secMap = {};
+    secList.forEach(sec => {
+      secMap[sec] = shuffle(pool.filter(q => q.section === sec));
+    });
+
+    const chosen = [];
+    let added = true;
+    while (chosen.length < count && added) {
+      added = false;
+      for (const sec of secList) {
+        if (chosen.length >= count) break;
+        if (secMap[sec] && secMap[sec].length > 0) {
+          chosen.push(secMap[sec].pop());
+          added = true;
+        }
+      }
+    }
+
+    if (chosen.length < count) {
+      const chosenIds = new Set(chosen.map(q => q.id));
+      const remaining = shuffle(pool.filter(q => !chosenIds.has(q.id)));
+      for (const q of remaining) {
+        if (chosen.length >= count) break;
+        chosen.push(q);
+      }
+    }
+
+    return shuffle(chosen);
+  }
+
   // --- Modal Lightbox ---
   function openImageModal(src, alt, caption) {
     if (!imageModal || !modalImg) return;
@@ -367,7 +407,7 @@
                 <span class="specimen-tag">MODE 1</span>
                 <h3 class="mode-card-title">Practice Mode</h3>
                 <p class="mode-card-desc">
-                  Step-by-step questions with instant feedback, model explanations, free hints, and self-check buttons.
+                  Step-by-step questions with instant feedback, model explanations, free hints, and custom random sets (20, 40, 60, or 100 questions from your chosen sections).
                 </p>
               </div>
               <button type="button" class="btn-action btn-secondary" style="width:100%;">
@@ -478,33 +518,75 @@
   // VIEW: PRACTICE SETUP
   // =========================================================================
   function renderPracticeSetupView() {
-    let selSection = 'all';
+    let selSections = ['1.2', '1.3', '2.1', '2.2', '2.3']; // all 5 initially selected
+    let selCount = 20; // 20 | 40 | 60 | 100 | 'all'
     let selType = 'all';
     let selLevel = 'all';
+    let selOrder = 'random'; // 'random' | 'sequential'
 
     appRoot.innerHTML = `
       <div class="setup-form-card">
         <span class="specimen-tag">MODE 1 CONFIGURATION</span>
         <h2 class="setup-title" style="margin-top:6px;">Practice Session Setup</h2>
-        <p class="setup-desc">Choose your topic, question format, and difficulty level.</p>
+        <p class="setup-desc">
+          Choose which sections to include, pick your set length, and test your knowledge with free hints and instant feedback.
+        </p>
 
-        <!-- Section Picker -->
+        <!-- Section Multi-Select Picker -->
         <div class="form-group">
-          <label class="form-label">1. Choose Section</label>
-          <div class="option-pill-group" id="group-sec">
-            <button type="button" class="pill-option active" data-val="all">All Sections (500)</button>
-            <button type="button" class="pill-option" data-val="1.2">1.2 Classifying (100)</button>
-            <button type="button" class="pill-option" data-val="1.3">1.3 Heredity (100)</button>
-            <button type="button" class="pill-option" data-val="2.1">2.1 Nervous System (100)</button>
-            <button type="button" class="pill-option" data-val="2.2">2.2 Immune System (100)</button>
-            <button type="button" class="pill-option" data-val="2.3">2.3 Excretory System (100)</button>
+          <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px; flex-wrap:wrap; gap:6px;">
+            <label class="form-label" style="margin-bottom:0;">1. Choose Sections to Include</label>
+            <div style="font-size:0.85rem; display:flex; gap:10px; align-items:center;">
+              <button type="button" id="practice-select-all-secs" class="subtle-link-btn">
+                Select All
+              </button>
+              <span style="color:var(--ink-border-dark);">|</span>
+              <button type="button" id="practice-clear-all-secs" class="subtle-link-btn">
+                Clear
+              </button>
+            </div>
+          </div>
+          <p style="font-size:0.85rem; color:var(--ink-secondary); margin-top:0; margin-bottom:10px;">
+            Tap sections to toggle them into your practice session:
+          </p>
+          <div class="option-pill-group" id="practice-group-sec">
+            <button type="button" class="pill-option active" data-sec="1.2">
+              <span class="pill-check">✓</span> 1.2 Classifying (100)
+            </button>
+            <button type="button" class="pill-option active" data-sec="1.3">
+              <span class="pill-check">✓</span> 1.3 Heredity (100)
+            </button>
+            <button type="button" class="pill-option active" data-sec="2.1">
+              <span class="pill-check">✓</span> 2.1 Nervous System (100)
+            </button>
+            <button type="button" class="pill-option active" data-sec="2.2">
+              <span class="pill-check">✓</span> 2.2 Immune System (100)
+            </button>
+            <button type="button" class="pill-option active" data-sec="2.3">
+              <span class="pill-check">✓</span> 2.3 Excretory System (100)
+            </button>
+          </div>
+          <div id="practice-sec-error" style="color:var(--feedback-wrong-ink); font-size:0.85rem; margin-top:6px; display:none; font-weight:700;">
+            Please select at least one section.
+          </div>
+        </div>
+
+        <!-- Practice Set Length (Count Picker) -->
+        <div class="form-group">
+          <label class="form-label">2. Practice Set Length</label>
+          <div class="option-pill-group" id="practice-group-count">
+            <button type="button" class="pill-option active" data-val="20">20 Questions (Quick)</button>
+            <button type="button" class="pill-option" data-val="40">40 Questions (Standard)</button>
+            <button type="button" class="pill-option" data-val="60">60 Questions (Comprehensive)</button>
+            <button type="button" class="pill-option" data-val="100">100 Questions (Mastery Set)</button>
+            <button type="button" class="pill-option" data-val="all">All Matching Questions</button>
           </div>
         </div>
 
         <!-- Question Type Picker -->
         <div class="form-group">
-          <label class="form-label">2. Question Type</label>
-          <div class="option-pill-group" id="group-type">
+          <label class="form-label">3. Question Format</label>
+          <div class="option-pill-group" id="practice-group-type">
             <button type="button" class="pill-option active" data-val="all">All Formats</button>
             <button type="button" class="pill-option" data-val="MCQ">Multiple Choice</button>
             <button type="button" class="pill-option" data-val="True/False">True / False</button>
@@ -515,11 +597,20 @@
 
         <!-- Level Picker -->
         <div class="form-group">
-          <label class="form-label">3. Difficulty Level</label>
-          <div class="option-pill-group" id="group-level">
+          <label class="form-label">4. Difficulty Level</label>
+          <div class="option-pill-group" id="practice-group-level">
             <button type="button" class="pill-option active" data-val="all">All Levels</button>
             <button type="button" class="pill-option" data-val="Medium">Medium</button>
             <button type="button" class="pill-option" data-val="Hard">Hard</button>
+          </div>
+        </div>
+
+        <!-- Question Order -->
+        <div class="form-group">
+          <label class="form-label">5. Question Order</label>
+          <div class="option-pill-group" id="practice-group-order">
+            <button type="button" class="pill-option active" data-val="random">Randomized Shuffle (Recommended)</button>
+            <button type="button" class="pill-option" data-val="sequential">Sequential (Topic Order)</button>
           </div>
         </div>
 
@@ -534,8 +625,60 @@
       </div>
     `;
 
-    function setupPillGroup(groupId, onChange) {
+    // Multi-select sections handling
+    const secButtons = document.querySelectorAll('#practice-group-sec .pill-option');
+    const secError = document.getElementById('practice-sec-error');
+
+    function updateSectionPillUI() {
+      secButtons.forEach(btn => {
+        const sec = btn.getAttribute('data-sec');
+        const isSelected = selSections.includes(sec);
+        btn.classList.toggle('active', isSelected);
+        let check = btn.querySelector('.pill-check');
+        if (isSelected) {
+          if (!check) {
+            check = document.createElement('span');
+            check.className = 'pill-check';
+            check.textContent = '✓ ';
+            btn.prepend(check);
+          }
+        } else {
+          if (check) check.remove();
+        }
+      });
+      if (selSections.length > 0 && secError) {
+        secError.style.display = 'none';
+      }
+    }
+
+    secButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const sec = btn.getAttribute('data-sec');
+        const idx = selSections.indexOf(sec);
+        if (idx > -1) {
+          selSections.splice(idx, 1);
+        } else {
+          selSections.push(sec);
+        }
+        updateSectionPillUI();
+      });
+    });
+
+    document.getElementById('practice-select-all-secs').addEventListener('click', () => {
+      selSections = ['1.2', '1.3', '2.1', '2.2', '2.3'];
+      updateSectionPillUI();
+    });
+
+    document.getElementById('practice-clear-all-secs').addEventListener('click', () => {
+      selSections = [];
+      updateSectionPillUI();
+      if (secError) secError.style.display = 'block';
+    });
+
+    // Single-select pill groups handling
+    function setupSinglePillGroup(groupId, onChange) {
       const group = document.getElementById(groupId);
+      if (!group) return;
       group.querySelectorAll('.pill-option').forEach((btn) => {
         btn.addEventListener('click', () => {
           group.querySelectorAll('.pill-option').forEach(b => b.classList.remove('active'));
@@ -545,23 +688,35 @@
       });
     }
 
-    setupPillGroup('group-sec', val => { selSection = val; });
-    setupPillGroup('group-type', val => { selType = val; });
-    setupPillGroup('group-level', val => { selLevel = val; });
+    setupSinglePillGroup('practice-group-count', val => {
+      selCount = val === 'all' ? 'all' : parseInt(val, 10);
+    });
+    setupSinglePillGroup('practice-group-type', val => { selType = val; });
+    setupSinglePillGroup('practice-group-level', val => { selLevel = val; });
+    setupSinglePillGroup('practice-group-order', val => { selOrder = val; });
 
     document.getElementById('btn-cancel-setup').addEventListener('click', () => setView('home'));
     document.getElementById('btn-start-practice').addEventListener('click', () => {
-      startPracticeSession(selSection, selType, selLevel);
+      if (selSections.length === 0) {
+        if (secError) secError.style.display = 'block';
+        alert('Please select at least one section to include in your practice session.');
+        return;
+      }
+      startPracticeSession(selSections, selType, selLevel, selCount, selOrder === 'random');
     });
   }
 
-  function startPracticeSession(section, type, level, customQuestions = null) {
+  function startPracticeSession(sections, type = 'all', level = 'all', count = 'all', isRandom = true, customQuestions = null) {
     let filtered = [];
     if (customQuestions && Array.isArray(customQuestions)) {
       filtered = customQuestions;
     } else {
+      const secList = typeof sections === 'string'
+        ? (sections === 'all' ? ['1.2', '1.3', '2.1', '2.2', '2.3'] : [sections])
+        : (Array.isArray(sections) && sections.length > 0 ? sections : ['1.2', '1.3', '2.1', '2.2', '2.3']);
+
       filtered = state.allQuestions.filter((q) => {
-        if (section !== 'all' && q.section !== section) return false;
+        if (!secList.includes(q.section)) return false;
         if (type !== 'all' && q.type !== type) return false;
         if (level !== 'all' && q.level !== level) return false;
         return true;
@@ -569,17 +724,38 @@
     }
 
     if (filtered.length === 0) {
-      alert('No questions match this filter combination. Try selecting All Levels or All Types.');
+      alert('No questions match this filter combination. Try selecting more sections or All Levels.');
       return;
     }
 
+    const secList = typeof sections === 'string'
+      ? (sections === 'all' ? ['1.2', '1.3', '2.1', '2.2', '2.3'] : [sections])
+      : (Array.isArray(sections) && sections.length > 0 ? sections : ['1.2', '1.3', '2.1', '2.2', '2.3']);
+
+    let chosen = [];
+    if (customQuestions && Array.isArray(customQuestions)) {
+      chosen = customQuestions;
+    } else if (count === 'all' || count >= filtered.length) {
+      chosen = isRandom ? shuffle(filtered) : filtered;
+    } else {
+      const targetCount = parseInt(count, 10);
+      if (isRandom) {
+        chosen = sampleBalanced(filtered, secList, targetCount);
+      } else {
+        chosen = filtered.slice(0, targetCount);
+      }
+    }
+
     state.practice = {
-      questions: filtered,
+      questions: chosen,
       currentIndex: 0,
       sessionAnswers: {},
-      section: section,
+      sections: secList,
+      section: secList.length === 1 ? secList[0] : 'multi',
       type: type,
-      level: level
+      level: level,
+      count: chosen.length,
+      isRandom: isRandom
     };
 
     setView('practice');
@@ -627,12 +803,13 @@
         <div class="field-plate" id="practice-card">
           <!-- Numeral & Specimen Metadata Row -->
           <div class="numeral-row">
-            <div class="question-big-num">Q${q.number}</div>
+            <div class="question-big-num">Q${idx + 1}</div>
             <div class="question-tags-group">
               <span class="specimen-tag ${secTagClass}">SEC ${q.section}</span>
               <span class="specimen-tag">${q.type.toUpperCase()}</span>
               <span class="specimen-tag">${q.lp}</span>
               <span class="specimen-tag ${isHard ? 'level-hard' : ''}">${q.level.toUpperCase()}</span>
+              <span class="specimen-tag" style="background:var(--paper-sheet);">ITEM #${q.number}</span>
             </div>
           </div>
 
@@ -655,7 +832,7 @@
         <!-- Side Rail: Progress & Question Navigation (Desktop) -->
         <aside class="journal-side-rail" aria-label="Question Navigation">
           <div class="side-rail-title">
-            <span>QUESTION INDEX</span>
+            <span>PRACTICE QUESTIONS</span>
             <span>${idx + 1} / ${qList.length}</span>
           </div>
           <div class="progress-rail-container" style="margin-bottom:14px;">
@@ -672,8 +849,8 @@
                 statusClass = itemAns.status === 'wrong' || itemAns.status === 'not_yet' ? 'answered-wrong' : 'answered-correct';
               }
               return `
-                <button type="button" class="nav-dot-btn ${statusClass}" data-index="${i}" title="Question ${item.number} (${item.type})">
-                  ${item.number}
+                <button type="button" class="nav-dot-btn ${statusClass}" data-index="${i}" title="Question ${i + 1} (Bank Sec ${item.section} #${item.number})">
+                  ${i + 1}
                 </button>
               `;
             }).join('')}
@@ -1303,16 +1480,7 @@
   function startMockExam(section, count, timerMinutes) {
     let chosen = [];
     if (section === 'all') {
-      const sections = ['1.2', '1.3', '2.1', '2.2', '2.3'];
-      const perSection = Math.floor(count / sections.length);
-      let remainder = count % sections.length;
-      sections.forEach(sec => {
-        const secPool = shuffle(state.allQuestions.filter(q => q.section === sec));
-        const take = perSection + (remainder > 0 ? 1 : 0);
-        if (remainder > 0) remainder--;
-        chosen.push(...secPool.slice(0, take));
-      });
-      chosen = shuffle(chosen);
+      chosen = sampleBalanced(state.allQuestions, ['1.2', '1.3', '2.1', '2.2', '2.3'], count);
     } else {
       const pool = state.allQuestions.filter(q => q.section === section);
       chosen = shuffle(pool).slice(0, Math.min(count, pool.length));

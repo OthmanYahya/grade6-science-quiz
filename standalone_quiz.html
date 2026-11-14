@@ -1359,6 +1359,29 @@ code {
   box-shadow: var(--stamp-shadow-sm);
 }
 
+.pill-option .pill-check {
+  display: inline-block;
+  margin-right: 4px;
+  font-weight: 900;
+}
+
+.subtle-link-btn {
+  background: none;
+  border: none;
+  padding: 2px 6px;
+  font-family: var(--font-serif);
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
+  color: var(--ink-primary);
+  transition: opacity 0.15s ease;
+}
+
+.subtle-link-btn:hover {
+  opacity: 0.7;
+}
+
 /* --- Mock Exam Timer & Bar --- */
 .exam-masthead-bar {
   display: flex;
@@ -2175,11 +2198,7 @@ window.SCIENCE_QUESTIONS = [
     "hint": "Compare the genus row.",
     "explanation": "Lion and tiger share the genus *Panthera* but have different species names. House cat has a different genus (*Felis*). All three share the family Felidae.",
     "image": null,
-    "table_markdown": "| Common name | Lion | Tiger | House cat |
-|---|---|---|---|
-| Family | Felidae | Felidae | Felidae |
-| Genus | *Panthera* | *Panthera* | *Felis* |
-| Species | *leo* | *tigris* | *catus* |",
+    "table_markdown": "| Common name | Lion | Tiger | House cat |\n|---|---|---|---|\n| Family | Felidae | Felidae | Felidae |\n| Genus | *Panthera* | *Panthera* | *Felis* |\n| Species | *leo* | *tigris* | *catus* |",
     "table_html": "<div class=\"table-wrap\"><table class=\"specimen-table\"><thead><tr><th>Common name</th><th>Lion</th><th>Tiger</th><th>House cat</th></tr></thead><tbody><tr><td>Family</td><td>Felidae</td><td>Felidae</td><td>Felidae</td></tr><tr><td>Genus</td><td><em>Panthera</em></td><td><em>Panthera</em></td><td><em>Felis</em></td></tr><tr><td>Species</td><td><em>leo</em></td><td><em>tigris</em></td><td><em>catus</em></td></tr></tbody></table></div>",
     "prompt": "Which statement is correct?",
     "options": [
@@ -2987,11 +3006,7 @@ window.SCIENCE_QUESTIONS = [
     "lp": "LP5",
     "level": "Medium",
     "hint": "Look at the long line of small bones.",
-    "explanation": "A is the backbone, part of the internal skeleton. An animal with a backbone is a vertebrate.
-
----
-## Part B – True or False (Q37–Q60)
-*(If the statement is false, correct it.)*",
+    "explanation": "A is the backbone, part of the internal skeleton. An animal with a backbone is a vertebrate.\n\n---\n## Part B – True or False (Q37–Q60)\n*(If the statement is false, correct it.)*",
     "image": {
       "alt": "Fish skeleton",
       "src": "images/s12_fish_skeleton.png"
@@ -3446,12 +3461,7 @@ window.SCIENCE_QUESTIONS = [
     "lp": "LP5",
     "level": "Hard",
     "hint": "Is a lighter bird easier or harder to lift?",
-    "explanation": "Hollow bones make the bird light. Wings lift the bird from the ground, so flying is easier.
-
----
-
-## Part C – Find the Mistake (Q61–Q80)
-*(Find the mistake and write the correct answer.)*",
+    "explanation": "Hollow bones make the bird light. Wings lift the bird from the ground, so flying is easier.\n\n---\n\n## Part C – Find the Mistake (Q61–Q80)\n*(Find the mistake and write the correct answer.)*",
     "image": null,
     "table_markdown": null,
     "table_html": null,
@@ -3845,11 +3855,7 @@ window.SCIENCE_QUESTIONS = [
     "lp": "LP4",
     "level": "Medium",
     "hint": "The embryo is green.",
-    "explanation": "The seed coat is the outside layer, the food supply is inside it, and the embryo is the small developing plant.
-
----
-
-## Part D – Written Questions (Q81–Q100)",
+    "explanation": "The seed coat is the outside layer, the food supply is inside it, and the embryo is the small developing plant.\n\n---\n\n## Part D – Written Questions (Q81–Q100)",
     "image": {
       "alt": "Parts of a seed",
       "src": "images/s12_seed_parts.png"
@@ -3921,15 +3927,7 @@ window.SCIENCE_QUESTIONS = [
     "hint": "The genus is the first word of the scientific name of the brown bear, and bears are carnivores.",
     "explanation": "The two bears share all levels down to genus, so they are very closely related. They have different species names, so they are different species.",
     "image": null,
-    "table_markdown": "| Level | Polar bear |
-|---|---|
-| Kingdom | Animalia |
-| Phylum | Chordata |
-| Class | Mammalia |
-| Order | **A** |
-| Family | Ursidae |
-| Genus | **B** |
-| Species | *maritimus* |",
+    "table_markdown": "| Level | Polar bear |\n|---|---|\n| Kingdom | Animalia |\n| Phylum | Chordata |\n| Class | Mammalia |\n| Order | **A** |\n| Family | Ursidae |\n| Genus | **B** |\n| Species | *maritimus* |",
     "table_html": "<div class=\"table-wrap\"><table class=\"specimen-table\"><thead><tr><th>Level</th><th>Polar bear</th></tr></thead><tbody><tr><td>Kingdom</td><td>Animalia</td></tr><tr><td>Phylum</td><td>Chordata</td></tr><tr><td>Class</td><td>Mammalia</td></tr><tr><td>Order</td><td><strong>A</strong></td></tr><tr><td>Family</td><td>Ursidae</td></tr><tr><td>Genus</td><td><strong>B</strong></td></tr><tr><td>Species</td><td><em>maritimus</em></td></tr></tbody></table></div>",
     "prompt": "(a) Fill in A and B. (b) Write the full scientific name of the polar bear. (c) The brown bear is *Ursus arctos*. Which levels do the polar bear and the brown bear share? Why are they different species?",
     "model_answer": "(a) A = Carnivora, B = *Ursus*. (b) *Ursus maritimus*. (c) They share kingdom, phylum, class, order, family and genus. They are different species (*maritimus* ≠ *arctos*)."
@@ -3945,12 +3943,7 @@ window.SCIENCE_QUESTIONS = [
     "hint": "Find the smallest group they share.",
     "explanation": "The smaller the group two organisms share, the more related they are.",
     "image": null,
-    "table_markdown": "| | Lion | Tiger | House cat |
-|---|---|---|---|
-| Order | Carnivora | Carnivora | Carnivora |
-| Family | Felidae | Felidae | Felidae |
-| Genus | *Panthera* | *Panthera* | *Felis* |
-| Species | *leo* | *tigris* | *catus* |",
+    "table_markdown": "| | Lion | Tiger | House cat |\n|---|---|---|---|\n| Order | Carnivora | Carnivora | Carnivora |\n| Family | Felidae | Felidae | Felidae |\n| Genus | *Panthera* | *Panthera* | *Felis* |\n| Species | *leo* | *tigris* | *catus* |",
     "table_html": "<div class=\"table-wrap\"><table class=\"specimen-table\"><thead><tr><th></th><th>Lion</th><th>Tiger</th><th>House cat</th></tr></thead><tbody><tr><td>Order</td><td>Carnivora</td><td>Carnivora</td><td>Carnivora</td></tr><tr><td>Family</td><td>Felidae</td><td>Felidae</td><td>Felidae</td></tr><tr><td>Genus</td><td><em>Panthera</em></td><td><em>Panthera</em></td><td><em>Felis</em></td></tr><tr><td>Species</td><td><em>leo</em></td><td><em>tigris</em></td><td><em>catus</em></td></tr></tbody></table></div>",
     "prompt": "Which two animals are the most closely related? Explain, using the table.",
     "model_answer": "Lion and tiger. They share the same genus (*Panthera*), which is a smaller group than the family. The house cat shares only the family (and bigger groups) with them."
@@ -4164,15 +4157,7 @@ window.SCIENCE_QUESTIONS = [
     "hint": "Count the rows with identical names, starting from kingdom.",
     "explanation": "More shared levels means a closer relationship.",
     "image": null,
-    "table_markdown": "| Level | Sand crab | Chimpanzee | Human |
-|---|---|---|---|
-| Kingdom | Animalia | Animalia | Animalia |
-| Phylum | Arthropoda | Chordata | Chordata |
-| Class | Crustacea | Mammalia | Mammalia |
-| Order | Decapoda | Primates | Primates |
-| Family | Portunidae | Pongidae | Hominidae |
-| Genus | *Portunus* | *Pan* | *Homo* |
-| Species | *pelagicus* | *troglodytes* | *sapiens* |",
+    "table_markdown": "| Level | Sand crab | Chimpanzee | Human |\n|---|---|---|---|\n| Kingdom | Animalia | Animalia | Animalia |\n| Phylum | Arthropoda | Chordata | Chordata |\n| Class | Crustacea | Mammalia | Mammalia |\n| Order | Decapoda | Primates | Primates |\n| Family | Portunidae | Pongidae | Hominidae |\n| Genus | *Portunus* | *Pan* | *Homo* |\n| Species | *pelagicus* | *troglodytes* | *sapiens* |",
     "table_html": "<div class=\"table-wrap\"><table class=\"specimen-table\"><thead><tr><th>Level</th><th>Sand crab</th><th>Chimpanzee</th><th>Human</th></tr></thead><tbody><tr><td>Kingdom</td><td>Animalia</td><td>Animalia</td><td>Animalia</td></tr><tr><td>Phylum</td><td>Arthropoda</td><td>Chordata</td><td>Chordata</td></tr><tr><td>Class</td><td>Crustacea</td><td>Mammalia</td><td>Mammalia</td></tr><tr><td>Order</td><td>Decapoda</td><td>Primates</td><td>Primates</td></tr><tr><td>Family</td><td>Portunidae</td><td>Pongidae</td><td>Hominidae</td></tr><tr><td>Genus</td><td><em>Portunus</em></td><td><em>Pan</em></td><td><em>Homo</em></td></tr><tr><td>Species</td><td><em>pelagicus</em></td><td><em>troglodytes</em></td><td><em>sapiens</em></td></tr></tbody></table></div>",
     "prompt": "(a) How many levels do the chimpanzee and the human share? (b) How many levels do the sand crab and the chimpanzee share? (c) Which two organisms are more closely related, and why?",
     "model_answer": "(a) 4 (kingdom, phylum, class, order). (b) 1 (kingdom). (c) The chimpanzee and the human, because they share more levels and smaller groups."
@@ -4202,16 +4187,12 @@ window.SCIENCE_QUESTIONS = [
     "lp": "LP2",
     "level": "Hard",
     "hint": "Start with an easy difference: animal or plant?",
-    "explanation": "Each step must have exactly two statements, and each statement must lead to an organism or to another step. Many different keys are correct.
-
----",
+    "explanation": "Each step must have exactly two statements, and each statement must lead to an organism or to another step. Many different keys are correct.\n\n---",
     "image": null,
     "table_markdown": null,
     "table_html": null,
     "prompt": "Make your own dichotomous key to identify: ant, frog, moss and pine tree. Write the steps with two statements each.",
-    "model_answer": "Step 1: 1a. Gets energy by eating other organisms → Go to Step 2; 1b. Makes food by photosynthesis → Go to Step 3.
-Step 2: 2a. Has a backbone → Frog; 2b. Has no backbone → Ant.
-Step 3: 3a. Has no tubes and is very small → Moss; 3b. Has tubes and its seeds grow in cones → Pine tree."
+    "model_answer": "Step 1: 1a. Gets energy by eating other organisms → Go to Step 2; 1b. Makes food by photosynthesis → Go to Step 3.\nStep 2: 2a. Has a backbone → Frog; 2b. Has no backbone → Ant.\nStep 3: 3a. Has no tubes and is very small → Moss; 3b. Has tubes and its seeds grow in cones → Pine tree."
   },
   {
     "id": "s13_q1",
@@ -5591,11 +5572,7 @@ Step 3: 3a. Has no tubes and is very small → Moss; 3b. Has tubes and its seeds
     "lp": "LP7",
     "level": "Medium",
     "hint": "It is \"fossilized resin\".",
-    "explanation": "Scientists studied the DNA of a beetle 120–135 million years old that was trapped in amber.
-
----
-## Part B – True or False (Q37–Q60)
-*(If the statement is false, correct it.)*",
+    "explanation": "Scientists studied the DNA of a beetle 120–135 million years old that was trapped in amber.\n\n---\n## Part B – True or False (Q37–Q60)\n*(If the statement is false, correct it.)*",
     "image": null,
     "table_markdown": null,
     "table_html": null,
@@ -6047,12 +6024,7 @@ Step 3: 3a. Has no tubes and is very small → Moss; 3b. Has tubes and its seeds
     "lp": "LP7",
     "level": "Medium",
     "hint": "Amber is hard fossilized resin.",
-    "explanation": "Amber often contains trapped insects.
-
----
-
-## Part C – Find the Mistake (Q61–Q80)
-*(Find the mistake and write the correct answer.)*",
+    "explanation": "Amber often contains trapped insects.\n\n---\n\n## Part C – Find the Mistake (Q61–Q80)\n*(Find the mistake and write the correct answer.)*",
     "image": null,
     "table_markdown": null,
     "table_html": null,
@@ -6309,11 +6281,7 @@ Step 3: 3a. Has no tubes and is very small → Moss; 3b. Has tubes and its seeds
     "hint": "Is growing toward light a body part or an action?",
     "explanation": "It is how the plant acts. It helps the plant collect more sunlight.",
     "image": null,
-    "table_markdown": "| Physical adaptations | Behavioral adaptations |
-|---|---|
-| A snake's jaws | A praying mantis looking bigger |
-| A cactus's thick stem | A frigate bird inflating its pouch |
-| A plant growing toward light | |",
+    "table_markdown": "| Physical adaptations | Behavioral adaptations |\n|---|---|\n| A snake's jaws | A praying mantis looking bigger |\n| A cactus's thick stem | A frigate bird inflating its pouch |\n| A plant growing toward light | |",
     "table_html": "<div class=\"table-wrap\"><table class=\"specimen-table\"><thead><tr><th>Physical adaptations</th><th>Behavioral adaptations</th></tr></thead><tbody><tr><td>A snake's jaws</td><td>A praying mantis looking bigger</td></tr><tr><td>A cactus's thick stem</td><td>A frigate bird inflating its pouch</td></tr><tr><td>A plant growing toward light</td><td></td></tr></tbody></table></div>",
     "student_answer": null,
     "student_table_flag": true,
@@ -6450,11 +6418,7 @@ Step 3: 3a. Has no tubes and is very small → Moss; 3b. Has tubes and its seeds
     "lp": "LP5",
     "level": "Hard",
     "hint": "Does adapted mean adapted to everything?",
-    "explanation": "An adaptation helps in a particular environment only.
-
----
-
-## Part D – Written Questions (Q81–Q100)",
+    "explanation": "An adaptation helps in a particular environment only.\n\n---\n\n## Part D – Written Questions (Q81–Q100)",
     "image": null,
     "table_markdown": null,
     "table_html": null,
@@ -6795,18 +6759,9 @@ Step 3: 3a. Has no tubes and is very small → Moss; 3b. Has tubes and its seeds
     "lp": "LP3/LP4",
     "level": "Hard",
     "hint": "Decide if it is a body part or an action.",
-    "explanation": "Every adaptation helps the organism survive or reproduce.
-
----
-
-*End of the question bank.*",
+    "explanation": "Every adaptation helps the organism survive or reproduce.\n\n---\n\n*End of the question bank.*",
     "image": null,
-    "table_markdown": "| Organism | Adaptation | Physical or behavioral? | How it helps |
-|---|---|---|---|
-| Owl | Fringed wings | (a) | (b) |
-| Praying mantis | Makes itself look bigger | (c) | (d) |
-| Barrel cactus | (e) | Physical | Stores water |
-| Houseplant near a window | Grows toward the light | (f) | (g) |",
+    "table_markdown": "| Organism | Adaptation | Physical or behavioral? | How it helps |\n|---|---|---|---|\n| Owl | Fringed wings | (a) | (b) |\n| Praying mantis | Makes itself look bigger | (c) | (d) |\n| Barrel cactus | (e) | Physical | Stores water |\n| Houseplant near a window | Grows toward the light | (f) | (g) |",
     "table_html": "<div class=\"table-wrap\"><table class=\"specimen-table\"><thead><tr><th>Organism</th><th>Adaptation</th><th>Physical or behavioral?</th><th>How it helps</th></tr></thead><tbody><tr><td>Owl</td><td>Fringed wings</td><td>(a)</td><td>(b)</td></tr><tr><td>Praying mantis</td><td>Makes itself look bigger</td><td>(c)</td><td>(d)</td></tr><tr><td>Barrel cactus</td><td>(e)</td><td>Physical</td><td>Stores water</td></tr><tr><td>Houseplant near a window</td><td>Grows toward the light</td><td>(f)</td><td>(g)</td></tr></tbody></table></div>",
     "prompt": "Complete the table.",
     "model_answer": "(a) Physical (b) It flies silently and sneaks up on prey. (c) Behavioral (d) It frightens its enemies. (e) A thick, fleshy stem. (f) Behavioral (g) It collects more sunlight for photosynthesis, so it makes more food."
@@ -7366,26 +7321,12 @@ Step 3: 3a. Has no tubes and is very small → Moss; 3b. Has tubes and its seeds
     "type": "True/False",
     "lp": "ACT",
     "level": "Hard",
-    "hint": "Key clue: The slides report improvement with practice, not that variation disappears.
-
----
-
-## Coverage and checking notes
-
-| Format | Question numbers | Count |
-|---|---|---:|
-| Standard free response | 1–35 | 35 |
-| Correct the mistake (free response) | 36–50 | 15 |
-| Multiple choice, one best answer | 51–80 | 30 |
-| True / false, with corrections | 81–100 | 20 |
-| **Total** | **1–100** | **100** |",
+    "hint": "Key clue: The slides report improvement with practice, not that variation disappears.\n\n---\n\n## Coverage and checking notes\n\n| Format | Question numbers | Count |\n|---|---|---:|\n| Standard free response | 1–35 | 35 |\n| Correct the mistake (free response) | 36–50 | 15 |\n| Multiple choice, one best answer | 51–80 | 30 |\n| True / false, with corrections | 81–100 | 20 |\n| **Total** | **1–100** | **100** |",
     "explanation": "False. Reaction measurements can vary between trials, although practice may improve performance. (You recognized the difference between an overall improvement and identical results.)",
     "image": null,
     "table_markdown": null,
     "table_html": null,
-    "statement": "Repeated practice guarantees that every ruler-drop trial will have exactly the same catch distance.
-
----",
+    "statement": "Repeated practice guarantees that every ruler-drop trial will have exactly the same catch distance.\n\n---",
     "is_true": false,
     "raw_answer": "False. Reaction measurements can vary between trials, although practice may improve performance.",
     "correction": "Reaction measurements can vary between trials, although practice may improve performance.",
@@ -7553,9 +7494,7 @@ Step 3: 3a. Has no tubes and is very small → Moss; 3b. Has tubes and its seeds
     "type": "MCQ",
     "lp": "ACT",
     "level": "Hard",
-    "hint": "Clue: A single trial or changing the starting position can give a misleading comparison.
-
-## Part D answers — True or false (81–100)",
+    "hint": "Clue: A single trial or changing the starting position can give a misleading comparison.\n\n## Part D answers — True or false (81–100)",
     "explanation": "Consistent conditions and repeated measurements improve fairness and reliability. (You recognized how to compare participants and identify trial-to-trial variation.)",
     "image": null,
     "table_markdown": null,
@@ -8757,18 +8696,12 @@ Step 3: 3a. Has no tubes and is very small → Moss; 3b. Has tubes and its seeds
     "type": "Written",
     "lp": "ACT",
     "level": "Hard",
-    "hint": "Remember: In this experiment a larger catch distance means the ruler fell farther before being caught; it does not mean a quicker reaction.
-
-## Part B answers — Correct the mistake (36–50)",
+    "hint": "Remember: In this experiment a larger catch distance means the ruler fell farther before being caught; it does not mean a quicker reaction.\n\n## Part B answers — Correct the mistake (36–50)",
     "explanation": "A appears faster: A’s distances are generally shorter than B’s. A shorter falling distance means the hand caught the ruler sooner. Several trials reveal variation and make the comparison more reliable. (You interpreted the measurements rather than just choosing the smaller single number.)",
     "image": null,
     "table_markdown": null,
     "table_html": null,
-    "prompt": "In a ruler-drop activity, A catches a stick at 9 cm, 11 cm, and 10 cm; B catches at 18 cm, 15 cm, and 16 cm. Who appears to react faster? Explain what distance means and why several trials help.
-
-## Part B — Correct the mistake (Questions 36–50)
-
-*Every statement below contains an intentional science error. Identify it and rewrite the statement correctly. A clear correction is more important than merely naming the wrong word.*",
+    "prompt": "In a ruler-drop activity, A catches a stick at 9 cm, 11 cm, and 10 cm; B catches at 18 cm, 15 cm, and 16 cm. Who appears to react faster? Explain what distance means and why several trials help.\n\n## Part B — Correct the mistake (Questions 36–50)\n\n*Every statement below contains an intentional science error. Identify it and rewrite the statement correctly. A clear correction is more important than merely naming the wrong word.*",
     "model_answer": "A appears faster: A’s distances are generally shorter than B’s. A shorter falling distance means the hand caught the ruler sooner. Several trials reveal variation and make the comparison more reliable.",
     "orig_number": 35
   },
@@ -8894,9 +8827,7 @@ Step 3: 3a. Has no tubes and is very small → Moss; 3b. Has tubes and its seeds
     "type": "Find the Mistake",
     "lp": "ACT",
     "level": "Hard",
-    "hint": "Notice: The numbers are falling distances, not speed scores; a greater catch distance means a longer delay.
-
-## Part C answers — Multiple choice (51–80)",
+    "hint": "Notice: The numbers are falling distances, not speed scores; a greater catch distance means a longer delay.\n\n## Part C answers — Multiple choice (51–80)",
     "explanation": "The 8 cm catch shows a faster reaction because the ruler fell a shorter distance before it was caught. (You correctly interpreted ruler-drop distances.)",
     "image": null,
     "table_markdown": null,
@@ -8904,9 +8835,7 @@ Step 3: 3a. Has no tubes and is very small → Moss; 3b. Has tubes and its seeds
     "student_answer": "\"If a student catches a falling ruler at 25 cm instead of 8 cm, the 25 cm catch shows a faster reaction.\"",
     "student_table_flag": false,
     "question": "Find the mistake in this statement and write the scientifically correct statement.",
-    "mistake": "The numbers are falling distances, not speed scores; a greater catch distance means a longer delay.
-
-## Part C answers — Multiple choice (51–80)",
+    "mistake": "The numbers are falling distances, not speed scores; a greater catch distance means a longer delay.\n\n## Part C answers — Multiple choice (51–80)",
     "correct_answer": "The 8 cm catch shows a faster reaction because the ruler fell a shorter distance before it was caught.",
     "orig_number": 50
   },
@@ -10651,9 +10580,7 @@ Step 3: 3a. Has no tubes and is very small → Moss; 3b. Has tubes and its seeds
     "type": "MCQ",
     "lp": "LP6",
     "level": "Hard",
-    "hint": "Key clue: Cancer is described as uncontrolled cell growth, but it is not contagious through normal contact.
-
-## Part D solutions — True or false (Q081–Q100)",
+    "hint": "Key clue: Cancer is described as uncontrolled cell growth, but it is not contagious through normal contact.\n\n## Part D solutions — True or false (Q081–Q100)",
     "explanation": "C. Both categories can harm the body, but noninfectious illnesses do not spread from person to person. (You retained the common feature while distinguishing causes and transmission.)",
     "image": null,
     "table_markdown": null,
@@ -10705,18 +10632,12 @@ Step 3: 3a. Has no tubes and is very small → Moss; 3b. Has tubes and its seeds
     "type": "Written",
     "lp": "LP6+LP4",
     "level": "Hard",
-    "hint": "Remember: Seriousness does not determine contagiousness. A noninfectious condition cannot be passed through ordinary contact and is not a source of pathogen-specific immune memory.
-
-## Part B solutions — Correct the mistake (Q036–Q050)",
+    "hint": "Remember: Seriousness does not determine contagiousness. A noninfectious condition cannot be passed through ordinary contact and is not a source of pathogen-specific immune memory.\n\n## Part B solutions — Correct the mistake (Q036–Q050)",
     "explanation": "Diabetes, asthma, and cancer are noninfectious diseases and cannot be caught by a handshake. They are not caused by contagious pathogens, and having one does not develop the pathogen-specific immunity that can follow infection or vaccination. (You rejected stigma and explained that having a noninfectious condition does not train immunity to a pathogen.)",
     "image": null,
     "table_markdown": null,
     "table_html": null,
-    "prompt": "A student says people should avoid shaking hands with someone who has diabetes, asthma, or cancer because “all serious diseases are contagious.” Respond using the textbook’s definition and explain what *does not cause immunity* means here.
-
-## Part B — Correct the mistake (Q036–Q050)
-
-*Each statement has at least one deliberate misconception. Identify it and rewrite the statement correctly.*",
+    "prompt": "A student says people should avoid shaking hands with someone who has diabetes, asthma, or cancer because “all serious diseases are contagious.” Respond using the textbook’s definition and explain what *does not cause immunity* means here.\n\n## Part B — Correct the mistake (Q036–Q050)\n\n*Each statement has at least one deliberate misconception. Identify it and rewrite the statement correctly.*",
     "model_answer": "Diabetes, asthma, and cancer are noninfectious diseases and cannot be caught by a handshake. They are not caused by contagious pathogens, and having one does not develop the pathogen-specific immunity that can follow infection or vaccination.",
     "orig_number": 35,
     "id": "s22_q65"
@@ -11115,21 +11036,13 @@ Step 3: 3a. Has no tubes and is very small → Moss; 3b. Has tubes and its seeds
     "type": "Find the Mistake",
     "lp": "LP6",
     "level": "Hard",
-    "hint": "Look closely: The ability to spread depends on pathogens, not on whether an illness is serious or needs treatment.
-
-## Part C solutions — Multiple choice (Q051–Q080)",
+    "hint": "Look closely: The ability to spread depends on pathogens, not on whether an illness is serious or needs treatment.\n\n## Part C solutions — Multiple choice (Q051–Q080)",
     "explanation": "Diabetes, asthma, and cancer are noninfectious diseases. They are not transmitted by ordinary person-to-person contact, so avoiding a handshake on that basis is unnecessary. (You used the correct category and avoided blaming or isolating people with noninfectious illnesses.)",
     "image": null,
     "table_markdown": null,
     "table_html": null,
-    "student_answer": "Diabetes, asthma, and cancer are infectious diseases, so people should avoid normal contact with anyone who has them.”
-
-## Part C — Multiple choice (Q051–Q080)
-
-*Choose **one best answer** per question.*",
-    "mistake": "The ability to spread depends on pathogens, not on whether an illness is serious or needs treatment.
-
-## Part C solutions — Multiple choice (Q051–Q080)",
+    "student_answer": "Diabetes, asthma, and cancer are infectious diseases, so people should avoid normal contact with anyone who has them.”\n\n## Part C — Multiple choice (Q051–Q080)\n\n*Choose **one best answer** per question.*",
+    "mistake": "The ability to spread depends on pathogens, not on whether an illness is serious or needs treatment.\n\n## Part C solutions — Multiple choice (Q051–Q080)",
     "correct_answer": "Diabetes, asthma, and cancer are noninfectious diseases. They are not transmitted by ordinary person-to-person contact, so avoiding a handshake on that basis is unnecessary.",
     "orig_number": 50,
     "id": "s22_q82"
@@ -11511,26 +11424,12 @@ Step 3: 3a. Has no tubes and is very small → Moss; 3b. Has tubes and its seeds
     "type": "True/False",
     "lp": "LP6",
     "level": "Hard",
-    "hint": "Key clue: Do not mistake “can cause harm” for “can be caught.” A noninfectious condition may be serious without being contagious.
-
----
-
-## Coverage and verification
-
-| Question type | Numbers | Count |
-|---|---|---:|
-| Standard free response | 1–35 | 35 |
-| Correct the mistake (free response) | 36–50 | 15 |
-| Multiple choice | 51–80 | 30 |
-| True/False, with false statements to correct | 81–100 | 20 |
-| **Total** | **1–100** | **100** |",
+    "hint": "Key clue: Do not mistake “can cause harm” for “can be caught.” A noninfectious condition may be serious without being contagious.\n\n---\n\n## Coverage and verification\n\n| Question type | Numbers | Count |\n|---|---|---:|\n| Standard free response | 1–35 | 35 |\n| Correct the mistake (free response) | 36–50 | 15 |\n| Multiple choice | 51–80 | 30 |\n| True/False, with false statements to correct | 81–100 | 20 |\n| **Total** | **1–100** | **100** |",
     "explanation": "True. Both categories can affect health, but pathogens cause infectious rather than noninfectious diseases. (You kept both the similarity and the important difference.)",
     "image": null,
     "table_markdown": null,
     "table_html": null,
-    "statement": "Infectious and noninfectious diseases can both harm the body, but only infectious diseases are caused by pathogens in this lesson.
-
----",
+    "statement": "Infectious and noninfectious diseases can both harm the body, but only infectious diseases are caused by pathogens in this lesson.\n\n---",
     "is_true": true,
     "raw_answer": "True. Both categories can affect health, but pathogens cause infectious rather than noninfectious diseases.",
     "correction": null,
@@ -11930,21 +11829,13 @@ Step 3: 3a. Has no tubes and is very small → Moss; 3b. Has tubes and its seeds
     "type": "Find the Mistake",
     "lp": "LP5",
     "level": "Hard",
-    "hint": "Look closely: All three original behaviors are harmful or unhelpful according to the lesson; revise the lung, skin, and kidney habits.
-
-## Part C — Multiple choice",
+    "hint": "Look closely: All three original behaviors are harmful or unhelpful according to the lesson; revise the lung, skin, and kidney habits.\n\n## Part C — Multiple choice",
     "explanation": "Avoid polluted air to protect lungs, bathe regularly to care for skin, and avoid taking unnecessary medicines without a doctor's direction to protect kidneys. (You fixed all three habits and connected each to the proper organ.)",
     "image": null,
     "table_markdown": null,
     "table_html": null,
-    "student_answer": "Breathing polluted air, skipping baths, and taking lots of medicine without a prescription all protect the excretory system.\"
-
-## Part C — Multiple choice (Q051–Q080)
-
-*Choose the **one best answer** (A–D).*",
-    "mistake": "All three original behaviors are harmful or unhelpful according to the lesson; revise the lung, skin, and kidney habits.
-
-## Part C — Multiple choice",
+    "student_answer": "Breathing polluted air, skipping baths, and taking lots of medicine without a prescription all protect the excretory system.\"\n\n## Part C — Multiple choice (Q051–Q080)\n\n*Choose the **one best answer** (A–D).*",
+    "mistake": "All three original behaviors are harmful or unhelpful according to the lesson; revise the lung, skin, and kidney habits.\n\n## Part C — Multiple choice",
     "correct_answer": "Avoid polluted air to protect lungs, bathe regularly to care for skin, and avoid taking unnecessary medicines without a doctor's direction to protect kidneys.",
     "orig_number": 50,
     "id": "s23_q14"
@@ -12026,29 +11917,12 @@ Step 3: 3a. Has no tubes and is very small → Moss; 3b. Has tubes and its seeds
     "type": "True/False",
     "lp": "LP5",
     "level": "Hard",
-    "hint": "Key clue: The lesson recommends water and medical guidance, not unnecessary self-medication.
-
----
-
-## Coverage and verification summary
-
-| Component | Verified total |
-|---|---:|
-| Free-response questions | **35** |
-| Find-and-correct-the-mistake questions | **15** |
-| Multiple-choice questions | **30** |
-| True/false questions | **20** |
-| **All questions** | **100** |
-| Model answers | **100** |
-| If correct explanations | **100** |
-| If incorrect explanations | **100** |",
+    "hint": "Key clue: The lesson recommends water and medical guidance, not unnecessary self-medication.\n\n---\n\n## Coverage and verification summary\n\n| Component | Verified total |\n|---|---:|\n| Free-response questions | **35** |\n| Find-and-correct-the-mistake questions | **15** |\n| Multiple-choice questions | **30** |\n| True/false questions | **20** |\n| **All questions** | **100** |\n| Model answers | **100** |\n| If correct explanations | **100** |\n| If incorrect explanations | **100** |",
     "explanation": "True (You matched both kidney-care habits in the slides and revision sheet.)",
     "image": null,
     "table_markdown": null,
     "table_html": null,
-    "statement": "A recommended way to protect kidneys is to drink plenty of water and avoid unnecessary medicines without a doctor's prescription.
-
----",
+    "statement": "A recommended way to protect kidneys is to drink plenty of water and avoid unnecessary medicines without a doctor's prescription.\n\n---",
     "is_true": true,
     "raw_answer": "True",
     "correction": null,
@@ -12219,9 +12093,7 @@ Step 3: 3a. Has no tubes and is very small → Moss; 3b. Has tubes and its seeds
     "type": "MCQ",
     "lp": "LP5",
     "level": "Hard",
-    "hint": "Key clue: Review the three care targets separately: clean air for lungs, bathing for skin, water for kidneys.
-
-## Part D — True or false",
+    "hint": "Key clue: Review the three care targets separately: clean air for lungs, bathing for skin, water for kidneys.\n\n## Part D — True or false",
     "explanation": "**A. Avoid polluted air—lungs; bathe regularly—skin; drink plenty of water—kidneys** (You correctly linked each recommended habit to its target organ.)",
     "image": null,
     "table_markdown": null,
@@ -13119,18 +12991,12 @@ Step 3: 3a. Has no tubes and is very small → Moss; 3b. Has tubes and its seeds
     "type": "Written",
     "lp": "LP5",
     "level": "Hard",
-    "hint": "Remember: Give a habit for each target organ, not three versions of 'drink water' or advice unrelated to the lesson.
-
-## Part B — Find and correct the mistake",
+    "hint": "Remember: Give a habit for each target organ, not three versions of 'drink water' or advice unrelated to the lesson.\n\n## Part B — Find and correct the mistake",
     "explanation": "Lungs: avoid polluted air or exercise to support breathing. Skin: bathe regularly so skin stays clean and sweat pores remain open. Kidneys: drink plenty of water and avoid unnecessary medicines without a doctor's direction. (You linked three habits to three different excretory organs and their roles.)",
     "image": null,
     "table_markdown": null,
     "table_html": null,
-    "prompt": "An athlete asks for a practical plan to care for the lungs, skin, and kidneys. Give one lesson-based habit for each and explain its purpose.
-
-## Part B — Find and correct the mistake (Q036–Q050)
-
-*Every statement is incorrect. Identify the misconception and write a scientifically correct replacement.*",
+    "prompt": "An athlete asks for a practical plan to care for the lungs, skin, and kidneys. Give one lesson-based habit for each and explain its purpose.\n\n## Part B — Find and correct the mistake (Q036–Q050)\n\n*Every statement is incorrect. Identify the misconception and write a scientifically correct replacement.*",
     "model_answer": "Lungs: avoid polluted air or exercise to support breathing. Skin: bathe regularly so skin stays clean and sweat pores remain open. Kidneys: drink plenty of water and avoid unnecessary medicines without a doctor's direction.",
     "orig_number": 35,
     "id": "s23_q63"
@@ -14081,6 +13947,46 @@ Step 3: 3a. Has no tubes and is very small → Moss; 3b. Has tubes and its seeds
     return arr;
   }
 
+  // Balanced random sampling across selected sections
+  function sampleBalanced(pool, sections, count) {
+    if (!count || count === 'all' || count >= pool.length) {
+      return shuffle(pool);
+    }
+
+    const secList = (Array.isArray(sections) && sections.length > 0)
+      ? sections
+      : ['1.2', '1.3', '2.1', '2.2', '2.3'];
+
+    const secMap = {};
+    secList.forEach(sec => {
+      secMap[sec] = shuffle(pool.filter(q => q.section === sec));
+    });
+
+    const chosen = [];
+    let added = true;
+    while (chosen.length < count && added) {
+      added = false;
+      for (const sec of secList) {
+        if (chosen.length >= count) break;
+        if (secMap[sec] && secMap[sec].length > 0) {
+          chosen.push(secMap[sec].pop());
+          added = true;
+        }
+      }
+    }
+
+    if (chosen.length < count) {
+      const chosenIds = new Set(chosen.map(q => q.id));
+      const remaining = shuffle(pool.filter(q => !chosenIds.has(q.id)));
+      for (const q of remaining) {
+        if (chosen.length >= count) break;
+        chosen.push(q);
+      }
+    }
+
+    return shuffle(chosen);
+  }
+
   // --- Modal Lightbox ---
   function openImageModal(src, alt, caption) {
     if (!imageModal || !modalImg) return;
@@ -14308,7 +14214,7 @@ Step 3: 3a. Has no tubes and is very small → Moss; 3b. Has tubes and its seeds
                 <span class="specimen-tag">MODE 1</span>
                 <h3 class="mode-card-title">Practice Mode</h3>
                 <p class="mode-card-desc">
-                  Step-by-step questions with instant feedback, model explanations, free hints, and self-check buttons.
+                  Step-by-step questions with instant feedback, model explanations, free hints, and custom random sets (20, 40, 60, or 100 questions from your chosen sections).
                 </p>
               </div>
               <button type="button" class="btn-action btn-secondary" style="width:100%;">
@@ -14419,33 +14325,75 @@ Step 3: 3a. Has no tubes and is very small → Moss; 3b. Has tubes and its seeds
   // VIEW: PRACTICE SETUP
   // =========================================================================
   function renderPracticeSetupView() {
-    let selSection = 'all';
+    let selSections = ['1.2', '1.3', '2.1', '2.2', '2.3']; // all 5 initially selected
+    let selCount = 20; // 20 | 40 | 60 | 100 | 'all'
     let selType = 'all';
     let selLevel = 'all';
+    let selOrder = 'random'; // 'random' | 'sequential'
 
     appRoot.innerHTML = `
       <div class="setup-form-card">
         <span class="specimen-tag">MODE 1 CONFIGURATION</span>
         <h2 class="setup-title" style="margin-top:6px;">Practice Session Setup</h2>
-        <p class="setup-desc">Choose your topic, question format, and difficulty level.</p>
+        <p class="setup-desc">
+          Choose which sections to include, pick your set length, and test your knowledge with free hints and instant feedback.
+        </p>
 
-        <!-- Section Picker -->
+        <!-- Section Multi-Select Picker -->
         <div class="form-group">
-          <label class="form-label">1. Choose Section</label>
-          <div class="option-pill-group" id="group-sec">
-            <button type="button" class="pill-option active" data-val="all">All Sections (500)</button>
-            <button type="button" class="pill-option" data-val="1.2">1.2 Classifying (100)</button>
-            <button type="button" class="pill-option" data-val="1.3">1.3 Heredity (100)</button>
-            <button type="button" class="pill-option" data-val="2.1">2.1 Nervous System (100)</button>
-            <button type="button" class="pill-option" data-val="2.2">2.2 Immune System (100)</button>
-            <button type="button" class="pill-option" data-val="2.3">2.3 Excretory System (100)</button>
+          <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px; flex-wrap:wrap; gap:6px;">
+            <label class="form-label" style="margin-bottom:0;">1. Choose Sections to Include</label>
+            <div style="font-size:0.85rem; display:flex; gap:10px; align-items:center;">
+              <button type="button" id="practice-select-all-secs" class="subtle-link-btn">
+                Select All
+              </button>
+              <span style="color:var(--ink-border-dark);">|</span>
+              <button type="button" id="practice-clear-all-secs" class="subtle-link-btn">
+                Clear
+              </button>
+            </div>
+          </div>
+          <p style="font-size:0.85rem; color:var(--ink-secondary); margin-top:0; margin-bottom:10px;">
+            Tap sections to toggle them into your practice session:
+          </p>
+          <div class="option-pill-group" id="practice-group-sec">
+            <button type="button" class="pill-option active" data-sec="1.2">
+              <span class="pill-check">✓</span> 1.2 Classifying (100)
+            </button>
+            <button type="button" class="pill-option active" data-sec="1.3">
+              <span class="pill-check">✓</span> 1.3 Heredity (100)
+            </button>
+            <button type="button" class="pill-option active" data-sec="2.1">
+              <span class="pill-check">✓</span> 2.1 Nervous System (100)
+            </button>
+            <button type="button" class="pill-option active" data-sec="2.2">
+              <span class="pill-check">✓</span> 2.2 Immune System (100)
+            </button>
+            <button type="button" class="pill-option active" data-sec="2.3">
+              <span class="pill-check">✓</span> 2.3 Excretory System (100)
+            </button>
+          </div>
+          <div id="practice-sec-error" style="color:var(--feedback-wrong-ink); font-size:0.85rem; margin-top:6px; display:none; font-weight:700;">
+            Please select at least one section.
+          </div>
+        </div>
+
+        <!-- Practice Set Length (Count Picker) -->
+        <div class="form-group">
+          <label class="form-label">2. Practice Set Length</label>
+          <div class="option-pill-group" id="practice-group-count">
+            <button type="button" class="pill-option active" data-val="20">20 Questions (Quick)</button>
+            <button type="button" class="pill-option" data-val="40">40 Questions (Standard)</button>
+            <button type="button" class="pill-option" data-val="60">60 Questions (Comprehensive)</button>
+            <button type="button" class="pill-option" data-val="100">100 Questions (Mastery Set)</button>
+            <button type="button" class="pill-option" data-val="all">All Matching Questions</button>
           </div>
         </div>
 
         <!-- Question Type Picker -->
         <div class="form-group">
-          <label class="form-label">2. Question Type</label>
-          <div class="option-pill-group" id="group-type">
+          <label class="form-label">3. Question Format</label>
+          <div class="option-pill-group" id="practice-group-type">
             <button type="button" class="pill-option active" data-val="all">All Formats</button>
             <button type="button" class="pill-option" data-val="MCQ">Multiple Choice</button>
             <button type="button" class="pill-option" data-val="True/False">True / False</button>
@@ -14456,11 +14404,20 @@ Step 3: 3a. Has no tubes and is very small → Moss; 3b. Has tubes and its seeds
 
         <!-- Level Picker -->
         <div class="form-group">
-          <label class="form-label">3. Difficulty Level</label>
-          <div class="option-pill-group" id="group-level">
+          <label class="form-label">4. Difficulty Level</label>
+          <div class="option-pill-group" id="practice-group-level">
             <button type="button" class="pill-option active" data-val="all">All Levels</button>
             <button type="button" class="pill-option" data-val="Medium">Medium</button>
             <button type="button" class="pill-option" data-val="Hard">Hard</button>
+          </div>
+        </div>
+
+        <!-- Question Order -->
+        <div class="form-group">
+          <label class="form-label">5. Question Order</label>
+          <div class="option-pill-group" id="practice-group-order">
+            <button type="button" class="pill-option active" data-val="random">Randomized Shuffle (Recommended)</button>
+            <button type="button" class="pill-option" data-val="sequential">Sequential (Topic Order)</button>
           </div>
         </div>
 
@@ -14475,8 +14432,60 @@ Step 3: 3a. Has no tubes and is very small → Moss; 3b. Has tubes and its seeds
       </div>
     `;
 
-    function setupPillGroup(groupId, onChange) {
+    // Multi-select sections handling
+    const secButtons = document.querySelectorAll('#practice-group-sec .pill-option');
+    const secError = document.getElementById('practice-sec-error');
+
+    function updateSectionPillUI() {
+      secButtons.forEach(btn => {
+        const sec = btn.getAttribute('data-sec');
+        const isSelected = selSections.includes(sec);
+        btn.classList.toggle('active', isSelected);
+        let check = btn.querySelector('.pill-check');
+        if (isSelected) {
+          if (!check) {
+            check = document.createElement('span');
+            check.className = 'pill-check';
+            check.textContent = '✓ ';
+            btn.prepend(check);
+          }
+        } else {
+          if (check) check.remove();
+        }
+      });
+      if (selSections.length > 0 && secError) {
+        secError.style.display = 'none';
+      }
+    }
+
+    secButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const sec = btn.getAttribute('data-sec');
+        const idx = selSections.indexOf(sec);
+        if (idx > -1) {
+          selSections.splice(idx, 1);
+        } else {
+          selSections.push(sec);
+        }
+        updateSectionPillUI();
+      });
+    });
+
+    document.getElementById('practice-select-all-secs').addEventListener('click', () => {
+      selSections = ['1.2', '1.3', '2.1', '2.2', '2.3'];
+      updateSectionPillUI();
+    });
+
+    document.getElementById('practice-clear-all-secs').addEventListener('click', () => {
+      selSections = [];
+      updateSectionPillUI();
+      if (secError) secError.style.display = 'block';
+    });
+
+    // Single-select pill groups handling
+    function setupSinglePillGroup(groupId, onChange) {
       const group = document.getElementById(groupId);
+      if (!group) return;
       group.querySelectorAll('.pill-option').forEach((btn) => {
         btn.addEventListener('click', () => {
           group.querySelectorAll('.pill-option').forEach(b => b.classList.remove('active'));
@@ -14486,23 +14495,35 @@ Step 3: 3a. Has no tubes and is very small → Moss; 3b. Has tubes and its seeds
       });
     }
 
-    setupPillGroup('group-sec', val => { selSection = val; });
-    setupPillGroup('group-type', val => { selType = val; });
-    setupPillGroup('group-level', val => { selLevel = val; });
+    setupSinglePillGroup('practice-group-count', val => {
+      selCount = val === 'all' ? 'all' : parseInt(val, 10);
+    });
+    setupSinglePillGroup('practice-group-type', val => { selType = val; });
+    setupSinglePillGroup('practice-group-level', val => { selLevel = val; });
+    setupSinglePillGroup('practice-group-order', val => { selOrder = val; });
 
     document.getElementById('btn-cancel-setup').addEventListener('click', () => setView('home'));
     document.getElementById('btn-start-practice').addEventListener('click', () => {
-      startPracticeSession(selSection, selType, selLevel);
+      if (selSections.length === 0) {
+        if (secError) secError.style.display = 'block';
+        alert('Please select at least one section to include in your practice session.');
+        return;
+      }
+      startPracticeSession(selSections, selType, selLevel, selCount, selOrder === 'random');
     });
   }
 
-  function startPracticeSession(section, type, level, customQuestions = null) {
+  function startPracticeSession(sections, type = 'all', level = 'all', count = 'all', isRandom = true, customQuestions = null) {
     let filtered = [];
     if (customQuestions && Array.isArray(customQuestions)) {
       filtered = customQuestions;
     } else {
+      const secList = typeof sections === 'string'
+        ? (sections === 'all' ? ['1.2', '1.3', '2.1', '2.2', '2.3'] : [sections])
+        : (Array.isArray(sections) && sections.length > 0 ? sections : ['1.2', '1.3', '2.1', '2.2', '2.3']);
+
       filtered = state.allQuestions.filter((q) => {
-        if (section !== 'all' && q.section !== section) return false;
+        if (!secList.includes(q.section)) return false;
         if (type !== 'all' && q.type !== type) return false;
         if (level !== 'all' && q.level !== level) return false;
         return true;
@@ -14510,17 +14531,38 @@ Step 3: 3a. Has no tubes and is very small → Moss; 3b. Has tubes and its seeds
     }
 
     if (filtered.length === 0) {
-      alert('No questions match this filter combination. Try selecting All Levels or All Types.');
+      alert('No questions match this filter combination. Try selecting more sections or All Levels.');
       return;
     }
 
+    const secList = typeof sections === 'string'
+      ? (sections === 'all' ? ['1.2', '1.3', '2.1', '2.2', '2.3'] : [sections])
+      : (Array.isArray(sections) && sections.length > 0 ? sections : ['1.2', '1.3', '2.1', '2.2', '2.3']);
+
+    let chosen = [];
+    if (customQuestions && Array.isArray(customQuestions)) {
+      chosen = customQuestions;
+    } else if (count === 'all' || count >= filtered.length) {
+      chosen = isRandom ? shuffle(filtered) : filtered;
+    } else {
+      const targetCount = parseInt(count, 10);
+      if (isRandom) {
+        chosen = sampleBalanced(filtered, secList, targetCount);
+      } else {
+        chosen = filtered.slice(0, targetCount);
+      }
+    }
+
     state.practice = {
-      questions: filtered,
+      questions: chosen,
       currentIndex: 0,
       sessionAnswers: {},
-      section: section,
+      sections: secList,
+      section: secList.length === 1 ? secList[0] : 'multi',
       type: type,
-      level: level
+      level: level,
+      count: chosen.length,
+      isRandom: isRandom
     };
 
     setView('practice');
@@ -14568,12 +14610,13 @@ Step 3: 3a. Has no tubes and is very small → Moss; 3b. Has tubes and its seeds
         <div class="field-plate" id="practice-card">
           <!-- Numeral & Specimen Metadata Row -->
           <div class="numeral-row">
-            <div class="question-big-num">Q${q.number}</div>
+            <div class="question-big-num">Q${idx + 1}</div>
             <div class="question-tags-group">
               <span class="specimen-tag ${secTagClass}">SEC ${q.section}</span>
               <span class="specimen-tag">${q.type.toUpperCase()}</span>
               <span class="specimen-tag">${q.lp}</span>
               <span class="specimen-tag ${isHard ? 'level-hard' : ''}">${q.level.toUpperCase()}</span>
+              <span class="specimen-tag" style="background:var(--paper-sheet);">ITEM #${q.number}</span>
             </div>
           </div>
 
@@ -14596,7 +14639,7 @@ Step 3: 3a. Has no tubes and is very small → Moss; 3b. Has tubes and its seeds
         <!-- Side Rail: Progress & Question Navigation (Desktop) -->
         <aside class="journal-side-rail" aria-label="Question Navigation">
           <div class="side-rail-title">
-            <span>QUESTION INDEX</span>
+            <span>PRACTICE QUESTIONS</span>
             <span>${idx + 1} / ${qList.length}</span>
           </div>
           <div class="progress-rail-container" style="margin-bottom:14px;">
@@ -14613,8 +14656,8 @@ Step 3: 3a. Has no tubes and is very small → Moss; 3b. Has tubes and its seeds
                 statusClass = itemAns.status === 'wrong' || itemAns.status === 'not_yet' ? 'answered-wrong' : 'answered-correct';
               }
               return `
-                <button type="button" class="nav-dot-btn ${statusClass}" data-index="${i}" title="Question ${item.number} (${item.type})">
-                  ${item.number}
+                <button type="button" class="nav-dot-btn ${statusClass}" data-index="${i}" title="Question ${i + 1} (Bank Sec ${item.section} #${item.number})">
+                  ${i + 1}
                 </button>
               `;
             }).join('')}
@@ -15244,16 +15287,7 @@ Step 3: 3a. Has no tubes and is very small → Moss; 3b. Has tubes and its seeds
   function startMockExam(section, count, timerMinutes) {
     let chosen = [];
     if (section === 'all') {
-      const sections = ['1.2', '1.3', '2.1', '2.2', '2.3'];
-      const perSection = Math.floor(count / sections.length);
-      let remainder = count % sections.length;
-      sections.forEach(sec => {
-        const secPool = shuffle(state.allQuestions.filter(q => q.section === sec));
-        const take = perSection + (remainder > 0 ? 1 : 0);
-        if (remainder > 0) remainder--;
-        chosen.push(...secPool.slice(0, take));
-      });
-      chosen = shuffle(chosen);
+      chosen = sampleBalanced(state.allQuestions, ['1.2', '1.3', '2.1', '2.2', '2.3'], count);
     } else {
       const pool = state.allQuestions.filter(q => q.section === section);
       chosen = shuffle(pool).slice(0, Math.min(count, pool.length));
@@ -15536,10 +15570,8 @@ Step 3: 3a. Has no tubes and is very small → Moss; 3b. Has tubes and its seeds
     }
 
     const msg = answered < total
-      ? `You have answered ${answered} of ${total} questions.
-Are you sure you want to finish and submit the exam?`
-      : `You have answered all ${total} questions!
-Ready to submit and view your score breakdown?`;
+      ? `You have answered ${answered} of ${total} questions.\nAre you sure you want to finish and submit the exam?`
+      : `You have answered all ${total} questions!\nReady to submit and view your score breakdown?`;
 
     if (confirm(msg)) {
       submitMockExam();
