@@ -14581,16 +14581,14 @@ window.SCIENCE_QUESTIONS = [
       return;
     }
 
-    // Initialize answer state for this question if not exists
+    // Initialize answer state for this question in this practice session if not exists
     if (!state.practice.sessionAnswers[q.id]) {
-      // Check if user previously answered this in progress
-      const prev = state.userProgress.answered[q.id];
       state.practice.sessionAnswers[q.id] = {
-        answered: !!prev,
-        selected: prev ? prev.lastAnswer : null,
+        answered: false,
+        selected: null,
         studentText: '',
-        revealed: !!prev,
-        status: prev ? prev.status : null,
+        revealed: false,
+        status: null,
         hintOpened: false
       };
     }
